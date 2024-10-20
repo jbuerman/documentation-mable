@@ -1,0 +1,151 @@
+mable package
+=============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mable.competition
+   mable.examples
+   mable.extensions
+
+Submodules
+----------
+
+mable.cargo\_bidding module
+---------------------------
+
+.. automodule:: mable.cargo_bidding
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.cli module
+----------------
+
+.. automodule:: mable.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.engine module
+-------------------
+
+.. automodule:: mable.engine
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.event\_management module
+------------------------------
+
+.. automodule:: mable.event_management
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.global\_setup module
+--------------------------
+
+.. automodule:: mable.global_setup
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.instructions module
+-------------------------
+
+.. automodule:: mable.instructions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.metrics module
+--------------------
+
+.. automodule:: mable.metrics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.observers module
+----------------------
+
+.. automodule:: mable.observers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.shipping\_market module
+-----------------------------
+
+.. automodule:: mable.shipping_market
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.simulation\_de\_serialisation module
+------------------------------------------
+
+.. automodule:: mable.simulation_de_serialisation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.simulation\_environment module
+------------------------------------
+
+.. automodule:: mable.simulation_environment
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.simulation\_generation module
+-----------------------------------
+
+.. automodule:: mable.simulation_generation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.simulation\_space module
+------------------------------
+
+.. automodule:: mable.simulation_space
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.transport\_operation module
+---------------------------------
+
+.. automodule:: mable.transport_operation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.transportation\_scheduling module
+---------------------------------------
+
+.. automodule:: mable.transportation_scheduling
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.util module
+-----------------
+
+.. automodule:: mable.util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: mable
+   :members:
+   :undoc-members:
+   :show-inheritance:

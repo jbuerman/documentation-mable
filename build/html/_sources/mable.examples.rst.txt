@@ -1,0 +1,29 @@
+mable.examples package
+======================
+
+Submodules
+----------
+
+mable.examples.environment module
+---------------------------------
+
+.. automodule:: mable.examples.environment
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.examples.fleets module
+----------------------------
+
+.. automodule:: mable.examples.fleets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: mable.examples
+   :members:
+   :undoc-members:
+   :show-inheritance:

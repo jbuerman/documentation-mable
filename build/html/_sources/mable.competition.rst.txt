@@ -1,0 +1,21 @@
+mable.competition package
+=========================
+
+Submodules
+----------
+
+mable.competition.generation module
+-----------------------------------
+
+.. automodule:: mable.competition.generation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: mable.competition
+   :members:
+   :undoc-members:
+   :show-inheritance:

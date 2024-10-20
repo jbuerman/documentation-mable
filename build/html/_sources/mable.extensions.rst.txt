@@ -1,0 +1,37 @@
+mable.extensions package
+========================
+
+Submodules
+----------
+
+mable.extensions.cargo\_distributions module
+--------------------------------------------
+
+.. automodule:: mable.extensions.cargo_distributions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.extensions.fuel\_emissions module
+---------------------------------------
+
+.. automodule:: mable.extensions.fuel_emissions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.extensions.world\_ports module
+------------------------------------
+
+.. automodule:: mable.extensions.world_ports
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: mable.extensions
+   :members:
+   :undoc-members:
+   :show-inheritance:
