@@ -56,6 +56,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mable.cargo_bidding">mable.cargo_bidding module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mable.cargo_bidding.InternalTradingCompany"><code class="docutils literal notranslate"><span class="pre">InternalTradingCompany</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.cargo_bidding.MCSTCompany"><code class="docutils literal notranslate"><span class="pre">MCSTCompany</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.cargo_bidding.MeansCompany"><code class="docutils literal notranslate"><span class="pre">MeansCompany</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.cargo_bidding.TradingCompany"><code class="docutils literal notranslate"><span class="pre">TradingCompany</span></code></a></li>
@@ -71,6 +72,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mable.engine">mable.engine module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#mable.engine.EnginePrePostRunner"><code class="docutils literal notranslate"><span class="pre">EnginePrePostRunner</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mable.engine.SimulationCentre"><code class="docutils literal notranslate"><span class="pre">SimulationCentre</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.engine.SimulationEngine"><code class="docutils literal notranslate"><span class="pre">SimulationEngine</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.engine.pre_run_inform_vessel_locations"><code class="docutils literal notranslate"><span class="pre">pre_run_inform_vessel_locations()</span></code></a></li>
 </ul>
@@ -426,6 +428,49 @@
 <span id="mable-cargo-bidding-module"></span><h2>mable.cargo_bidding module<a class="headerlink" href="#module-mable.cargo_bidding" title="Link to this heading"></a></h2>
 <p>Classes and functions around companies bidding for cargoes.</p>
 <dl class="py class">
+<dt class="sig sig-object py" id="mable.cargo_bidding.InternalTradingCompany">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.cargo_bidding.</span></span><span class="sig-name descname"><span class="pre">InternalTradingCompany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fleet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.InternalTradingCompany" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.transport_operation.SimpleCompany" title="mable.transport_operation.SimpleCompany"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleCompany</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.cargo_bidding.InternalTradingCompany.inform">
+<span class="sig-name descname"><span class="pre">inform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trades</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.InternalTradingCompany.inform" title="Link to this definition"></a></dt>
+<dd><p>The shipping company that bids in cargo auctions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trades</strong> (<em>list</em><em>[</em><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><em>Trade</em></a><em>]</em>) – The list of trades.</p></li>
+<li><p><strong>args</strong> – Not used.</p></li>
+<li><p><strong>kwargs</strong> – Not used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bids of the company</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[<a class="reference internal" href="#mable.transport_operation.Bid" title="mable.transport_operation.Bid">Bid</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.cargo_bidding.InternalTradingCompany.receive">
+<span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contracts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_ledger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.InternalTradingCompany.receive" title="Link to this definition"></a></dt>
+<dd><p>Allocate a list of trades to the company.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>contracts</strong> (<em>List</em><em>[</em><a class="reference internal" href="#mable.shipping_market.Contract" title="mable.shipping_market.Contract"><em>Contract</em></a><em>]</em>) – The list of trades.</p></li>
+<li><p><strong>auction_ledger</strong> (<a class="reference internal" href="#mable.shipping_market.AuctionLedger" title="mable.shipping_market.AuctionLedger"><em>AuctionLedger</em></a><em> | </em><em>None</em>) – Outcomes of all cargo auctions in the round.</p></li>
+<li><p><strong>args</strong> – Not used.</p></li>
+<li><p><strong>kwargs</strong> – Not used.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="mable.cargo_bidding.MCSTCompany">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.cargo_bidding.</span></span><span class="sig-name descname"><span class="pre">MCSTCompany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fleet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.MCSTCompany" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.cargo_bidding.TradingCompany" title="mable.cargo_bidding.TradingCompany"><code class="xref py py-class docutils literal notranslate"><span class="pre">TradingCompany</span></code></a></p>
@@ -481,43 +526,48 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.cargo_bidding.</span></span><span class="sig-name descname"><span class="pre">TradingCompany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fleet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.TradingCompany" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mable.transport_operation.SimpleCompany" title="mable.transport_operation.SimpleCompany"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleCompany</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.inform">
-<span class="sig-name descname"><span class="pre">inform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trades</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.inform" title="Link to this definition"></a></dt>
-<dd><p>The shipping company that bids in cargo auctions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trades</strong> (<em>list</em><em>[</em><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><em>Trade</em></a><em>]</em>) – The list of trades.</p></li>
-<li><p><strong>args</strong> – Not used.</p></li>
-<li><p><strong>kwargs</strong> – Not used.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The bids of the company</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list[<a class="reference internal" href="#mable.transport_operation.Bid" title="mable.transport_operation.Bid">Bid</a>]</p>
-</dd>
-</dl>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.Data">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fleet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.Vessel.Data" title="mable.transport_operation.Vessel.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.Data" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.simulation_de_serialisation.DataClass" title="mable.simulation_de_serialisation.DataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataClass</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.Data.Schema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">AbstractSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">AbstractSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">AbstractSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">AbstractSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">AbstractSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.Data.Schema" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.simulation_de_serialisation.DataSchema" title="mable.simulation_de_serialisation.DataSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSchema</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.Data.Schema.opts">
+<span class="sig-name descname"><span class="pre">opts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">SchemaOpts</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;marshmallow.schema.SchemaOpts</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.Data.Schema.opts" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.Data.fleet">
+<span class="sig-name descname"><span class="pre">fleet</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.Vessel.Data" title="mable.transport_operation.Vessel.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.Data.fleet" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.Data.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.Data.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.inform">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trades</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.inform" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.pre_inform">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pre_inform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trades</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.pre_inform" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="mable.cargo_bidding.TradingCompany.receive">
-<span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contracts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_ledger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.receive" title="Link to this definition"></a></dt>
-<dd><p>Allocate a list of trades to the company.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>contracts</strong> (<em>List</em><em>[</em><a class="reference internal" href="#mable.shipping_market.Contract" title="mable.shipping_market.Contract"><em>Contract</em></a><em>]</em>) – The list of trades.</p></li>
-<li><p><strong>auction_ledger</strong> (<a class="reference internal" href="#mable.shipping_market.AuctionLedger" title="mable.shipping_market.AuctionLedger"><em>AuctionLedger</em></a><em> | </em><em>None</em>) – Outcomes of all cargo auctions in the round.</p></li>
-<li><p><strong>args</strong> – Not used.</p></li>
-<li><p><strong>kwargs</strong> – Not used.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contracts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_ledger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.cargo_bidding.TradingCompany.receive" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -624,8 +674,35 @@ the task selector function to perform one of the tasks.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="mable.engine.SimulationCentre">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.engine.</span></span><span class="sig-name descname"><span class="pre">SimulationCentre</span></span><a class="headerlink" href="#mable.engine.SimulationCentre" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.simulation_environment.SimulationEngineAware" title="mable.simulation_environment.SimulationEngineAware"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngineAware</span></code></a></p>
+<p>A simulation centre that allows the trading companies to interact with the environment.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.engine.SimulationCentre.apply_schedules">
+<span class="sig-name descname"><span class="pre">apply_schedules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">company</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedules</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.SimulationCentre.apply_schedules" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.engine.SimulationCentre.current_time">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_time</span></span><a class="headerlink" href="#mable.engine.SimulationCentre.current_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.engine.SimulationCentre.get_network_distance">
+<span class="sig-name descname"><span class="pre">get_network_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_before</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.SimulationCentre.get_network_distance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.engine.SimulationCentre.get_network_port_or_default">
+<span class="sig-name descname"><span class="pre">get_network_port_or_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.SimulationCentre.get_network_port_or_default" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="mable.engine.SimulationEngine">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.engine.</span></span><span class="sig-name descname"><span class="pre">SimulationEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">world</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shipping_companies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_generation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_market</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_factory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_run_cmds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_run_cmds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.SimulationEngine" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.engine.</span></span><span class="sig-name descname"><span class="pre">SimulationEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">world</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shipping_companies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_generation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_market</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_factory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_run_cmds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_run_cmds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.SimulationEngine" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Main class to run a simulation.</p>
 <dl class="py attribute">
@@ -654,8 +731,10 @@ The class generation object (the class factory).</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">event_queue</span></span><a class="headerlink" href="#mable.engine.SimulationEngine.event_queue" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>EventQueue
-The worlds event queue.</p>
+<dd class="field-odd"><p>The worlds event queue.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mable.event_management.EventQueue" title="mable.event_management.EventQueue">EventQueue</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -694,6 +773,11 @@ Additional data in conjunction with the event. E.g. data that was produced or ch
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.engine.SimulationEngine.output_directory">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_directory</span></span><a class="headerlink" href="#mable.engine.SimulationEngine.output_directory" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.engine.SimulationEngine.register_event_observer">
