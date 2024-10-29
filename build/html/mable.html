@@ -1228,15 +1228,20 @@ the task selector function to perform one of the tasks.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.engine.CompanyHeadquarters.get_network_distance">
 <span class="sig-name descname"><span class="pre">get_network_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.CompanyHeadquarters.get_network_distance" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Get the distance between two locations.</p>
+<p>If there is no route between the two locations infinity (math.inf) if returned.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>location_one</strong></p></li>
-<li><p><strong>location_two</strong></p></li>
+<li><p><strong>location_one</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><em>Port</em></a><em>, </em><em>str</em><em>]</em>) – The first location.</p></li>
+<li><p><strong>location_two</strong> – The second location.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>The distance or math.inf if no route between the two locations exists.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
