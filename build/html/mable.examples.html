@@ -155,13 +155,27 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.environment.get_specification_builder">
-<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">get_specification_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">environment_files_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.get_specification_builder" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">get_specification_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">environment_files_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_occurrence_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trades_per_occurrence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_auctions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.get_specification_builder" title="Link to this definition"></a></dt>
 <dd><p>Generate a specifications builder to specify a simulation settings.</p>
-<p>param environment_files_path: The location of the environment files, i.e. the resources archive.
-:type environment_files_path: str
-:return: The specification builder.
-:rtype: FuelSpecsBuilder
-:raises FileNotFoundError: If the resource file does not exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>environment_files_path</strong> (<em>str</em>) – The location of the environment files, i.e. the resources archive.</p></li>
+<li><p><strong>trade_occurrence_frequency</strong> (<em>int</em>) – The number of days between each auction occurrence. Default is 30 days.</p></li>
+<li><p><strong>trades_per_occurrence</strong> (<em>int</em>) – The number of trades per auction occurrence. Default is 1.</p></li>
+<li><p><strong>num_auctions</strong> (<em>int</em>) – The number of auctions. Default is 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The specification builder.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.FuelSpecsBuilder" title="mable.extensions.fuel_emissions.FuelSpecsBuilder">FuelSpecsBuilder</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – If the resource file does not exist.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
