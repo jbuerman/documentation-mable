@@ -1,0 +1,21 @@
+mable.io package
+================
+
+Submodules
+----------
+
+mable.io.logging\_util module
+-----------------------------
+
+.. automodule:: mable.io.logging_util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: mable.io
+   :members:
+   :undoc-members:
+   :show-inheritance:

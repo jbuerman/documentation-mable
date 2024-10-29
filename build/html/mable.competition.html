@@ -46,12 +46,40 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">mable</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mable.html">mable package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="mable.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">mable.competition package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">mable.competition package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.competition.generation">mable.competition.generation module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#mable.competition.generation.AuctionCargoEvent"><code class="docutils literal notranslate"><span class="pre">AuctionCargoEvent</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionCargoEvent.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionCargoEvent.__init__()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionCargoEvent.allocation_result"><code class="docutils literal notranslate"><span class="pre">AuctionCargoEvent.allocation_result</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionCargoEvent.event_action"><code class="docutils literal notranslate"><span class="pre">AuctionCargoEvent.event_action()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.competition.generation.AuctionClassFactory"><code class="docutils literal notranslate"><span class="pre">AuctionClassFactory</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_engine"><code class="docutils literal notranslate"><span class="pre">AuctionClassFactory.generate_engine()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_event_cargo"><code class="docutils literal notranslate"><span class="pre">AuctionClassFactory.generate_event_cargo()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_market"><code class="docutils literal notranslate"><span class="pre">AuctionClassFactory.generate_market()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.competition.generation.AuctionSimulationEngine"><code class="docutils literal notranslate"><span class="pre">AuctionSimulationEngine</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.competition.generation.CompetitionBuilder"><code class="docutils literal notranslate"><span class="pre">CompetitionBuilder</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.CompetitionBuilder.generate_fleet"><code class="docutils literal notranslate"><span class="pre">CompetitionBuilder.generate_fleet()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.CompetitionBuilder.generate_shipping_companies"><code class="docutils literal notranslate"><span class="pre">CompetitionBuilder.generate_shipping_companies()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.CompetitionBuilder.set_engines"><code class="docutils literal notranslate"><span class="pre">CompetitionBuilder.set_engines()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.competition">Module contents</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="mable.examples.html">mable.examples package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.extensions.html">mable.extensions package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.io.html">mable.io package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#submodules">Submodules</a></li>
@@ -117,6 +145,27 @@
 <dd><p>Bases: <a class="reference internal" href="mable.html#mable.event_management.CargoEvent" title="mable.event_management.CargoEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">CargoEvent</span></code></a></p>
 <p>An event of appearance of cargoes in an auction setting.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="mable.competition.generation.AuctionCargoEvent.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionCargoEvent.__init__" title="Link to this definition"></a></dt>
+<dd><p>Constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> – float
+The time of the event.</p></li>
+<li><p><strong>info</strong> – str
+Some info on the event for logging etc.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.competition.generation.AuctionCargoEvent.allocation_result">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">allocation_result</span></span><a class="headerlink" href="#mable.competition.generation.AuctionCargoEvent.allocation_result" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="mable.competition.generation.AuctionCargoEvent.event_action">
 <span class="sig-name descname"><span class="pre">event_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionCargoEvent.event_action" title="Link to this definition"></a></dt>
 <dd><p>Collects the cargoes becoming available at the event’s time from the shipping object and passes
@@ -125,6 +174,12 @@ them to the market for distribution.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>engine</strong> – Engine
 The simulation engine.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The distribution ledger.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="mable.html#mable.shipping_market.AuctionLedger" title="mable.shipping_market.AuctionLedger">AuctionLedger</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -156,14 +211,13 @@ The simulation engine.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.competition.generation.AuctionClassFactory.generate_event_cargo">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_event_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionClassFactory.generate_event_cargo" title="Link to this definition"></a></dt>
-<dd><p>Generates an arrival event. Default: py:class:<cite>maritime_simulator.event_management.ArrivalEvent</cite>.
-:param args:</p>
-<blockquote>
-<div><p>Positional args.</p>
-</div></blockquote>
+<dd><p>Generates a cargo event. Default: py:class:<cite>maritime_simulator.event_management.CargoEvent</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>kwargs</strong> – Keyword args.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Positional args.</p></li>
+<li><p><strong>kwargs</strong> – Keyword args.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The event.</p>
@@ -242,6 +296,12 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 <dd class="field-even"><p>self</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.competition.generation.CompetitionBuilder.set_engines">
+<span class="sig-name descname"><span class="pre">set_engines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.CompetitionBuilder.set_engines" title="Link to this definition"></a></dt>
+<dd><p>Makes the engine known to the units constituting the simulation.</p>
 </dd></dl>
 
 </dd></dl>

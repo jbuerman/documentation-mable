@@ -46,12 +46,30 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">mable</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mable.html">mable package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="mable.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="mable.competition.html">mable.competition package</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">mable.examples package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">mable.examples package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.examples.environment">mable.examples.environment module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#mable.examples.environment.generate_simulation"><code class="docutils literal notranslate"><span class="pre">generate_simulation()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.examples.environment.get_specification_builder"><code class="docutils literal notranslate"><span class="pre">get_specification_builder()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.examples.fleets">mable.examples.fleets module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.default_laden_balast_consumption"><code class="docutils literal notranslate"><span class="pre">default_laden_balast_consumption()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.example_fleet_1"><code class="docutils literal notranslate"><span class="pre">example_fleet_1()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.example_fleet_2"><code class="docutils literal notranslate"><span class="pre">example_fleet_2()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.get_fuel_mfo"><code class="docutils literal notranslate"><span class="pre">get_fuel_mfo()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.examples">Module contents</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="mable.extensions.html">mable.extensions package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.io.html">mable.io package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#submodules">Submodules</a></li>
@@ -112,29 +130,39 @@
 <section id="module-mable.examples.environment">
 <span id="mable-examples-environment-module"></span><h2>mable.examples.environment module<a class="headerlink" href="#module-mable.examples.environment" title="Link to this heading"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="mable.examples.environment.activate_stats_collection">
-<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">activate_stats_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.activate_stats_collection" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mable.examples.environment.calculate_penalty">
-<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">calculate_penalty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.calculate_penalty" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mable.examples.environment.export_stats">
-<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">export_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.export_stats" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.environment.generate_simulation">
-<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">generate_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specifications_builder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.generate_simulation" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">generate_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specifications_builder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_detailed_auction_outcome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.generate_simulation" title="Link to this definition"></a></dt>
+<dd><p>Generate a simulation from a specifications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>specifications_builder</strong> (<a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.FuelSpecsBuilder" title="mable.extensions.fuel_emissions.FuelSpecsBuilder"><em>FuelSpecsBuilder</em></a>) – The specifications builder that has been used to specify a simulation settings.</p></li>
+<li><p><strong>show_detailed_auction_outcome</strong> (<em>bool</em>) – Log the outcomes of auctions in detail.</p></li>
+<li><p><strong>output_directory</strong> (<em>str</em>) – A directory to save the simulation output files.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The simulation instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="mable.html#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine">SimulationEngine</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the output directory does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.environment.get_specification_builder">
 <span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">get_specification_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">environment_files_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.get_specification_builder" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Generate a specifications builder to specify a simulation settings.</p>
+<p>param environment_files_path: The location of the environment files, i.e. the resources archive.
+:type environment_files_path: str
+:return: The specification builder.
+:rtype: FuelSpecsBuilder
+:raises FileNotFoundError: If the resource file does not exist.</p>
+</dd></dl>
 
 </section>
 <section id="module-mable.examples.fleets">
@@ -142,22 +170,56 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.fleets.default_laden_balast_consumption">
 <span class="sig-prename descclassname"><span class="pre">mable.examples.fleets.</span></span><span class="sig-name descname"><span class="pre">default_laden_balast_consumption</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.fleets.default_laden_balast_consumption" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Returns laden and balast consumption curve specifications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple of laden and balast consumption.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[<a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.ConsumptionRate.Data" title="mable.extensions.fuel_emissions.ConsumptionRate.Data">ConsumptionRate.Data</a>, <a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.ConsumptionRate.Data" title="mable.extensions.fuel_emissions.ConsumptionRate.Data">ConsumptionRate.Data</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.fleets.example_fleet_1">
 <span class="sig-prename descclassname"><span class="pre">mable.examples.fleets.</span></span><span class="sig-name descname"><span class="pre">example_fleet_1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.fleets.example_fleet_1" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>A fleet with one vessel docked in Aberdeen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The fleet.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.VesselWithEngine.Data" title="mable.extensions.fuel_emissions.VesselWithEngine.Data">VesselWithEngine.Data</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.fleets.example_fleet_2">
 <span class="sig-prename descclassname"><span class="pre">mable.examples.fleets.</span></span><span class="sig-name descname"><span class="pre">example_fleet_2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.fleets.example_fleet_2" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>A fleet with one vessel docked in Aberdeen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The fleet.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.VesselWithEngine.Data" title="mable.extensions.fuel_emissions.VesselWithEngine.Data">VesselWithEngine.Data</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.fleets.get_fuel_mfo">
 <span class="sig-prename descclassname"><span class="pre">mable.examples.fleets.</span></span><span class="sig-name descname"><span class="pre">get_fuel_mfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.fleets.get_fuel_mfo" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Return an ‘MFO’ fuel instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The fuel instance.</p>
+</dd>
+</dl>
+<p>:rtype Fuel</p>
+</dd></dl>
 
 </section>
 <section id="module-mable.examples">

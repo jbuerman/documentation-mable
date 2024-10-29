@@ -10,6 +10,7 @@ Subpackages
    mable.competition
    mable.examples
    mable.extensions
+   mable.io
 
 Submodules
 ----------
