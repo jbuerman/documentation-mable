@@ -11,11 +11,18 @@ MABLE is a
 that allows the simulation of an international maritime tramp shipping
 operation.
 
+.. note::
+
+   The current version of MABLE is |project_version_bold|.
+   Hence you should install MABLE-|project_version_it|-py3-none-any.whl.
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    overview
+   tradingAgentIntroduction
    modules
 
 .. automodule:: mable

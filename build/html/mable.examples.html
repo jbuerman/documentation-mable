@@ -6,15 +6,16 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable.examples package &mdash; MABLE 0.0.2 documentation</title>
+  <title>mable.examples package &mdash; MABLE 0.0.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css" />
 
   
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=e3a6060d"></script>
+      <script src="_static/documentation_options.js?v=47de8214"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -47,6 +48,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingAgentIntroduction.html">Creating a Trading Company</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">mable</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mable.html">mable package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="mable.html#subpackages">Subpackages</a><ul class="current">
@@ -62,6 +64,7 @@
 <li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.default_laden_balast_consumption"><code class="docutils literal notranslate"><span class="pre">default_laden_balast_consumption()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.example_fleet_1"><code class="docutils literal notranslate"><span class="pre">example_fleet_1()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.example_fleet_2"><code class="docutils literal notranslate"><span class="pre">example_fleet_2()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.example_fleet_3"><code class="docutils literal notranslate"><span class="pre">example_fleet_3()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="#mable.examples.fleets.get_fuel_mfo"><code class="docutils literal notranslate"><span class="pre">get_fuel_mfo()</span></code></a></li>
 </ul>
 </li>
@@ -136,9 +139,9 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>specifications_builder</strong> (<a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.FuelSpecsBuilder" title="mable.extensions.fuel_emissions.FuelSpecsBuilder"><em>FuelSpecsBuilder</em></a>) – The specifications builder that has been used to specify a simulation settings.</p></li>
-<li><p><strong>show_detailed_auction_outcome</strong> (<em>bool</em>) – Log the outcomes of auctions in detail.</p></li>
-<li><p><strong>output_directory</strong> (<em>str</em>) – A directory to save the simulation output files.</p></li>
+<li><p><span class="target" id="mable.examples.environment.generate_simulation.params.specifications_builder"></span><strong>specifications_builder</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.specifications_builder">¶</a> (<a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.FuelSpecsBuilder" title="mable.extensions.fuel_emissions.FuelSpecsBuilder"><em>FuelSpecsBuilder</em></a>) – The specifications builder that has been used to specify a simulation settings.</p></li>
+<li><p><span class="target" id="mable.examples.environment.generate_simulation.params.show_detailed_auction_outcome"></span><strong>show_detailed_auction_outcome</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.show_detailed_auction_outcome">¶</a> (<em>bool</em>) – Log the outcomes of auctions in detail.</p></li>
+<li><p><span class="target" id="mable.examples.environment.generate_simulation.params.output_directory"></span><strong>output_directory</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.output_directory">¶</a> (<em>str</em>) – A directory to save the simulation output files.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -155,15 +158,19 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.environment.get_specification_builder">
-<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">get_specification_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">environment_files_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_occurrence_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trades_per_occurrence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_auctions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.get_specification_builder" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">get_specification_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">environment_files_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_occurrence_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trades_per_occurrence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_auctions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_trades</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.get_specification_builder" title="Link to this definition"></a></dt>
 <dd><p>Generate a specifications builder to specify a simulation settings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>environment_files_path</strong> (<em>str</em>) – The location of the environment files, i.e. the resources archive.</p></li>
-<li><p><strong>trade_occurrence_frequency</strong> (<em>int</em>) – The number of days between each auction occurrence. Default is 30 days.</p></li>
-<li><p><strong>trades_per_occurrence</strong> (<em>int</em>) – The number of trades per auction occurrence. Default is 1.</p></li>
-<li><p><strong>num_auctions</strong> (<em>int</em>) – The number of auctions. Default is 2.</p></li>
+<li><p><span class="target" id="mable.examples.environment.get_specification_builder.params.environment_files_path"></span><strong>environment_files_path</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.get_specification_builder.params.environment_files_path">¶</a> (<em>str</em>) – The location of the environment files, i.e. the resources archive.</p></li>
+<li><p><span class="target" id="mable.examples.environment.get_specification_builder.params.trade_occurrence_frequency"></span><strong>trade_occurrence_frequency</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.get_specification_builder.params.trade_occurrence_frequency">¶</a> (<em>int</em>) – The number of days between each auction occurrence. Default is 30 days.</p></li>
+<li><p><span class="target" id="mable.examples.environment.get_specification_builder.params.trades_per_occurrence"></span><strong>trades_per_occurrence</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.get_specification_builder.params.trades_per_occurrence">¶</a> (<em>int</em>) – The number of trades per auction occurrence. Default is 1.</p></li>
+<li><p><span class="target" id="mable.examples.environment.get_specification_builder.params.num_auctions"></span><strong>num_auctions</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.get_specification_builder.params.num_auctions">¶</a> (<em>int</em>) – The number of auctions. Default is 2.</p></li>
+<li><p><span class="target" id="mable.examples.environment.get_specification_builder.params.fixed_trades"></span><strong>fixed_trades</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.get_specification_builder.params.fixed_trades">¶</a> (<em>List</em><em>[</em><a class="reference internal" href="mable.html#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><em>Trade</em></a><em>]</em>) – A list of fixed trades. Default is None.
+If fixed trades are specified, <a class="reference internal" href="#mable.examples.environment.get_specification_builder.params.trade_occurrence_frequency" title="mable.examples.environment.get_specification_builder"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">get_specification_builder.trade_occurrence_frequency</span></code></a>,
+<a class="reference internal" href="#mable.examples.environment.get_specification_builder.params.trades_per_occurrence" title="mable.examples.environment.get_specification_builder"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">get_specification_builder.trades_per_occurrence</span></code></a>
+and <a class="reference internal" href="#mable.examples.environment.get_specification_builder.params.num_auctions" title="mable.examples.environment.get_specification_builder"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">get_specification_builder.num_auctions</span></code></a> will be ignored.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -213,6 +220,20 @@
 <dt class="sig sig-object py" id="mable.examples.fleets.example_fleet_2">
 <span class="sig-prename descclassname"><span class="pre">mable.examples.fleets.</span></span><span class="sig-name descname"><span class="pre">example_fleet_2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.fleets.example_fleet_2" title="Link to this definition"></a></dt>
 <dd><p>A fleet with one vessel docked in Aberdeen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The fleet.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.VesselWithEngine.Data" title="mable.extensions.fuel_emissions.VesselWithEngine.Data">VesselWithEngine.Data</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mable.examples.fleets.example_fleet_3">
+<span class="sig-prename descclassname"><span class="pre">mable.examples.fleets.</span></span><span class="sig-name descname"><span class="pre">example_fleet_3</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.fleets.example_fleet_3" title="Link to this definition"></a></dt>
+<dd><p>A fleet with two vessel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The fleet.</p>

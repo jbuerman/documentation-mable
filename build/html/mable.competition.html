@@ -6,15 +6,16 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable.competition package &mdash; MABLE 0.0.2 documentation</title>
+  <title>mable.competition package &mdash; MABLE 0.0.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css" />
 
   
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=e3a6060d"></script>
+      <script src="_static/documentation_options.js?v=47de8214"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -47,6 +48,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingAgentIntroduction.html">Creating a Trading Company</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">mable</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mable.html">mable package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="mable.html#subpackages">Subpackages</a><ul class="current">
@@ -63,6 +65,7 @@
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_engine"><code class="docutils literal notranslate"><span class="pre">AuctionClassFactory.generate_engine()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_event_cargo"><code class="docutils literal notranslate"><span class="pre">AuctionClassFactory.generate_event_cargo()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_market"><code class="docutils literal notranslate"><span class="pre">AuctionClassFactory.generate_market()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_shipping"><code class="docutils literal notranslate"><span class="pre">AuctionClassFactory.generate_shipping()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l6"><a class="reference internal" href="#mable.competition.generation.AuctionSimulationEngine"><code class="docutils literal notranslate"><span class="pre">AuctionSimulationEngine</span></code></a></li>
@@ -151,9 +154,9 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time</strong> – float
+<li><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.params.time">¶</a> – float
 The time of the event.</p></li>
-<li><p><strong>info</strong> – str
+<li><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.params.info"></span><strong>info</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.params.info">¶</a> – str
 Some info on the event for logging etc.</p></li>
 </ul>
 </dd>
@@ -172,7 +175,7 @@ Some info on the event for logging etc.</p></li>
 them to the market for distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>engine</strong> – Engine
+<dd class="field-odd"><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.event_action.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.event_action.params.engine">¶</a> – Engine
 The simulation engine.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -194,13 +197,13 @@ The simulation engine.</p>
 <dt class="sig sig-object py" id="mable.competition.generation.AuctionClassFactory.generate_engine">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionClassFactory.generate_engine" title="Link to this definition"></a></dt>
 <dd><p>Generates a simulation engine. Default: py:class:<cite>maritime_simulator.engine.SimulationEngine</cite>.
-:param args:</p>
+:param _sphinx_paramlinks_mable.competition.generation.AuctionClassFactory.generate_engine.args:</p>
 <blockquote>
 <div><p>Positional args.</p>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>kwargs</strong> – Keyword args.</p>
+<dd class="field-odd"><p><span class="target" id="mable.competition.generation.AuctionClassFactory.generate_engine.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_engine.params.kwargs">¶</a> – Keyword args.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The engine.</p>
@@ -215,8 +218,8 @@ The simulation engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>args</strong> – Positional args.</p></li>
-<li><p><strong>kwargs</strong> – Keyword args.</p></li>
+<li><p><span class="target" id="mable.competition.generation.AuctionClassFactory.generate_event_cargo.params.args"></span><strong>args</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_event_cargo.params.args">¶</a> – Positional args.</p></li>
+<li><p><span class="target" id="mable.competition.generation.AuctionClassFactory.generate_event_cargo.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_event_cargo.params.kwargs">¶</a> – Keyword args.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -229,16 +232,35 @@ The simulation engine.</p>
 <dt class="sig sig-object py" id="mable.competition.generation.AuctionClassFactory.generate_market">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionClassFactory.generate_market" title="Link to this definition"></a></dt>
 <dd><p>Generates a market. Default: py:class:<cite>maritime_simulator.shipping_market.SimpleMarket</cite>.
-:param args:</p>
+:param _sphinx_paramlinks_mable.competition.generation.AuctionClassFactory.generate_market.args:</p>
 <blockquote>
 <div><p>Positional args.</p>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>kwargs</strong> – Keyword args.</p>
+<dd class="field-odd"><p><span class="target" id="mable.competition.generation.AuctionClassFactory.generate_market.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_market.params.kwargs">¶</a> – Keyword args.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The market.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.competition.generation.AuctionClassFactory.generate_shipping">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_shipping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionClassFactory.generate_shipping" title="Link to this definition"></a></dt>
+<dd><p>Generates a shipping (cargo generation) unit.
+Default: py:class:<cite>maritime_simulator.shipping_market.StaticShipping</cite>.
+:param _sphinx_paramlinks_mable.competition.generation.AuctionClassFactory.generate_shipping.args:</p>
+<blockquote>
+<div><p>Positional args.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.competition.generation.AuctionClassFactory.generate_shipping.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionClassFactory.generate_shipping.params.kwargs">¶</a> – Keyword args.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The shipping.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -260,13 +282,13 @@ The simulation engine.</p>
 <span class="sig-name descname"><span class="pre">generate_fleet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.CompetitionBuilder.generate_fleet" title="Link to this definition"></a></dt>
 <dd><p>Generates the fleet of vessels of one company based on a list of vessel specifications and
 <code class="xref py py-func docutils literal notranslate"><span class="pre">SimulationFactory.generate_vessel()</span></code>.
-:param args:</p>
+:param _sphinx_paramlinks_mable.competition.generation.CompetitionBuilder.generate_fleet.args:</p>
 <blockquote>
 <div><p>Positional args. The first argument should be a list of vessel instructions.</p>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>kwargs</strong> – Keyword args.</p>
+<dd class="field-odd"><p><span class="target" id="mable.competition.generation.CompetitionBuilder.generate_fleet.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.CompetitionBuilder.generate_fleet.params.kwargs">¶</a> – Keyword args.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of vessels.</p>
@@ -280,7 +302,7 @@ The simulation engine.</p>
 <dd><p>Generates the shipping companies including the vessels based on the specification information and the
 class factory’s <code class="xref py py-func docutils literal notranslate"><span class="pre">ClassFactory.generate_company()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">SimulationFactory.generate_fleet()</span></code>,
 respectively.
-:param args:</p>
+:param _sphinx_paramlinks_mable.competition.generation.CompetitionBuilder.generate_shipping_companies.args:</p>
 <blockquote>
 <div><p>Positional args.
 (Most likely no arguments since the args from the specifications are used. But can be used for further
@@ -288,7 +310,7 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>kwargs</strong> – Keyword args.
+<dd class="field-odd"><p><span class="target" id="mable.competition.generation.CompetitionBuilder.generate_shipping_companies.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.CompetitionBuilder.generate_shipping_companies.params.kwargs">¶</a> – Keyword args.
 (Most likely no arguments since the kwargs from the specifications are used. But can be used for further
 instructions from <code class="xref py py-func docutils literal notranslate"><span class="pre">generate_engine()</span></code>.)</p>
 </dd>
