@@ -12,6 +12,14 @@ mable.competition.generation module
    :undoc-members:
    :show-inheritance:
 
+mable.competition.information module
+------------------------------------
+
+.. automodule:: mable.competition.information
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

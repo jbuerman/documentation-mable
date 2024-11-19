@@ -6,16 +6,16 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable package &mdash; MABLE 0.0.3 documentation</title>
+  <title>mable package &mdash; MABLE 0.0.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
 
   
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=47de8214"></script>
+      <script src="_static/documentation_options.js?v=8c5712d9"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -115,6 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.engine.pre_run_inform_vessel_locations"><code class="docutils literal notranslate"><span class="pre">pre_run_inform_vessel_locations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mable.engine.pre_run_place_vessels"><code class="docutils literal notranslate"><span class="pre">pre_run_place_vessels()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mable.event_management">mable.event_management module</a><ul>
@@ -476,6 +477,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.__init__()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict.get_port"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.get_port()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict.get_port_or_default"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.get_port_or_default()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict.ports"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.ports</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.simulation_space.OnJourney"><code class="docutils literal notranslate"><span class="pre">OnJourney</span></code></a><ul>
@@ -759,6 +761,18 @@
 <li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.generation.CompetitionBuilder.set_engines"><code class="docutils literal notranslate"><span class="pre">CompetitionBuilder.set_engines()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="mable.competition.html#mable.competition.generation.load_module_from_file"><code class="docutils literal notranslate"><span class="pre">load_module_from_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mable.competition.html#module-mable.competition.information">mable.competition.information module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters.__init__"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters.current_time"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.current_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters.get_companies"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_companies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters.get_network_distance"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_network_distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters.get_network_port_or_default"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_network_port_or_default()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mable.competition.html#module-mable.competition">Module contents</a></li>
@@ -766,6 +780,27 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mable.examples.html">mable.examples package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mable.examples.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mable.examples.html#module-mable.examples.companies">mable.examples.companies module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.companies.MyArchEnemy"><code class="docutils literal notranslate"><span class="pre">MyArchEnemy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.MyArchEnemy.Data"><code class="docutils literal notranslate"><span class="pre">MyArchEnemy.Data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.MyArchEnemy.__init__"><code class="docutils literal notranslate"><span class="pre">MyArchEnemy.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.MyArchEnemy.propose_schedules"><code class="docutils literal notranslate"><span class="pre">MyArchEnemy.propose_schedules()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.companies.PondPlayer"><code class="docutils literal notranslate"><span class="pre">PondPlayer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.PondPlayer.receive"><code class="docutils literal notranslate"><span class="pre">PondPlayer.receive()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.companies.TheScheduler"><code class="docutils literal notranslate"><span class="pre">TheScheduler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.TheScheduler.Data"><code class="docutils literal notranslate"><span class="pre">TheScheduler.Data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.TheScheduler.__init__"><code class="docutils literal notranslate"><span class="pre">TheScheduler.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.TheScheduler.predict_cost"><code class="docutils literal notranslate"><span class="pre">TheScheduler.predict_cost()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.TheScheduler.propose_schedules"><code class="docutils literal notranslate"><span class="pre">TheScheduler.propose_schedules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html#mable.examples.companies.TheScheduler.receive"><code class="docutils literal notranslate"><span class="pre">TheScheduler.receive()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="mable.examples.html#module-mable.examples.environment">mable.examples.environment module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.environment.generate_simulation"><code class="docutils literal notranslate"><span class="pre">generate_simulation()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.environment.get_specification_builder"><code class="docutils literal notranslate"><span class="pre">get_specification_builder()</span></code></a></li>
@@ -773,10 +808,22 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mable.examples.html#module-mable.examples.fleets">mable.examples.fleets module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.default_laden_balast_consumption"><code class="docutils literal notranslate"><span class="pre">default_laden_balast_consumption()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.default_suezmax_aframax_laden_balast_consumption"><code class="docutils literal notranslate"><span class="pre">default_suezmax_aframax_laden_balast_consumption()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.default_vlcc_laden_balast_consumption"><code class="docutils literal notranslate"><span class="pre">default_vlcc_laden_balast_consumption()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.example_fleet_1"><code class="docutils literal notranslate"><span class="pre">example_fleet_1()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.example_fleet_2"><code class="docutils literal notranslate"><span class="pre">example_fleet_2()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.example_fleet_3"><code class="docutils literal notranslate"><span class="pre">example_fleet_3()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.get_fuel_mfo"><code class="docutils literal notranslate"><span class="pre">get_fuel_mfo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.get_vessel"><code class="docutils literal notranslate"><span class="pre">get_vessel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.get_vessel_aframax"><code class="docutils literal notranslate"><span class="pre">get_vessel_aframax()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.get_vessel_suezmax"><code class="docutils literal notranslate"><span class="pre">get_vessel_suezmax()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.get_vessel_vlcc"><code class="docutils literal notranslate"><span class="pre">get_vessel_vlcc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.mixed_fleet"><code class="docutils literal notranslate"><span class="pre">mixed_fleet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.fleets.specified_laden_balast_consumption"><code class="docutils literal notranslate"><span class="pre">specified_laden_balast_consumption()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mable.examples.html#module-mable.examples.shipping">mable.examples.shipping module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mable.examples.html#mable.examples.shipping.example_trades_1"><code class="docutils literal notranslate"><span class="pre">example_trades_1()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mable.examples.html#module-mable.examples">Module contents</a></li>
@@ -1060,7 +1107,7 @@
 <dd class="field-odd"><p>The company’s headquarters.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>CompanyHeadquarters</p>
+<dd class="field-even"><p><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters" title="mable.competition.information.CompanyHeadquarters">CompanyHeadquarters</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1218,7 +1265,7 @@ the task selector function to perform one of the tasks.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mable.engine.SimulationEngine.PRE_RUN_CMDS">
-<span class="sig-name descname"><span class="pre">PRE_RUN_CMDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">pre_run_inform_vessel_locations&gt;]</span></em><a class="headerlink" href="#mable.engine.SimulationEngine.PRE_RUN_CMDS" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">PRE_RUN_CMDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">pre_run_place_vessels&gt;,</span> <span class="pre">&lt;function</span> <span class="pre">pre_run_inform_vessel_locations&gt;]</span></em><a class="headerlink" href="#mable.engine.SimulationEngine.PRE_RUN_CMDS" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1381,6 +1428,11 @@ The world environment of the simulation.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.engine.pre_run_inform_vessel_locations">
 <span class="sig-prename descclassname"><span class="pre">mable.engine.</span></span><span class="sig-name descname"><span class="pre">pre_run_inform_vessel_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation_engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.pre_run_inform_vessel_locations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mable.engine.pre_run_place_vessels">
+<span class="sig-prename descclassname"><span class="pre">mable.engine.</span></span><span class="sig-name descname"><span class="pre">pre_run_place_vessels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation_engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.pre_run_place_vessels" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>
@@ -2019,16 +2071,10 @@ The trade associated with the event.</p>
 <dt class="sig sig-object py" id="mable.event_management.VesselEvent.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.VesselEvent.__init__" title="Link to this definition"></a></dt>
 <dd><p>Constructor.
-:param _sphinx_paramlinks_mable.event_management.VesselEvent.time: float</p>
-<blockquote>
-<div><p>The time of the event.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.event_management.VesselEvent.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.VesselEvent.params.vessel">¶</a> – Vessel
-The vessel associated with the event.</p>
-</dd>
-</dl>
+:param _sphinx_paramlinks_mable.event_management.VesselEvent.time: The time of the event.
+:type _sphinx_paramlinks_mable.event_management.VesselEvent.time: float
+:param _sphinx_paramlinks_mable.event_management.VesselEvent.vessel: The vessel associated with the event.
+:type _sphinx_paramlinks_mable.event_management.VesselEvent.vessel: Vessel</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3166,7 +3212,7 @@ A json encodable object.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.shipping_market.TradeStatus">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">TradeStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.TradeStatus" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">TradeStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.TradeStatus" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mable.shipping_market.TradeStatus.ACCEPTED">
@@ -4100,6 +4146,11 @@ Whatever is passed to default or None if nothing is specified.</p>
 </dl>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.simulation_space.NetworkWithPortDict.ports">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ports</span></span><a class="headerlink" href="#mable.simulation_space.NetworkWithPortDict.ports" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -4938,7 +4989,7 @@ will be created.</p>
 <p>A vessel with a fixed travel time.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transport_operation.SimpleVessel.Data">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.CargoCapacity.Data" title="mable.transport_operation.CargoCapacity.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleVessel.Data" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.CargoCapacity.Data" title="mable.transport_operation.CargoCapacity.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleVessel.Data" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.transport_operation.Vessel.Data" title="mable.transport_operation.Vessel.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transport_operation.SimpleVessel.Data.Schema">
@@ -4953,7 +5004,7 @@ will be created.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.SimpleVessel.Data.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.CargoCapacity.Data" title="mable.transport_operation.CargoCapacity.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.transport_operation.SimpleVessel.Data.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.CargoCapacity.Data" title="mable.transport_operation.CargoCapacity.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.transport_operation.SimpleVessel.Data.__init__" title="Link to this definition"></a></dt>
 <dd><p>Method generated by attrs for class SimpleVessel.Data.</p>
 </dd></dl>
 
@@ -5051,7 +5102,7 @@ the loading rate of the cargo hold.</p>
 <p>A vessel to travel and transport cargo.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.Data">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.CargoCapacity.Data" title="mable.transport_operation.CargoCapacity.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.Data" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.CargoCapacity.Data" title="mable.transport_operation.CargoCapacity.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.Data" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.simulation_de_serialisation.DataClass" title="mable.simulation_de_serialisation.DataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataClass</span></code></a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.Data.Schema">
@@ -5066,7 +5117,7 @@ the loading rate of the cargo hold.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.Data.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.CargoCapacity.Data" title="mable.transport_operation.CargoCapacity.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.transport_operation.Vessel.Data.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.simulation_de_serialisation.DataProtocol" title="mable.simulation_de_serialisation.DataProtocol"><span class="pre">DataProtocol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.transport_operation.CargoCapacity.Data" title="mable.transport_operation.CargoCapacity.Data"><span class="pre">Data</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.transport_operation.Vessel.Data.__init__" title="Link to this definition"></a></dt>
 <dd><p>Method generated by attrs for class Vessel.Data.</p>
 </dd></dl>
 
@@ -5082,7 +5133,7 @@ the loading rate of the cargo hold.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.Data.location">
-<span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mable.transport_operation.Vessel.Data.location" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#mable.transport_operation.Vessel.Data.location" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -5570,7 +5621,7 @@ The verification is done via simulating all loading and unloading events.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.TransportationSourceDestinationIndicator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">TransportationSourceDestinationIndicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.TransportationSourceDestinationIndicator" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">TransportationSourceDestinationIndicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.TransportationSourceDestinationIndicator" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.TransportationSourceDestinationIndicator.DROP_OFF">
@@ -5586,7 +5637,7 @@ The verification is done via simulating all loading and unloading events.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.TransportationStartFinishIndicator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">TransportationStartFinishIndicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.TransportationStartFinishIndicator" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">TransportationStartFinishIndicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.TransportationStartFinishIndicator" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.TransportationStartFinishIndicator.FINISH">

@@ -6,16 +6,16 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable.competition package &mdash; MABLE 0.0.3 documentation</title>
+  <title>mable.competition package &mdash; MABLE 0.0.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
 
   
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=47de8214"></script>
+      <script src="_static/documentation_options.js?v=8c5712d9"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -73,6 +73,18 @@
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.CompetitionBuilder.generate_fleet"><code class="docutils literal notranslate"><span class="pre">CompetitionBuilder.generate_fleet()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.CompetitionBuilder.generate_shipping_companies"><code class="docutils literal notranslate"><span class="pre">CompetitionBuilder.generate_shipping_companies()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.generation.CompetitionBuilder.set_engines"><code class="docutils literal notranslate"><span class="pre">CompetitionBuilder.set_engines()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.competition.generation.load_module_from_file"><code class="docutils literal notranslate"><span class="pre">load_module_from_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.competition.information">mable.competition.information module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.__init__"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.__init__()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.current_time"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.current_time</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_companies"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_companies()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_network_distance()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_port_or_default"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_network_port_or_default()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +336,94 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 <dt class="sig sig-object py" id="mable.competition.generation.CompetitionBuilder.set_engines">
 <span class="sig-name descname"><span class="pre">set_engines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.CompetitionBuilder.set_engines" title="Link to this definition"></a></dt>
 <dd><p>Makes the engine known to the units constituting the simulation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mable.competition.generation.load_module_from_file">
+<span class="sig-prename descclassname"><span class="pre">mable.competition.generation.</span></span><span class="sig-name descname"><span class="pre">load_module_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_directory_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.load_module_from_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-mable.competition.information">
+<span id="mable-competition-information-module"></span><h2>mable.competition.information module<a class="headerlink" href="#module-mable.competition.information" title="Link to this heading"></a></h2>
+<p>Safe distribution of information to companies.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.competition.information.</span></span><span class="sig-name descname"><span class="pre">CompanyHeadquarters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation_engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A centre that allows the trading companies to interact with the wider environment.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation_engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.competition.information.CompanyHeadquarters.params.simulation_engine"></span><strong>simulation_engine</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.params.simulation_engine">¶</a> (<a class="reference internal" href="mable.html#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – The simulation engine.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters.current_time">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_time</span></span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.current_time" title="Link to this definition"></a></dt>
+<dd><p>The current time of the simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current time.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters.get_companies">
+<span class="sig-name descname"><span class="pre">get_companies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.get_companies" title="Link to this definition"></a></dt>
+<dd><p>Get all companies.
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters.get_network_distance">
+<span class="sig-name descname"><span class="pre">get_network_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.get_network_distance" title="Link to this definition"></a></dt>
+<dd><p>Get the distance between two locations.</p>
+<p>If there is no route between the two locations infinity (math.inf) if returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_one">¶</a> (<em>Union</em><em>[</em><a class="reference internal" href="mable.html#mable.simulation_space.Port" title="mable.simulation_space.Port"><em>Port</em></a><em>, </em><em>str</em><em>]</em>) – The first location.</p></li>
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_two">¶</a> – The second location.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The distance or math.inf if no route between the two locations exists.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters.get_network_port_or_default">
+<span class="sig-name descname"><span class="pre">get_network_port_or_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.get_network_port_or_default" title="Link to this definition"></a></dt>
+<dd><p>Returns a port by name or the default value in case no port with the specified name exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_network_port_or_default.params.port_name"></span><strong>port_name</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_port_or_default.params.port_name">¶</a> (<em>str</em>) – The name of the port.</p></li>
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_network_port_or_default.params.default"></span><strong>default</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_port_or_default.params.default">¶</a> (<em>Any</em>) – The default value to return. By default, this is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Either the port or whatever is passed to default (None by default).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="mable.html#mable.simulation_space.Port" title="mable.simulation_space.Port">Port</a>, Any]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

@@ -4,6 +4,14 @@ mable.examples package
 Submodules
 ----------
 
+mable.examples.companies module
+-------------------------------
+
+.. automodule:: mable.examples.companies
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 mable.examples.environment module
 ---------------------------------
 
@@ -16,6 +24,14 @@ mable.examples.fleets module
 ----------------------------
 
 .. automodule:: mable.examples.fleets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.examples.shipping module
+------------------------------
+
+.. automodule:: mable.examples.shipping
    :members:
    :undoc-members:
    :show-inheritance:
