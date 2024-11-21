@@ -93,10 +93,6 @@
 </ul>
 </li>
 <li class="toctree-l5"><a class="reference internal" href="#module-mable.examples.environment">mable.examples.environment module</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#mable.examples.environment.DummyIdling"><code class="docutils literal notranslate"><span class="pre">DummyIdling</span></code></a><ul>
-<li class="toctree-l7"><a class="reference internal" href="#mable.examples.environment.DummyIdling.__init__"><code class="docutils literal notranslate"><span class="pre">DummyIdling.__init__()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l6"><a class="reference internal" href="#mable.examples.environment.generate_simulation"><code class="docutils literal notranslate"><span class="pre">generate_simulation()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="#mable.examples.environment.get_specification_builder"><code class="docutils literal notranslate"><span class="pre">get_specification_builder()</span></code></a></li>
 </ul>
@@ -365,24 +361,6 @@ finishing the current schedule.</p>
 </section>
 <section id="module-mable.examples.environment">
 <span id="mable-examples-environment-module"></span><h2>mable.examples.environment module<a class="headerlink" href="#module-mable.examples.environment" title="Link to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="mable.examples.environment.DummyIdling">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">DummyIdling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_started</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.DummyIdling" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="mable.html#mable.event_management.IdleEvent" title="mable.event_management.IdleEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">IdleEvent</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.examples.environment.DummyIdling.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_started</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.DummyIdling.__init__" title="Link to this definition"></a></dt>
-<dd><p>Constructor.
-:param _sphinx_paramlinks_mable.examples.environment.DummyIdling.time: The occurrence time of the event.
-:type _sphinx_paramlinks_mable.examples.environment.DummyIdling.time: float
-:param _sphinx_paramlinks_mable.examples.environment.DummyIdling.vessel: The vessel associated with the event.
-:type _sphinx_paramlinks_mable.examples.environment.DummyIdling.vessel: Vessel
-:param _sphinx_paramlinks_mable.examples.environment.DummyIdling.location: The location where the vessel idles.
-:type _sphinx_paramlinks_mable.examples.environment.DummyIdling.location: Location</p>
-</dd></dl>
-
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.environment.generate_simulation">
 <span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">generate_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specifications_builder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_detailed_auction_outcome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_agent_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.generate_simulation" title="Link to this definition"></a></dt>
@@ -393,7 +371,7 @@ finishing the current schedule.</p>
 <li><p><span class="target" id="mable.examples.environment.generate_simulation.params.specifications_builder"></span><strong>specifications_builder</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.specifications_builder">¶</a> (<a class="reference internal" href="mable.extensions.html#mable.extensions.fuel_emissions.FuelSpecsBuilder" title="mable.extensions.fuel_emissions.FuelSpecsBuilder"><em>FuelSpecsBuilder</em></a>) – The specifications builder that has been used to specify a simulation settings.</p></li>
 <li><p><span class="target" id="mable.examples.environment.generate_simulation.params.show_detailed_auction_outcome"></span><strong>show_detailed_auction_outcome</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.show_detailed_auction_outcome">¶</a> (<em>bool</em>) – Log the outcomes of auctions in detail.</p></li>
 <li><p><span class="target" id="mable.examples.environment.generate_simulation.params.output_directory"></span><strong>output_directory</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.output_directory">¶</a> (<em>str</em>) – A directory to save the simulation output files.</p></li>
-<li><p><span class="target" id="mable.examples.environment.generate_simulation.params.global_agent_timeout"></span><strong>global_agent_timeout</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.global_agent_timeout">¶</a> (<em>int.</em>) – The timeout in seconds of every agent action, e.g. one call to ‘inform’ or ‘receive’
+<li><p><span class="target" id="mable.examples.environment.generate_simulation.params.global_agent_timeout"></span><strong>global_agent_timeout</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.global_agent_timeout">¶</a> (<em>int.</em>) – The timeout in seconds of every agent action, e.g. one call to ‘inform’ or ‘receive’.
 Default is 60 seconds.</p></li>
 </ul>
 </dd>
