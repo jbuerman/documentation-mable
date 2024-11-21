@@ -83,6 +83,7 @@
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.__init__"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.__init__()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.current_time"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.current_time</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_companies"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_companies()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_journey_location()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_network_distance()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_port_or_default"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_network_port_or_default()</span></code></a></li>
 </ul>
@@ -162,14 +163,11 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.competition.generation.AuctionCargoEvent.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionCargoEvent.__init__" title="Link to this definition"></a></dt>
-<dd><p>Constructor.</p>
-<dl class="field-list simple">
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.params.time">¶</a> – float
-The time of the event.</p></li>
-<li><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.params.info"></span><strong>info</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.params.info">¶</a> – str
-Some info on the event for logging etc.</p></li>
+<li><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.params.time">¶</a> (<em>float</em>) – The occurrence time of the event.</p></li>
+<li><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.params.info"></span><strong>info</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.params.info">¶</a> (<em>str</em>) – Some info on the event for logging etc.</p></li>
 </ul>
 </dd>
 </dl>
@@ -187,8 +185,7 @@ Some info on the event for logging etc.</p></li>
 them to the market for distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.event_action.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.event_action.params.engine">¶</a> – Engine
-The simulation engine.</p>
+<dd class="field-odd"><p><span class="target" id="mable.competition.generation.AuctionCargoEvent.event_action.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.competition.generation.AuctionCargoEvent.event_action.params.engine">¶</a> (<a class="reference internal" href="#mable.competition.generation.AuctionSimulationEngine" title="mable.competition.generation.AuctionSimulationEngine"><em>AuctionSimulationEngine</em></a>) – The simulation engine.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The distribution ledger.</p>
@@ -281,7 +278,7 @@ Default: py:class:<cite>maritime_simulator.shipping_market.StaticShipping</cite>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.competition.generation.AuctionSimulationEngine">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.competition.generation.</span></span><span class="sig-name descname"><span class="pre">AuctionSimulationEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">world</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shipping_companies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_generation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_market</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_factory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_run_cmds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_run_cmds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionSimulationEngine" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.competition.generation.</span></span><span class="sig-name descname"><span class="pre">AuctionSimulationEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">world</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shipping_companies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_generation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_market</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_factory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_run_cmds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_run_cmds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_agent_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.generation.AuctionSimulationEngine" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="mable.html#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngine</span></code></a></p>
 </dd></dl>
 
@@ -386,10 +383,33 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters.get_journey_location">
+<span class="sig-name descname"><span class="pre">get_journey_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.get_journey_location" title="Link to this definition"></a></dt>
+<dd><p>Get the current location of a vessel on a journey.</p>
+<p><strong>Warning</strong>: <em>If the location is intended to calculate an exact distance with</em>
+<a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance" title="mable.competition.information.CompanyHeadquarters.get_network_distance"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_network_distance()</span></code></a>,         <em>that calculation will take time.</em>         <em>It may be better to work with the origin and destination of a journey rather than the actual location of the</em>         <em>vessel.</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.journey">¶</a> (<a class="reference internal" href="mable.html#mable.simulation_space.OnJourney" title="mable.simulation_space.OnJourney"><em>OnJourney</em></a>) – The journey.</p></li>
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.vessel">¶</a> (<a class="reference internal" href="mable.html#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel that is performing the journey.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The current location the vessel is in.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="mable.html#mable.simulation_space.Location" title="mable.simulation_space.Location">Location</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters.get_network_distance">
 <span class="sig-name descname"><span class="pre">get_network_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.get_network_distance" title="Link to this definition"></a></dt>
 <dd><p>Get the distance between two locations.</p>
 <p>If there is no route between the two locations infinity (math.inf) if returned.</p>
+<p><strong>Warning</strong>: <em>If one or both of the locations come from a vessel on a journey, the calculation will take time.</em>         <em>It may be better to work with the origin and destination of a journey rather than the actual location of the</em>         <em>vessel.</em></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

@@ -1621,7 +1621,7 @@ are considered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one">¶</a> (<em>Union</em><em>[</em><a class="reference internal" href="mable.html#mable.simulation_space.Port" title="mable.simulation_space.Port"><em>Port</em></a><em>, </em><em>str</em><em>]</em>) – The first location.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one">¶</a> (<a class="reference internal" href="mable.html#mable.simulation_space.Port" title="mable.simulation_space.Port"><em>Port</em></a><em> | </em><em>str</em>) – The first location.</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_two">¶</a> – The second location.</p></li>
 </ul>
 </dd>
@@ -1637,27 +1637,20 @@ are considered.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location">
 <span class="sig-name descname"><span class="pre">get_journey_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location" title="Link to this definition"></a></dt>
-<dd><p>TODO Allow finding the actual location</p>
-<p>Returns the current position of the vessel based on the journey information and the current time.</p>
+<dd><p>Returns the current position of the vessel based on the journey information and the current time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey">¶</a> – Journey
-The journey object.</p></li>
-<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.vessel">¶</a> – Vessel
-The vessel that is performing the journey.</p></li>
-<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.current_time">¶</a> – float
-The current time.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey">¶</a> (<a class="reference internal" href="mable.html#mable.simulation_space.OnJourney" title="mable.simulation_space.OnJourney"><em>OnJourney</em></a>) – The journey object.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.vessel">¶</a> (<a class="reference internal" href="mable.html#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel that is performing the journey.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.current_time">¶</a> (<em>float</em>) – The current time.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><dl class="field-list simple">
-<dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Location</p>
+<dd class="field-even"><p>The current location the vessel is in.</p>
 </dd>
-</dl>
-<p>The current location the vessel is in.</p>
-</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="mable.html#mable.simulation_space.Location" title="mable.simulation_space.Location">Location</a></p>
 </dd>
 </dl>
 </dd></dl>
