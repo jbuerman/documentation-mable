@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable package &mdash; MABLE 0.0.4 documentation</title>
+  <title>mable package &mdash; MABLE 0.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8c5712d9"></script>
+      <script src="_static/documentation_options.js?v=282f96c0"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -176,6 +176,11 @@
 <li class="toctree-l5"><a class="reference internal" href="#mable.event_management.EventQueue.get"><code class="docutils literal notranslate"><span class="pre">EventQueue.get()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.event_management.EventQueue.put"><code class="docutils literal notranslate"><span class="pre">EventQueue.put()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.event_management.EventQueue.remove"><code class="docutils literal notranslate"><span class="pre">EventQueue.remove()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#mable.event_management.FirstCargoAnnouncementEvent"><code class="docutils literal notranslate"><span class="pre">FirstCargoAnnouncementEvent</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#mable.event_management.FirstCargoAnnouncementEvent.__init__"><code class="docutils literal notranslate"><span class="pre">FirstCargoAnnouncementEvent.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.event_management.FirstCargoAnnouncementEvent.event_action"><code class="docutils literal notranslate"><span class="pre">FirstCargoAnnouncementEvent.event_action()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.event_management.IdleEvent"><code class="docutils literal notranslate"><span class="pre">IdleEvent</span></code></a><ul>
@@ -671,6 +676,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.copy"><code class="docutils literal notranslate"><span class="pre">Schedule.copy()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.get"><code class="docutils literal notranslate"><span class="pre">Schedule.get()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.get_insertion_points"><code class="docutils literal notranslate"><span class="pre">Schedule.get_insertion_points()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.init_with_engine"><code class="docutils literal notranslate"><span class="pre">Schedule.init_with_engine()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.next"><code class="docutils literal notranslate"><span class="pre">Schedule.next()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.pop"><code class="docutils literal notranslate"><span class="pre">Schedule.pop()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.verify_schedule"><code class="docutils literal notranslate"><span class="pre">Schedule.verify_schedule()</span></code></a></li>
@@ -1492,11 +1498,10 @@ The distance.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.event_management.CargoAnnouncementEvent.event_action">
 <span class="sig-name descname"><span class="pre">event_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.CargoAnnouncementEvent.event_action" title="Link to this definition"></a></dt>
-<dd><p>Announces the cargoes becoming available at a later time.</p>
+<dd><p>Announces the cargoes becoming available at a later time and adds the auction to the event queue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.event_management.CargoAnnouncementEvent.event_action.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.CargoAnnouncementEvent.event_action.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – SimulationEngine
-The simulation engine.</p>
+<dd class="field-odd"><p><span class="target" id="mable.event_management.CargoAnnouncementEvent.event_action.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.CargoAnnouncementEvent.event_action.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – The simulation engine.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1579,12 +1584,12 @@ occurrence, i.e. <a class="reference internal" href="#mable.event_management.Ves
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.event_management.DurationEvent.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.DurationEvent.__init__" title="Link to this definition"></a></dt>
-<dd><p>Constructor.
-An unstarted event has a start time of -1.
-:param _sphinx_paramlinks_mable.event_management.DurationEvent.time: float</p>
-<blockquote>
-<div><p>The time at which the event happens/ends.</p>
-</div></blockquote>
+<dd><p>An unstarted event has a start time of -1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.event_management.DurationEvent.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.DurationEvent.params.time">¶</a> (<em>float</em>) – The time at which the event happens/ends.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1615,9 +1620,15 @@ An unstarted event has a start time of -1.
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.event_management.DurationEvent.performed_time">
 <span class="sig-name descname"><span class="pre">performed_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.DurationEvent.performed_time" title="Link to this definition"></a></dt>
-<dd><p>The duration the event took. Is zero as long as the event hasn’t started.
-:return: The duration.
-:rtype: float</p>
+<dd><p>The duration the event took. Is zero as long as the event hasn’t started.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The duration.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -1789,18 +1800,19 @@ Additional data in conjunction with the event. E.g. data that was produced or ch
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.event_management.EventQueue.get">
 <span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.EventQueue.get" title="Link to this definition"></a></dt>
-<dd><p>Removes and returns the next event from the queue.
-:param _sphinx_paramlinks_mable.event_management.EventQueue.get.block:</p>
-<blockquote>
-<div><p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">PriorityQueue.get()</span></code></p>
-</div></blockquote>
+<dd><p>Removes and returns the next event from the queue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.event_management.EventQueue.get.params.timeout"></span><strong>timeout</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventQueue.get.params.timeout">¶</a> – See <code class="xref py py-func docutils literal notranslate"><span class="pre">PriorityQueue.get()</span></code></p>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.event_management.EventQueue.get.params.block"></span><strong>block</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventQueue.get.params.block">¶</a> – See <code class="xref py py-func docutils literal notranslate"><span class="pre">PriorityQueue.get()</span></code></p></li>
+<li><p><span class="target" id="mable.event_management.EventQueue.get.params.timeout"></span><strong>timeout</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventQueue.get.params.timeout">¶</a> – See <code class="xref py py-func docutils literal notranslate"><span class="pre">PriorityQueue.get()</span></code></p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Event
-The event.</p>
+<dd class="field-even"><p>The event.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event">Event</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1808,20 +1820,20 @@ The event.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.event_management.EventQueue.put">
 <span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><span class="pre">Event</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.EventQueue.put" title="Link to this definition"></a></dt>
-<dd><p>Adds an event to the queue.
-:param _sphinx_paramlinks_mable.event_management.EventQueue.put.event: Event</p>
-<blockquote>
-<div><p>The event.</p>
-</div></blockquote>
+<dd><p>Adds an event to the queue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.event_management.EventQueue.put.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventQueue.put.params.event">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a>) – The event.</p></li>
 <li><p><span class="target" id="mable.event_management.EventQueue.put.params.block"></span><strong>block</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventQueue.put.params.block">¶</a> – See <code class="xref py py-func docutils literal notranslate"><span class="pre">PriorityQueue.put()</span></code></p></li>
 <li><p><span class="target" id="mable.event_management.EventQueue.put.params.timeout"></span><strong>timeout</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventQueue.put.params.timeout">¶</a> – See <code class="xref py py-func docutils literal notranslate"><span class="pre">PriorityQueue.put()</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>ValueError</strong> – if the event’s time is infinite.</p>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – if the event’s time is infinite.</p></li>
+<li><p><strong>ValueError</strong> – if the event’s time is in the past.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1829,11 +1841,44 @@ The event.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.event_management.EventQueue.remove">
 <span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.EventQueue.remove" title="Link to this definition"></a></dt>
-<dd><p>Removes one or more events from the queue.
-:param _sphinx_paramlinks_mable.event_management.EventQueue.remove.event_s: Event | [Event]</p>
-<blockquote>
-<div><p>The event or a list of events.</p>
-</div></blockquote>
+<dd><p>Removes one or more events from the queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.event_management.EventQueue.remove.params.event_s"></span><strong>event_s</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventQueue.remove.params.event_s">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a><em> | </em><em>List</em><em>[</em><a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a><em>]</em>) – The event or a list of events.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.event_management.FirstCargoAnnouncementEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.event_management.</span></span><span class="sig-name descname"><span class="pre">FirstCargoAnnouncementEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_available_time_second_cargo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.FirstCargoAnnouncementEvent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a></p>
+<p>Announces future cargoes at the start of the simulation before a cargo auction at time 0.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.event_management.FirstCargoAnnouncementEvent.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_available_time_second_cargo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.FirstCargoAnnouncementEvent.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.event_management.FirstCargoAnnouncementEvent.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.FirstCargoAnnouncementEvent.params.time">¶</a> (<em>float</em>) – The occurrence time of the event.</p></li>
+<li><p><span class="target" id="mable.event_management.FirstCargoAnnouncementEvent.params.info"></span><strong>info</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.FirstCargoAnnouncementEvent.params.info">¶</a> (<em>str</em>) – Some info on the event for logging etc.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.event_management.FirstCargoAnnouncementEvent.event_action">
+<span class="sig-name descname"><span class="pre">event_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.FirstCargoAnnouncementEvent.event_action" title="Link to this definition"></a></dt>
+<dd><p>Announces the cargoes becoming available at a later time and adds the auction to the event queue as well as
+the auction about events at time 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.event_management.FirstCargoAnnouncementEvent.event_action.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.FirstCargoAnnouncementEvent.event_action.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – The simulation engine.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -2747,7 +2792,7 @@ Additional data in conjunction with the event. E.g. data that was produced or ch
 <dd class="field-odd"><p>The ledger.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Dict[str, <a class="reference internal" href="#mable.shipping_market.Contract" title="mable.shipping_market.Contract">Contract</a>]</p>
+<dd class="field-even"><p>Dict[str, List[<a class="reference internal" href="#mable.shipping_market.Contract" title="mable.shipping_market.Contract">Contract</a>]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3364,9 +3409,13 @@ descendant of <a class="reference internal" href="#mable.simulation_de_serialisa
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.simulation_environment.SimulationEngineAware.set_engine">
 <span class="sig-name descname"><span class="pre">set_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_environment.SimulationEngineAware.set_engine" title="Link to this definition"></a></dt>
-<dd><p>Set the simulation engine.
-:param _sphinx_paramlinks_mable.simulation_environment.SimulationEngineAware.set_engine.engine:
-:type _sphinx_paramlinks_mable.simulation_environment.SimulationEngineAware.set_engine.engine: SimulationEngine</p>
+<dd><p><strong>WARNING</strong>: Part of internal simulation logic. Only allowed to be called by the simulation!</p>
+<p>Set the simulation engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.simulation_environment.SimulationEngineAware.set_engine.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_environment.SimulationEngineAware.set_engine.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – The simulation engine.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -3380,14 +3429,10 @@ Also keeps track of the current time.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.simulation_environment.World.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_environment.World.__init__" title="Link to this definition"></a></dt>
-<dd><p>Constructor.
-:param _sphinx_paramlinks_mable.simulation_environment.World.network:</p>
-<blockquote>
-<div><p>The space/network of operation.</p>
-</div></blockquote>
-<dl class="field-list simple">
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.simulation_environment.World.params.network"></span><strong>network</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_environment.World.params.network">¶</a> (<a class="reference internal" href="#mable.simulation_space.ShippingNetwork" title="mable.simulation_space.ShippingNetwork"><em>ShippingNetwork</em></a>) – The space/network of operation.</p></li>
 <li><p><span class="target" id="mable.simulation_environment.World.params.event_queue"></span><strong>event_queue</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_environment.World.params.event_queue">¶</a> (<a class="reference internal" href="#mable.event_management.EventQueue" title="mable.event_management.EventQueue"><em>EventQueue</em></a>) – The event queue.</p></li>
 <li><p><span class="target" id="mable.simulation_environment.World.params.random"></span><strong>random</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_environment.World.params.random">¶</a> – A random to use wherever randomness is needed.</p></li>
 </ul>
@@ -3421,8 +3466,10 @@ The current time in the simulation.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">event_queue</span></span><a class="headerlink" href="#mable.simulation_environment.World.event_queue" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>EventQueue
-The event queue.</p>
+<dd class="field-odd"><p>The event queue.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mable.event_management.EventQueue" title="mable.event_management.EventQueue">EventQueue</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -5224,9 +5271,16 @@ the loading rate of the cargo hold.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.event_occurrence">
 <span class="sig-name descname"><span class="pre">event_occurrence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.event_occurrence" title="Link to this definition"></a></dt>
-<dd><p>Informs the vessel about the occurrence of an event. This has to be the vessel’s next event.
-:param _sphinx_paramlinks_mable.transport_operation.Vessel.event_occurrence.event: The event.
-:raises ValueError: if the event is not the next event.</p>
+<dd><p><strong>WARNING</strong>: Part of internal simulation logic. Only allowed to be called by the simulation!</p>
+<p>Informs the vessel about the occurrence of an event. This has to be the vessel’s next event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.transport_operation.Vessel.event_occurrence.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.Vessel.event_occurrence.params.event">¶</a> – The event.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – if the event is not the next event.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -5289,9 +5343,15 @@ the loading rate of the cargo hold.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.has_next_event">
 <span class="sig-name descname"><span class="pre">has_next_event</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.has_next_event" title="Link to this definition"></a></dt>
-<dd><p>Checks if there is at least one event in the schedule.
-:return: True is there is an event in the schedule and False otherwise.
-:rtype: bool</p>
+<dd><p>Checks if there is at least one event in the schedule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True is there is an event in the schedule and False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -5308,7 +5368,8 @@ the loading rate of the cargo hold.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.load_cargo">
 <span class="sig-name descname"><span class="pre">load_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.load_cargo" title="Link to this definition"></a></dt>
-<dd><p>Loads the specified amount of cargo in the container of the type.</p>
+<dd><p><strong>WARNING</strong>: Part of internal simulation logic. Only allowed to be called by the simulation!</p>
+<p>Loads the specified amount of cargo in the container of the type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -5339,16 +5400,26 @@ the loading rate of the cargo hold.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.location">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#mable.transport_operation.Vessel.location" title="Link to this definition"></a></dt>
-<dd><p>The current location
-:return:</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current location.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location">Location</a> | <a class="reference internal" href="#mable.simulation_space.OnJourney" title="mable.simulation_space.OnJourney">OnJourney</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.log_journey_log_event">
 <span class="sig-name descname"><span class="pre">log_journey_log_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_entry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.log_journey_log_event" title="Link to this definition"></a></dt>
-<dd><p>Log an entry in the journey log.
-:param _sphinx_paramlinks_mable.transport_operation.Vessel.log_journey_log_event.log_entry: The entry to make
-:type _sphinx_paramlinks_mable.transport_operation.Vessel.log_journey_log_event.log_entry: VesselEvent</p>
+<dd><p><strong>WARNING</strong>: Part of internal simulation logic. Only allowed to be called by the simulation!</p>
+<p>Log an entry in the journey log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.transport_operation.Vessel.log_journey_log_event.params.log_entry"></span><strong>log_entry</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.Vessel.log_journey_log_event.params.log_entry">¶</a> (<a class="reference internal" href="#mable.event_management.VesselEvent" title="mable.event_management.VesselEvent"><em>VesselEvent</em></a>) – The entry to make</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -5356,8 +5427,10 @@ the loading rate of the cargo hold.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mable.transport_operation.Vessel.name" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str
-The name of the vessel.</p>
+<dd class="field-odd"><p>The name of the vessel.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5378,22 +5451,28 @@ The name of the vessel.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.set_engine">
 <span class="sig-name descname"><span class="pre">set_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.set_engine" title="Link to this definition"></a></dt>
-<dd><p>Set the simulation engine.
-:param _sphinx_paramlinks_mable.transport_operation.Vessel.set_engine.engine:
-:type _sphinx_paramlinks_mable.transport_operation.Vessel.set_engine.engine: SimulationEngine</p>
+<dd><p><strong>WARNING</strong>: Part of internal simulation logic. Only allowed to be called by the simulation!</p>
+<p>Set the simulation engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.transport_operation.Vessel.set_engine.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.Vessel.set_engine.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – The simulation engine.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.start_next_event">
 <span class="sig-name descname"><span class="pre">start_next_event</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.start_next_event" title="Link to this definition"></a></dt>
-<dd><p>Starts the next event in schedule. The event is also added to the event queue. However, does not check if
+<dd><p><strong>WARNING</strong>: Part of internal simulation logic. Only allowed to be called by the simulation!</p>
+<p>Starts the next event in schedule. The event is also added to the event queue. However, does not check if
 (if any) preceding next event has occurred nor tidies the event queue of any such event.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.unload_cargo">
 <span class="sig-name descname"><span class="pre">unload_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.unload_cargo" title="Link to this definition"></a></dt>
-<dd><p>Unloads the specified amount of cargo in the container of the type.</p>
+<dd><p><strong>WARNING</strong>: Part of internal simulation logic. Only allowed to be called by the simulation!</p>
+<p>Unloads the specified amount of cargo in the container of the type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -5458,13 +5537,14 @@ The name of the vessel.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.Schedule">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">Schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">Schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.simulation_environment.SimulationEngineAware" title="mable.simulation_environment.SimulationEngineAware"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngineAware</span></code></a></p>
 <p>The schedule of a vessel.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.Schedule.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule.__init__" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule.__init__" title="Link to this definition"></a></dt>
+<dd><p><strong>Note</strong>: Requires the engine to be set to work.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><span class="target" id="mable.transportation_scheduling.Schedule.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.transportation_scheduling.Schedule.params.vessel">¶</a> (<a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel for which the schedule is.</p></li>
@@ -5556,6 +5636,11 @@ The name of the vessel.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.transportation_scheduling.Schedule.init_with_engine">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_with_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule.init_with_engine" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.Schedule.next">

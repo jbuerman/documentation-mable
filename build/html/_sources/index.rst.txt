@@ -24,6 +24,7 @@ operation.
    overview
    tradingAgentIntroduction
    modules
+   changelog
 
 .. automodule:: mable
    :members:

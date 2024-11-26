@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; MABLE 0.0.4 documentation</title>
+  <title>Index &mdash; MABLE 0.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8c5712d9"></script>
+      <script src="_static/documentation_options.js?v=282f96c0"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -47,6 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tradingAgentIntroduction.html">Creating a Trading Company</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">mable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 
         </div>
@@ -137,6 +138,8 @@
         <li><a href="mable.html#mable.event_management.EventItem.__init__">(mable.event_management.EventItem method)</a>
 </li>
         <li><a href="mable.html#mable.event_management.EventQueue.__init__">(mable.event_management.EventQueue method)</a>
+</li>
+        <li><a href="mable.html#mable.event_management.FirstCargoAnnouncementEvent.__init__">(mable.event_management.FirstCargoAnnouncementEvent method)</a>
 </li>
         <li><a href="mable.html#mable.event_management.IdleEvent.__init__">(mable.event_management.IdleEvent method)</a>
 </li>
@@ -940,6 +943,8 @@
 </li>
         <li><a href="mable.html#mable.event_management.EventObserver.notify.params.engine">(mable.event_management.EventObserver.notify parameter)</a>
 </li>
+        <li><a href="mable.html#mable.event_management.FirstCargoAnnouncementEvent.event_action.params.engine">(mable.event_management.FirstCargoAnnouncementEvent.event_action parameter)</a>
+</li>
         <li><a href="mable.html#mable.event_management.IdleEvent.distance.params.engine">(mable.event_management.IdleEvent.distance parameter)</a>
 </li>
         <li><a href="mable.html#mable.event_management.TravelEvent.added_to_queue.params.engine">(mable.event_management.TravelEvent.added_to_queue parameter)</a>
@@ -1016,6 +1021,8 @@
 </li>
         <li><a href="mable.html#mable.event_management.Event.event_action">(mable.event_management.Event method)</a>
 </li>
+        <li><a href="mable.html#mable.event_management.FirstCargoAnnouncementEvent.event_action">(mable.event_management.FirstCargoAnnouncementEvent method)</a>
+</li>
         <li><a href="mable.html#mable.event_management.TravelEvent.event_action">(mable.event_management.TravelEvent method)</a>
 </li>
         <li><a href="mable.html#mable.event_management.VesselEvent.event_action">(mable.event_management.VesselEvent method)</a>
@@ -1070,6 +1077,8 @@
       <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.find_closest_node">find_closest_node() (mable.extensions.world_ports.LatLongShippingNetwork method)</a>
 </li>
       <li><a href="mable.html#mable.transportation_scheduling.TransportationStartFinishIndicator.FINISH">FINISH (mable.transportation_scheduling.TransportationStartFinishIndicator attribute)</a>
+</li>
+      <li><a href="mable.html#mable.event_management.FirstCargoAnnouncementEvent">FirstCargoAnnouncementEvent (class in mable.event_management)</a>
 </li>
       <li><a href="mable.examples.html#mable.examples.environment.get_specification_builder.params.fixed_trades">fixed_trades (mable.examples.environment.get_specification_builder parameter)</a>
 </li>
@@ -1480,6 +1489,8 @@
 </li>
         <li><a href="mable.html#mable.event_management.Event.params.info">(mable.event_management.Event parameter)</a>
 </li>
+        <li><a href="mable.html#mable.event_management.FirstCargoAnnouncementEvent.params.info">(mable.event_management.FirstCargoAnnouncementEvent parameter)</a>
+</li>
       </ul></li>
       <li><a href="mable.html#mable.cargo_bidding.MCSTCompany.inform">inform() (mable.cargo_bidding.MCSTCompany method)</a>
 
@@ -1498,6 +1509,8 @@
       <li><a href="mable.html#mable.shipping_market.AuctionMarket.inform_future_trades">inform_future_trades() (mable.shipping_market.AuctionMarket static method)</a>
 </li>
       <li><a href="mable.html#mable.instructions.Specifications.init_from_json_string">init_from_json_string() (mable.instructions.Specifications class method)</a>
+</li>
+      <li><a href="mable.html#mable.transportation_scheduling.Schedule.init_with_engine">init_with_engine() (mable.transportation_scheduling.Schedule class method)</a>
 </li>
       <li><a href="mable.extensions.html#mable.extensions.cargo_distributions.DistributionShipping.initialise_trades">initialise_trades() (mable.extensions.cargo_distributions.DistributionShipping method)</a>
 
@@ -2729,6 +2742,8 @@
         <li><a href="mable.html#mable.event_management.Event.format_time.params.time">(mable.event_management.Event.format_time parameter)</a>
 </li>
         <li><a href="mable.html#mable.event_management.EventItem.time">(mable.event_management.EventItem attribute)</a>
+</li>
+        <li><a href="mable.html#mable.event_management.FirstCargoAnnouncementEvent.params.time">(mable.event_management.FirstCargoAnnouncementEvent parameter)</a>
 </li>
         <li><a href="mable.html#mable.event_management.IdleEvent.params.time">(mable.event_management.IdleEvent parameter)</a>
 </li>
