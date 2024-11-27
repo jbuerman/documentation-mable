@@ -120,6 +120,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 
         </div>
@@ -384,7 +385,7 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.competition.information.CompanyHeadquarters.get_journey_location">
-<span class="sig-name descname"><span class="pre">get_journey_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.get_journey_location" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_journey_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.competition.information.CompanyHeadquarters.get_journey_location" title="Link to this definition"></a></dt>
 <dd><p>Get the current location of a vessel on a journey.</p>
 <p><strong>Warning</strong>: <em>If the location is intended to calculate an exact distance with</em>
 <a class="reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance" title="mable.competition.information.CompanyHeadquarters.get_network_distance"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_network_distance()</span></code></a>,         <em>that calculation will take time.</em>         <em>It may be better to work with the origin and destination of a journey rather than the actual location of the</em>         <em>vessel.</em></p>
@@ -393,6 +394,7 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 <dd class="field-odd"><ul class="simple">
 <li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.journey">¶</a> (<a class="reference internal" href="mable.html#mable.simulation_space.OnJourney" title="mable.simulation_space.OnJourney"><em>OnJourney</em></a>) – The journey.</p></li>
 <li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.vessel">¶</a> (<a class="reference internal" href="mable.html#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel that is performing the journey.</p></li>
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.time">¶</a> (<em>float</em>) – The time at which the journey location will be calculated. Default, i.e. None, is the current time.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
