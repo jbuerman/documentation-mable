@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable package &mdash; MABLE 0.0.5 documentation</title>
+  <title>mable package &mdash; MABLE 0.0.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=282f96c0"></script>
+      <script src="_static/documentation_options.js?v=1fd71caa"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -676,6 +676,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.copy"><code class="docutils literal notranslate"><span class="pre">Schedule.copy()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.get"><code class="docutils literal notranslate"><span class="pre">Schedule.get()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.get_insertion_points"><code class="docutils literal notranslate"><span class="pre">Schedule.get_insertion_points()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.get_simple_schedule"><code class="docutils literal notranslate"><span class="pre">Schedule.get_simple_schedule()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.init_with_engine"><code class="docutils literal notranslate"><span class="pre">Schedule.init_with_engine()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.next"><code class="docutils literal notranslate"><span class="pre">Schedule.next()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transportation_scheduling.Schedule.pop"><code class="docutils literal notranslate"><span class="pre">Schedule.pop()</span></code></a></li>
@@ -5538,12 +5539,12 @@ the loading rate of the cargo hold.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.Schedule">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">Schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">Schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creation_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.simulation_environment.SimulationEngineAware" title="mable.simulation_environment.SimulationEngineAware"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngineAware</span></code></a></p>
 <p>The schedule of a vessel.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.Schedule.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creation_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule.__init__" title="Link to this definition"></a></dt>
 <dd><p><strong>Note</strong>: Requires the engine to be set to work.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -5634,6 +5635,21 @@ the loading rate of the cargo hold.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.transportation_scheduling.Schedule.get_simple_schedule">
+<span class="sig-name descname"><span class="pre">get_simple_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.Schedule.get_simple_schedule" title="Link to this definition"></a></dt>
+<dd><p>Produce a simple overview of the schedule in the form of a list with drop off/pick up indicator and
+associated cargo, e.g. [(‘PICK_UP’, &lt;trade&gt;), (‘DROP_OFF’, &lt;trade&gt;)].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The simple overview.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[Tuple[str, <a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade">Trade</a>]]</p>
 </dd>
 </dl>
 </dd></dl>
