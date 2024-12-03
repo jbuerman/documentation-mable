@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable.examples package &mdash; MABLE 0.0.6 documentation</title>
+  <title>mable.examples package &mdash; MABLE 0.0.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=1fd71caa"></script>
+      <script src="_static/documentation_options.js?v=bbaf98b3"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -390,7 +390,7 @@ Default is 60 seconds.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.environment.get_specification_builder">
-<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">get_specification_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">environment_files_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_occurrence_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trades_per_occurrence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_auctions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_trades</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.get_specification_builder" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">get_specification_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">environment_files_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_occurrence_frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trades_per_occurrence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_auctions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_trades</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_only_precomputed_routes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.get_specification_builder" title="Link to this definition"></a></dt>
 <dd><p>Generate a specifications builder to specify a simulation settings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -403,6 +403,8 @@ Default is 60 seconds.</p></li>
 If fixed trades are specified, <a class="reference internal" href="#mable.examples.environment.get_specification_builder.params.trade_occurrence_frequency" title="mable.examples.environment.get_specification_builder"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">get_specification_builder.trade_occurrence_frequency</span></code></a>,
 <a class="reference internal" href="#mable.examples.environment.get_specification_builder.params.trades_per_occurrence" title="mable.examples.environment.get_specification_builder"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">get_specification_builder.trades_per_occurrence</span></code></a>
 and <a class="reference internal" href="#mable.examples.environment.get_specification_builder.params.num_auctions" title="mable.examples.environment.get_specification_builder"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">get_specification_builder.num_auctions</span></code></a> will be ignored.</p></li>
+<li><p><span class="target" id="mable.examples.environment.get_specification_builder.params.use_only_precomputed_routes"></span><strong>use_only_precomputed_routes</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.get_specification_builder.params.use_only_precomputed_routes">¶</a> (<em>bool</em>) – Only generate cargoes between ports that have a precomputed route.
+Default is False.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>

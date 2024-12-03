@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable package &mdash; MABLE 0.0.6 documentation</title>
+  <title>mable package &mdash; MABLE 0.0.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=1fd71caa"></script>
+      <script src="_static/documentation_options.js?v=bbaf98b3"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -3456,11 +3456,15 @@ The current time in the simulation.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.simulation_environment.World.do_events_exists">
 <span class="sig-name descname"><span class="pre">do_events_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_environment.World.do_events_exists" title="Link to this definition"></a></dt>
-<dd><p>Returns if there are events left to deal with.
-:return: bool</p>
-<blockquote>
-<div><p>True if there are still events and false otherwise.</p>
-</div></blockquote>
+<dd><p>Returns if there are events left to deal with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if there are still events and false otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -3480,11 +3484,12 @@ The current time in the simulation.</p>
 <dt class="sig sig-object py" id="mable.simulation_environment.World.get_next_event">
 <span class="sig-name descname"><span class="pre">get_next_event</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_environment.World.get_next_event" title="Link to this definition"></a></dt>
 <dd><p>Removes and return the next event of the queue. Also sets the current time to the time of the
-event occurrence.
-:return:</p>
-<blockquote>
-<div><p>The event.</p>
-</div></blockquote>
+event occurrence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The event.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -3492,8 +3497,10 @@ event occurrence.
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">network</span></span><a class="headerlink" href="#mable.simulation_environment.World.network" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ShippingNetwork
-The space/network of operation.</p>
+<dd class="field-odd"><p>The space/network of operation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mable.simulation_space.ShippingNetwork" title="mable.simulation_space.ShippingNetwork">ShippingNetwork</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4956,12 +4963,22 @@ A json encodable object.</p>
 <dt class="sig sig-object py" id="mable.transport_operation.SimpleCompany.get_arrival_time">
 <span class="sig-name descname"><span class="pre">get_arrival_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleCompany.get_arrival_time" title="Link to this definition"></a></dt>
 <dd><p>Calculates the arrival time of the vessel at the port. If the specified schedule has events it is assumed
-that the vessel is in the location of the last event. Otherwise, the vessels current position is used.
-:param _sphinx_paramlinks_mable.transport_operation.SimpleCompany.get_arrival_time.port: The port
-:param Schedule _sphinx_paramlinks_mable.transport_operation.SimpleCompany.get_arrival_time.| None schedule: The schedule or None
-:param Vessel _sphinx_paramlinks_mable.transport_operation.SimpleCompany.get_arrival_time.vessel: The vessel.
-:return: The arrival time
-:rtype: float</p>
+that the vessel is in the location of the last event. Otherwise, the vessels current position is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.transport_operation.SimpleCompany.get_arrival_time.params.port"></span><strong>port</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.SimpleCompany.get_arrival_time.params.port">¶</a> – The port</p></li>
+<li><p><strong>schedule</strong> (<em>Schedule _sphinx_paramlinks_mable.transport_operation.SimpleCompany.get_arrival_time.</em><em>| </em><em>None</em>) – The schedule or None</p></li>
+<li><p><span class="target" id="mable.transport_operation.SimpleCompany.get_arrival_time.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.SimpleCompany.get_arrival_time.params.vessel">¶</a> (<a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The arrival time</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
