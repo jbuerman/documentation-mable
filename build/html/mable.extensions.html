@@ -49,7 +49,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tradingAgentIntroduction.html">Creating a Trading Company</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">mable</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">maritime_simulator</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mable.html">mable package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="mable.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="mable.competition.html">mable.competition package</a></li>
@@ -251,6 +251,7 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="mable.io.html">mable.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.simulation_space.html">mable.simulation_space package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#submodules">Submodules</a></li>
@@ -266,7 +267,6 @@
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_de_serialisation">mable.simulation_de_serialisation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_environment">mable.simulation_environment module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_generation">mable.simulation_generation module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_space">mable.simulation_space module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.transport_operation">mable.transport_operation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.transportation_scheduling">mable.transportation_scheduling module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.util">mable.util module</a></li>
@@ -292,7 +292,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">mable</a></li>
+          <li class="breadcrumb-item"><a href="modules.html">maritime_simulator</a></li>
           <li class="breadcrumb-item"><a href="mable.html">mable package</a></li>
       <li class="breadcrumb-item active">mable.extensions package</li>
       <li class="wy-breadcrumbs-aside">
@@ -1361,7 +1361,7 @@ while under ballast (unladen).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongLocation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.world_ports.</span></span><span class="sig-name descname"><span class="pre">LatLongLocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongLocation" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a></p>
 <p>A location with latitude and longitude.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongLocation.__init__">
@@ -1392,7 +1392,7 @@ while under ballast (unladen).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongPort">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.world_ports.</span></span><span class="sig-name descname"><span class="pre">LatLongPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongPort" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Port</span></code>, <a class="reference internal" href="mable.html#mable.util.JsonAble" title="mable.util.JsonAble"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonAble</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.Port" title="mable.simulation_space.universe.Port"><code class="xref py py-class docutils literal notranslate"><span class="pre">Port</span></code></a>, <a class="reference internal" href="mable.html#mable.util.JsonAble" title="mable.util.JsonAble"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonAble</span></code></a></p>
 <p>A port with latitude and longitude.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongPort.__init__">
@@ -1452,7 +1452,7 @@ while under ballast (unladen).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongShippingNetwork">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.world_ports.</span></span><span class="sig-name descname"><span class="pre">LatLongShippingNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precomputed_routes_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongShippingNetwork" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict" title="mable.simulation_space.structure.NetworkWithPortDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></a></p>
 <p>A shipping network with latitude on longitude locations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongShippingNetwork.__init__">
@@ -1650,7 +1650,7 @@ are considered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one">¶</a> (<em>Port</em><em> | </em><em>str</em>) – The first location.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one">¶</a> (<a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.Port" title="mable.simulation_space.universe.Port"><em>Port</em></a><em> | </em><em>str</em>) – The first location.</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_two">¶</a> – The second location.</p></li>
 </ul>
 </dd>
@@ -1670,7 +1670,7 @@ are considered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey">¶</a> (<em>OnJourney</em>) – The journey object.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey">¶</a> (<a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney" title="mable.simulation_space.universe.OnJourney"><em>OnJourney</em></a>) – The journey object.</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.vessel">¶</a> (<a class="reference internal" href="mable.html#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel that is performing the journey.</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.current_time">¶</a> (<em>float</em>) – The current time.</p></li>
 </ul>
@@ -1679,7 +1679,7 @@ are considered.</p>
 <dd class="field-even"><p>The current location the vessel is in.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Location</p>
+<dd class="field-odd"><p><a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location">Location</a></p>
 </dd>
 </dl>
 </dd></dl>

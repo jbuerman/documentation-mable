@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mable.simulation_space package &mdash; MABLE 0.0.9 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
+
+  
+    <link rel="shortcut icon" href="_static/mable_favicon.png"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f7cdbf68"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="mable.io package" href="mable.io.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MABLE
+              <img src="_static/mable_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingAgentIntroduction.html">Creating a Trading Company</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">maritime_simulator</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="mable.html">mable package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="mable.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html">mable.competition package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.examples.html">mable.examples package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.extensions.html">mable.extensions package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.io.html">mable.io package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">mable.simulation_space package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.simulation_space.structure">mable.simulation_space.structure module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#mable.simulation_space.structure.NetworkWithPortDict"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.NetworkWithPortDict.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.__init__()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.NetworkWithPortDict.get_port"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.get_port()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.get_port_or_default()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.NetworkWithPortDict.ports"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.ports</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.simulation_space.structure.ShippingNetwork"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.ShippingNetwork.__init__"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.__init__()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_distance"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_distance()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_journey_location"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_journey_location()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_port"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_port()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_port_or_default"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_port_or_default()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_vessel_location"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_vessel_location()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.simulation_space.structure.UnitShippingNetwork"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.UnitShippingNetwork.__init__"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.__init__()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.UnitShippingNetwork.get_distance"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.get_distance()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.structure.UnitShippingNetwork.get_journey_location"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.get_journey_location()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.simulation_space.universe">mable.simulation_space.universe module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#mable.simulation_space.universe.Location"><code class="docutils literal notranslate"><span class="pre">Location</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.Location.__init__"><code class="docutils literal notranslate"><span class="pre">Location.__init__()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.Location.name"><code class="docutils literal notranslate"><span class="pre">Location.name</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.Location.x"><code class="docutils literal notranslate"><span class="pre">Location.x</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.Location.y"><code class="docutils literal notranslate"><span class="pre">Location.y</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.simulation_space.universe.OnJourney"><code class="docutils literal notranslate"><span class="pre">OnJourney</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.OnJourney.__init__"><code class="docutils literal notranslate"><span class="pre">OnJourney.__init__()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.OnJourney.destination"><code class="docutils literal notranslate"><span class="pre">OnJourney.destination</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.OnJourney.origin"><code class="docutils literal notranslate"><span class="pre">OnJourney.origin</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.OnJourney.start_time"><code class="docutils literal notranslate"><span class="pre">OnJourney.start_time</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#mable.simulation_space.universe.Port"><code class="docutils literal notranslate"><span class="pre">Port</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.Port.__init__"><code class="docutils literal notranslate"><span class="pre">Port.__init__()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mable.simulation_space.universe.Port.to_json"><code class="docutils literal notranslate"><span class="pre">Port.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#module-mable.simulation_space">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.cargo_bidding">mable.cargo_bidding module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.cli">mable.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.engine">mable.engine module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.event_management">mable.event_management module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.global_setup">mable.global_setup module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.instructions">mable.instructions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.metrics">mable.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.observers">mable.observers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.shipping_market">mable.shipping_market module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_de_serialisation">mable.simulation_de_serialisation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_environment">mable.simulation_environment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_generation">mable.simulation_generation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.transport_operation">mable.transport_operation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.transportation_scheduling">mable.transportation_scheduling module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.util">mable.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MABLE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">maritime_simulator</a></li>
+          <li class="breadcrumb-item"><a href="mable.html">mable package</a></li>
+      <li class="breadcrumb-item active">mable.simulation_space package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/mable.simulation_space.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mable-simulation-space-package">
+<h1>mable.simulation_space package<a class="headerlink" href="#mable-simulation-space-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-mable.simulation_space.structure">
+<span id="mable-simulation-space-structure-module"></span><h2>mable.simulation_space.structure module<a class="headerlink" href="#module-mable.simulation_space.structure" title="Link to this heading"></a></h2>
+<p>The space where the simulation and operation takes place including the seas and the ports.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.NetworkWithPortDict">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.structure.</span></span><span class="sig-name descname"><span class="pre">NetworkWithPortDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.NetworkWithPortDict" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.simulation_space.structure.ShippingNetwork" title="mable.simulation_space.structure.ShippingNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShippingNetwork</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>A space of operation that stores the ports in form of a dictionary.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.NetworkWithPortDict.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.NetworkWithPortDict.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.NetworkWithPortDict.get_port">
+<span class="sig-name descname"><span class="pre">get_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.NetworkWithPortDict.get_port" title="Link to this definition"></a></dt>
+<dd><p>Returns the port with the name.
+:param _sphinx_paramlinks_mable.simulation_space.structure.NetworkWithPortDict.get_port.name:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default">
+<span class="sig-name descname"><span class="pre">get_port_or_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default" title="Link to this definition"></a></dt>
+<dd><p>Returns a port by name or the default value in case no port with the specified name exists.
+:param _sphinx_paramlinks_mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default.name: str</p>
+<blockquote>
+<div><p>The name of the port.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default.params.default"></span><strong>default</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default.params.default">¶</a> – Any
+The default value to return. By default, this is None.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>default
+Whatever is passed to default or None if nothing is specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.NetworkWithPortDict.ports">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ports</span></span><a class="headerlink" href="#mable.simulation_space.structure.NetworkWithPortDict.ports" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.ShippingNetwork">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.structure.</span></span><span class="sig-name descname"><span class="pre">ShippingNetwork</span></span><a class="headerlink" href="#mable.simulation_space.structure.ShippingNetwork" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="mable.html#mable.simulation_environment.SimulationEngineAware" title="mable.simulation_environment.SimulationEngineAware"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngineAware</span></code></a></p>
+<p>An abstract class for the space of operation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.ShippingNetwork.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.ShippingNetwork.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.ShippingNetwork.get_distance">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.ShippingNetwork.get_distance" title="Link to this definition"></a></dt>
+<dd><p>Returns the distance between two locations.
+:param _sphinx_paramlinks_mable.simulation_space.structure.ShippingNetwork.get_distance.location_one: Location</p>
+<blockquote>
+<div><p>The first location.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.simulation_space.structure.ShippingNetwork.get_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_distance.params.location_two">¶</a> – Location
+The second location.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float
+The distance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.ShippingNetwork.get_journey_location">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_journey_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.ShippingNetwork.get_journey_location" title="Link to this definition"></a></dt>
+<dd><p>Returns the current position of the vessel based on the journey information and the current time.
+:param _sphinx_paramlinks_mable.simulation_space.structure.ShippingNetwork.get_journey_location.journey: Journey</p>
+<blockquote>
+<div><p>The journey object.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.simulation_space.structure.ShippingNetwork.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_journey_location.params.vessel">¶</a> – Vessel
+The vessel that is performing the journey</p></li>
+<li><p><span class="target" id="mable.simulation_space.structure.ShippingNetwork.get_journey_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_journey_location.params.current_time">¶</a> – float
+The current time.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Location
+The current location the vessel is in.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.ShippingNetwork.get_port">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.ShippingNetwork.get_port" title="Link to this definition"></a></dt>
+<dd><p>Returns a port by name.
+:param _sphinx_paramlinks_mable.simulation_space.structure.ShippingNetwork.get_port.name: str</p>
+<blockquote>
+<div><p>The name of the port.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Port
+The port by the name.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.ShippingNetwork.get_port_or_default">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_port_or_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.ShippingNetwork.get_port_or_default" title="Link to this definition"></a></dt>
+<dd><p>Returns a port by name or the default value in case no port with the specified name exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.simulation_space.structure.ShippingNetwork.get_port_or_default.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_port_or_default.params.name">¶</a> (<em>str</em>) – The name of the port.</p></li>
+<li><p><span class="target" id="mable.simulation_space.structure.ShippingNetwork.get_port_or_default.params.default"></span><strong>default</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_port_or_default.params.default">¶</a> (<em>Any</em>) – The default value to return. By default, this is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Either the port or whatever is passed to default (None by default).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#mable.simulation_space.universe.Port" title="mable.simulation_space.universe.Port">Port</a>, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.ShippingNetwork.get_vessel_location">
+<span class="sig-name descname"><span class="pre">get_vessel_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.ShippingNetwork.get_vessel_location" title="Link to this definition"></a></dt>
+<dd><p>Returns the location of the vessel assuming the vessel is either in a port or on a journey.
+If the vessel is on a journey the current time is used to determine the vessel’s location on the
+journey.</p>
+<p>The method is robust to the vessel having a location by name or Location, i.e. if the vessel’s location
+is a port name the port will be determined by the name.
+:param _sphinx_paramlinks_mable.simulation_space.structure.ShippingNetwork.get_vessel_location.vessel: Vessel</p>
+<blockquote>
+<div><p>The vessel.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.simulation_space.structure.ShippingNetwork.get_vessel_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.ShippingNetwork.get_vessel_location.params.current_time">¶</a> – float
+The current time.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Location
+The current location of the vessel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.UnitShippingNetwork">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.structure.</span></span><span class="sig-name descname"><span class="pre">UnitShippingNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.UnitShippingNetwork" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.simulation_space.structure.NetworkWithPortDict" title="mable.simulation_space.structure.NetworkWithPortDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></a></p>
+<p>A space of operation in the [0,1]^2 Euclidian space.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.UnitShippingNetwork.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.UnitShippingNetwork.__init__" title="Link to this definition"></a></dt>
+<dd><p>Constructor.
+:param _sphinx_paramlinks_mable.simulation_space.structure.UnitShippingNetwork.ports: dict | list</p>
+<blockquote>
+<div><p>The collection of ports.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.UnitShippingNetwork.get_distance">
+<span class="sig-name descname"><span class="pre">get_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.UnitShippingNetwork.get_distance" title="Link to this definition"></a></dt>
+<dd><p>Returns the Euclidean distance between two locations.
+:param _sphinx_paramlinks_mable.simulation_space.structure.UnitShippingNetwork.get_distance.location_one: Location</p>
+<blockquote>
+<div><p>The first location.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.simulation_space.structure.UnitShippingNetwork.get_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.UnitShippingNetwork.get_distance.params.location_two">¶</a> – Location
+The second location.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float
+The Euclidean distance. If the location are outside of [0,1]^2 float(‘inf’) is returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.structure.UnitShippingNetwork.get_journey_location">
+<span class="sig-name descname"><span class="pre">get_journey_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.structure.UnitShippingNetwork.get_journey_location" title="Link to this definition"></a></dt>
+<dd><p>Returns the current position of the vessel based on the journey information and the current time.
+If the current time is before the start time the origin is returned. Similarly, if the current time is beyond
+the start time plus the travel time the destination is returned.
+:param _sphinx_paramlinks_mable.simulation_space.structure.UnitShippingNetwork.get_journey_location.journey: Journey</p>
+<blockquote>
+<div><p>The journey object.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.simulation_space.structure.UnitShippingNetwork.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.UnitShippingNetwork.get_journey_location.params.vessel">¶</a> – Vessel
+The vessel that is performing the journey</p></li>
+<li><p><span class="target" id="mable.simulation_space.structure.UnitShippingNetwork.get_journey_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.structure.UnitShippingNetwork.get_journey_location.params.current_time">¶</a> – float
+The current time.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Location
+The current location the vessel is in or one of the endpoints.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mable.simulation_space.universe">
+<span id="mable-simulation-space-universe-module"></span><h2>mable.simulation_space.universe module<a class="headerlink" href="#module-mable.simulation_space.universe" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.Location">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.universe.</span></span><span class="sig-name descname"><span class="pre">Location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.universe.Location" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A location in the operational space.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.Location.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.universe.Location.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.simulation_space.universe.Location.params.x"></span><strong>x</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.Location.params.x">¶</a> (<em>float</em>) – The x coordinate of the location.</p></li>
+<li><p><span class="target" id="mable.simulation_space.universe.Location.params.y"></span><strong>y</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.Location.params.y">¶</a> (<em>float</em>) – The y coordinate of the location.</p></li>
+<li><p><span class="target" id="mable.simulation_space.universe.Location.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.Location.params.name">¶</a> (<em>str</em>) – An optional name of the location.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.Location.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mable.simulation_space.universe.Location.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.Location.x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#mable.simulation_space.universe.Location.x" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.Location.y">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#mable.simulation_space.universe.Location.y" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.OnJourney">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.universe.</span></span><span class="sig-name descname"><span class="pre">OnJourney</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.universe.OnJourney" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An indicator that a vessel is in transit, i.e. performing a journey.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.simulation_space.universe.OnJourney.params.origin"></span><strong>origin</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.OnJourney.params.origin">¶</a> (<a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><em>Location</em></a>) – The start location of the journey.</p></li>
+<li><p><span class="target" id="mable.simulation_space.universe.OnJourney.params.destination"></span><strong>destination</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.OnJourney.params.destination">¶</a> (<a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><em>Location</em></a>) – The end location of the journey.</p></li>
+<li><p><span class="target" id="mable.simulation_space.universe.OnJourney.params.start_time"></span><strong>start_time</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.OnJourney.params.start_time">¶</a> (<em>float</em>) – The time at which the journey started, i.e. the time the vessel left origin.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.OnJourney.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.simulation_space.universe.OnJourney.__init__" title="Link to this definition"></a></dt>
+<dd><p>Method generated by attrs for class OnJourney.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.OnJourney.destination">
+<span class="sig-name descname"><span class="pre">destination</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><span class="pre">Location</span></a></em><a class="headerlink" href="#mable.simulation_space.universe.OnJourney.destination" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.OnJourney.origin">
+<span class="sig-name descname"><span class="pre">origin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><span class="pre">Location</span></a></em><a class="headerlink" href="#mable.simulation_space.universe.OnJourney.origin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.OnJourney.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#mable.simulation_space.universe.OnJourney.start_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.Port">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.universe.</span></span><span class="sig-name descname"><span class="pre">Port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.universe.Port" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a>, <a class="reference internal" href="mable.html#mable.util.JsonAble" title="mable.util.JsonAble"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonAble</span></code></a></p>
+<p>A port, i.e. a location in the operational space at which cargo gets exchanged.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.Port.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.universe.Port.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.simulation_space.universe.Port.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.Port.params.name">¶</a> (<em>str</em>) – The name of the port.</p></li>
+<li><p><span class="target" id="mable.simulation_space.universe.Port.params.x"></span><strong>x</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.Port.params.x">¶</a> (<em>float</em>) – The x coordinate of the port.</p></li>
+<li><p><span class="target" id="mable.simulation_space.universe.Port.params.y"></span><strong>y</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.universe.Port.params.y">¶</a> (<em>float</em>) – The y coordinate of the port.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.simulation_space.universe.Port.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.universe.Port.to_json" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any
+A json encodable object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mable.simulation_space">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mable.simulation_space" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mable.io.html" class="btn btn-neutral float-left" title="mable.io package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright All rights reserved, 2024, Jan Buermann.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

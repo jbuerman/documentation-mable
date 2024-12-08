@@ -1,5 +1,5 @@
-mable
-=====
+maritime_simulator
+==================
 
 .. toctree::
    :maxdepth: 4

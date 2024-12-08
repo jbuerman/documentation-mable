@@ -49,7 +49,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tradingAgentIntroduction.html">Creating a Trading Company</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">mable</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">maritime_simulator</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mable.html">mable package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="mable.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">mable.competition package</a><ul>
@@ -103,6 +103,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mable.examples.html">mable.examples package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.extensions.html">mable.extensions package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.io.html">mable.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.simulation_space.html">mable.simulation_space package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#submodules">Submodules</a></li>
@@ -118,7 +119,6 @@
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_de_serialisation">mable.simulation_de_serialisation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_environment">mable.simulation_environment module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_generation">mable.simulation_generation module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.simulation_space">mable.simulation_space module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.transport_operation">mable.transport_operation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.transportation_scheduling">mable.transportation_scheduling module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#module-mable.util">mable.util module</a></li>
@@ -144,7 +144,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">mable</a></li>
+          <li class="breadcrumb-item"><a href="modules.html">maritime_simulator</a></li>
           <li class="breadcrumb-item"><a href="mable.html">mable package</a></li>
       <li class="breadcrumb-item active">mable.competition package</li>
       <li class="wy-breadcrumbs-aside">
@@ -405,7 +405,7 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.journey">¶</a> (<em>OnJourney</em>) – The journey.</p></li>
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.journey">¶</a> (<a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney" title="mable.simulation_space.universe.OnJourney"><em>OnJourney</em></a>) – The journey.</p></li>
 <li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.vessel">¶</a> (<a class="reference internal" href="mable.html#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel that is performing the journey.</p></li>
 <li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_journey_location.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_journey_location.params.time">¶</a> (<em>float</em>) – The time at which the journey location will be calculated. Default, i.e. None, is the current time.</p></li>
 </ul>
@@ -414,7 +414,7 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 <dd class="field-even"><p>The current location the vessel is in.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Location</p>
+<dd class="field-odd"><p><a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.Location" title="mable.simulation_space.universe.Location">Location</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -428,7 +428,7 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_one">¶</a> (<em>Union</em><em>[</em><em>Port</em><em>, </em><em>str</em><em>]</em>) – The first location.</p></li>
+<li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_one">¶</a> (<em>Union</em><em>[</em><a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.Port" title="mable.simulation_space.universe.Port"><em>Port</em></a><em>, </em><em>str</em><em>]</em>) – The first location.</p></li>
 <li><p><span class="target" id="mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.competition.information.CompanyHeadquarters.get_network_distance.params.location_two">¶</a> – The second location.</p></li>
 </ul>
 </dd>
@@ -456,7 +456,7 @@ instructions from <code class="xref py py-func docutils literal notranslate"><sp
 <dd class="field-even"><p>Either the port or whatever is passed to default (None by default).</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[Port, Any]</p>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="mable.simulation_space.html#mable.simulation_space.universe.Port" title="mable.simulation_space.universe.Port">Port</a>, Any]</p>
 </dd>
 </dl>
 </dd></dl>

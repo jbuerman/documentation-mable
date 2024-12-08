@@ -46,7 +46,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tradingAgentIntroduction.html">Creating a Trading Company</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">mable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">maritime_simulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 
@@ -234,6 +234,18 @@
         <li><a href="mable.html#mable.simulation_environment.World.__init__">(mable.simulation_environment.World method)</a>
 </li>
         <li><a href="mable.html#mable.simulation_generation.SimulationBuilder.__init__">(mable.simulation_generation.SimulationBuilder method)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict.__init__">(mable.simulation_space.structure.NetworkWithPortDict method)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.__init__">(mable.simulation_space.structure.ShippingNetwork method)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.__init__">(mable.simulation_space.structure.UnitShippingNetwork method)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Location.__init__">(mable.simulation_space.universe.Location method)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney.__init__">(mable.simulation_space.universe.OnJourney method)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Port.__init__">(mable.simulation_space.universe.Port method)</a>
 </li>
         <li><a href="mable.html#mable.transport_operation.Bid.__init__">(mable.transport_operation.Bid method)</a>
 </li>
@@ -686,12 +698,12 @@
         <li><a href="mable.html#mable.simulation_generation.SimulationBuilder.params.class_factory">(mable.simulation_generation.SimulationBuilder parameter)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.simulation_generation.ClassFactory">ClassFactory (class in mable.simulation_generation)</a>
 </li>
       <li><a href="mable.html#mable.shipping_market.TimeWindowTrade.clean_window">clean_window() (mable.shipping_market.TimeWindowTrade method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.extensions.html#mable.extensions.fuel_emissions.Fuel.co2_coefficient">co2_coefficient (mable.extensions.fuel_emissions.Fuel attribute)</a>
 
       <ul>
@@ -797,6 +809,12 @@
 </li>
         <li><a href="mable.html#mable.simulation_environment.World.current_time">(mable.simulation_environment.World property)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_journey_location.params.current_time">(mable.simulation_space.structure.ShippingNetwork.get_journey_location parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_vessel_location.params.current_time">(mable.simulation_space.structure.ShippingNetwork.get_vessel_location parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.get_journey_location.params.current_time">(mable.simulation_space.structure.UnitShippingNetwork.get_journey_location parameter)</a>
+</li>
         <li><a href="mable.html#mable.transportation_scheduling.CurrentState.current_time">(mable.transportation_scheduling.CurrentState attribute)</a>
 </li>
       </ul></li>
@@ -839,6 +857,10 @@
       <ul>
         <li><a href="mable.extensions.html#mable.extensions.world_ports.get_index_or_default.params.default">(mable.extensions.world_ports.get_index_or_default parameter)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default.params.default">(mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_port_or_default.params.default">(mable.simulation_space.structure.ShippingNetwork.get_port_or_default parameter)</a>
+</li>
       </ul></li>
       <li><a href="mable.html#mable.util.JsonAbleEncoder.default">default() (mable.util.JsonAbleEncoder method)</a>
 </li>
@@ -849,15 +871,21 @@
       <li><a href="mable.examples.html#mable.examples.fleets.default_vlcc_laden_balast_consumption">default_vlcc_laden_balast_consumption() (in module mable.examples.fleets)</a>
 </li>
       <li><a href="mable.html#mable.event_management.TravelEvent.params.destination">destination (mable.event_management.TravelEvent parameter)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney.destination">(mable.simulation_space.universe.OnJourney attribute)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney.params.destination">(mable.simulation_space.universe.OnJourney parameter)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.shipping_market.Trade.destination_port">destination_port (mable.shipping_market.Trade attribute)</a>
 
       <ul>
         <li><a href="mable.html#mable.shipping_market.Trade.params.destination_port">(mable.shipping_market.Trade parameter)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.WorldVessel.get_travel_time.params.distance">distance (mable.extensions.world_ports.WorldVessel.get_travel_time parameter)</a>
 
       <ul>
@@ -1298,8 +1326,6 @@
       </ul></li>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.get_all_routes_between_points">get_all_routes_between_points() (mable.extensions.world_ports.LatLongShippingNetwork method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.get_all_stored_routes_between_points">get_all_stored_routes_between_points() (mable.extensions.world_ports.LatLongShippingNetwork method)</a>
 </li>
       <li><a href="mable.html#mable.transport_operation.SimpleCompany.get_arrival_time">get_arrival_time() (mable.transport_operation.SimpleCompany method)</a>
@@ -1312,6 +1338,8 @@
       </ul></li>
       <li><a href="mable.html#mable.transport_operation.CargoHold.get_capacity">get_capacity() (mable.transport_operation.CargoHold method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.transport_operation.ShippingCompany.get_class">get_class() (mable.transport_operation.ShippingCompany class method)</a>
 </li>
       <li><a href="mable.extensions.html#mable.extensions.fuel_emissions.Fuel.get_co2_emissions">get_co2_emissions() (mable.extensions.fuel_emissions.Fuel method)</a>
@@ -1333,7 +1361,13 @@
       <li><a href="mable.html#mable.transport_operation.CargoHold.get_current_load">get_current_load() (mable.transport_operation.CargoHold method)</a>
 </li>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.get_distance">get_distance() (mable.extensions.world_ports.LatLongShippingNetwork method)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_distance">(mable.simulation_space.structure.ShippingNetwork static method)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.get_distance">(mable.simulation_space.structure.UnitShippingNetwork method)</a>
+</li>
+      </ul></li>
       <li><a href="mable.html#mable.engine.SimulationEngine.get_event_observers">get_event_observers() (mable.engine.SimulationEngine method)</a>
 </li>
       <li><a href="mable.examples.html#mable.examples.fleets.get_fuel_mfo">get_fuel_mfo() (in module mable.examples.fleets)</a>
@@ -1354,6 +1388,10 @@
 
       <ul>
         <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location">(mable.extensions.world_ports.LatLongShippingNetwork method)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_journey_location">(mable.simulation_space.structure.ShippingNetwork method)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.get_journey_location">(mable.simulation_space.structure.UnitShippingNetwork method)</a>
 </li>
       </ul></li>
       <li><a href="mable.extensions.html#mable.extensions.fuel_emissions.GlobalSetup.get_keys">get_keys() (mable.extensions.fuel_emissions.GlobalSetup class method)</a>
@@ -1386,6 +1424,18 @@
 </li>
       <li><a href="mable.html#mable.simulation_environment.World.get_next_event">get_next_event() (mable.simulation_environment.World method)</a>
 </li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict.get_port">get_port() (mable.simulation_space.structure.NetworkWithPortDict method)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_port">(mable.simulation_space.structure.ShippingNetwork method)</a>
+</li>
+      </ul></li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default">get_port_or_default() (mable.simulation_space.structure.NetworkWithPortDict method)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_port_or_default">(mable.simulation_space.structure.ShippingNetwork method)</a>
+</li>
+      </ul></li>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.get_ports">get_ports() (in module mable.extensions.world_ports)</a>
 </li>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.get_shortest_grid_route_between_points">get_shortest_grid_route_between_points() (mable.extensions.world_ports.LatLongShippingNetwork method)</a>
@@ -1423,6 +1473,8 @@
       <li><a href="mable.examples.html#mable.examples.fleets.get_vessel_aframax">get_vessel_aframax() (in module mable.examples.fleets)</a>
 </li>
       <li><a href="mable.html#mable.metrics.MetricsCollector.get_vessel_id">get_vessel_id() (mable.metrics.MetricsCollector method)</a>
+</li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_vessel_location">get_vessel_location() (mable.simulation_space.structure.ShippingNetwork method)</a>
 </li>
       <li><a href="mable.examples.html#mable.examples.fleets.get_vessel_suezmax">get_vessel_suezmax() (in module mable.examples.fleets)</a>
 </li>
@@ -1548,6 +1600,10 @@
 
       <ul>
         <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey">(mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_journey_location.params.journey">(mable.simulation_space.structure.ShippingNetwork.get_journey_location parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.get_journey_location.params.journey">(mable.simulation_space.structure.UnitShippingNetwork.get_journey_location parameter)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1798,6 +1854,8 @@
         <li><a href="mable.html#mable.transport_operation.CargoContainer.loading_rate">(mable.transport_operation.CargoContainer property)</a>
 </li>
       </ul></li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Location">Location (class in mable.simulation_space.universe)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.event_management.IdleEvent.params.location">location (mable.event_management.IdleEvent parameter)</a>
@@ -1835,6 +1893,10 @@
       <ul>
         <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one">(mable.extensions.world_ports.LatLongShippingNetwork.get_distance parameter)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_distance.params.location_one">(mable.simulation_space.structure.ShippingNetwork.get_distance parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.get_distance.params.location_one">(mable.simulation_space.structure.UnitShippingNetwork.get_distance parameter)</a>
+</li>
       </ul></li>
       <li><a href="mable.html#mable.transportation_scheduling.Schedule.add_transportation.params.location_pick_up">location_pick_up (mable.transportation_scheduling.Schedule.add_transportation parameter)</a>
 </li>
@@ -1842,6 +1904,10 @@
 
       <ul>
         <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_two">(mable.extensions.world_ports.LatLongShippingNetwork.get_distance parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_distance.params.location_two">(mable.simulation_space.structure.ShippingNetwork.get_distance parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.get_distance.params.location_two">(mable.simulation_space.structure.UnitShippingNetwork.get_distance parameter)</a>
 </li>
       </ul></li>
       <li><a href="mable.html#mable.transport_operation.Vessel.log_journey_log_event.params.log_entry">log_entry (mable.transport_operation.Vessel.log_journey_log_event parameter)</a>
@@ -2059,11 +2125,25 @@
     mable.simulation_space
 
       <ul>
-        <li><a href="mable.html#module-mable.simulation_space">module</a>
+        <li><a href="mable.simulation_space.html#module-mable.simulation_space">module</a>
+</li>
+      </ul></li>
+      <li>
+    mable.simulation_space.structure
+
+      <ul>
+        <li><a href="mable.simulation_space.html#module-mable.simulation_space.structure">module</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    mable.simulation_space.universe
+
+      <ul>
+        <li><a href="mable.simulation_space.html#module-mable.simulation_space.universe">module</a>
+</li>
+      </ul></li>
       <li>
     mable.transport_operation
 
@@ -2169,7 +2249,11 @@
 </li>
         <li><a href="mable.html#module-mable.simulation_generation">mable.simulation_generation</a>
 </li>
-        <li><a href="mable.html#module-mable.simulation_space">mable.simulation_space</a>
+        <li><a href="mable.simulation_space.html#module-mable.simulation_space">mable.simulation_space</a>
+</li>
+        <li><a href="mable.simulation_space.html#module-mable.simulation_space.structure">mable.simulation_space.structure</a>
+</li>
+        <li><a href="mable.simulation_space.html#module-mable.simulation_space.universe">mable.simulation_space.universe</a>
 </li>
         <li><a href="mable.html#module-mable.transport_operation">mable.transport_operation</a>
 </li>
@@ -2221,6 +2305,20 @@
 </li>
         <li><a href="mable.html#mable.simulation_de_serialisation.SimulationSpecification.register.params.name">(mable.simulation_de_serialisation.SimulationSpecification.register parameter)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict.get_port.params.name">(mable.simulation_space.structure.NetworkWithPortDict.get_port parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default.params.name">(mable.simulation_space.structure.NetworkWithPortDict.get_port_or_default parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_port.params.name">(mable.simulation_space.structure.ShippingNetwork.get_port parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_port_or_default.params.name">(mable.simulation_space.structure.ShippingNetwork.get_port_or_default parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Location.params.name">(mable.simulation_space.universe.Location parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Location.name">(mable.simulation_space.universe.Location property)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Port.params.name">(mable.simulation_space.universe.Port parameter)</a>
+</li>
         <li><a href="mable.html#mable.transport_operation.ShippingCompany.name">(mable.transport_operation.ShippingCompany property)</a>
 </li>
         <li><a href="mable.html#mable.transport_operation.ShippingCompany.Data.name">(mable.transport_operation.ShippingCompany.Data attribute)</a>
@@ -2244,6 +2342,8 @@
         <li><a href="mable.html#mable.simulation_environment.World.network">(mable.simulation_environment.World property)</a>
 </li>
       </ul></li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict">NetworkWithPortDict (class in mable.simulation_space.structure)</a>
+</li>
       <li><a href="mable.html#mable.transportation_scheduling.Schedule.next">next() (mable.transportation_scheduling.Schedule method)</a>
 </li>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.NoPathsException">NoPathsException</a>
@@ -2290,6 +2390,8 @@
         <li><a href="mable.html#mable.engine.SimulationEngine.unregister_event_observer.params.observer">(mable.engine.SimulationEngine.unregister_event_observer parameter)</a>
 </li>
       </ul></li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney">OnJourney (class in mable.simulation_space.universe)</a>
+</li>
       <li><a href="mable.examples.html#mable.examples.companies.MyArchEnemy.Data.Schema.opts">opts (mable.examples.companies.MyArchEnemy.Data.Schema attribute)</a>
 
       <ul>
@@ -2317,7 +2419,13 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.event_management.TravelEvent.params.origin">origin (mable.event_management.TravelEvent parameter)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney.origin">(mable.simulation_space.universe.OnJourney attribute)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney.params.origin">(mable.simulation_space.universe.OnJourney parameter)</a>
+</li>
+      </ul></li>
       <li><a href="mable.html#mable.shipping_market.Trade.origin_port">origin_port (mable.shipping_market.Trade attribute)</a>
 
       <ul>
@@ -2374,6 +2482,8 @@
 </li>
       <li><a href="mable.html#mable.transportation_scheduling.Schedule.pop">pop() (mable.transportation_scheduling.Schedule method)</a>
 </li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Port">Port (class in mable.simulation_space.universe)</a>
+</li>
       <li><a href="mable.examples.html#mable.examples.fleets.get_vessel.params.port">port (mable.examples.fleets.get_vessel parameter)</a>
 
       <ul>
@@ -2396,6 +2506,12 @@
 </li>
       <li><a href="mable.extensions.html#mable.extensions.cargo_distributions.DistributionShipping.load_distributions.params.port_transition_duration_distributions_path">port_transition_duration_distributions_path (mable.extensions.cargo_distributions.DistributionShipping.load_distributions parameter)</a>
 </li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.structure.NetworkWithPortDict.ports">ports (mable.simulation_space.structure.NetworkWithPortDict property)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.params.ports">(mable.simulation_space.structure.UnitShippingNetwork parameter)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.engine.SimulationEngine.POST_RUN_CMDS">POST_RUN_CMDS (mable.engine.SimulationEngine attribute)</a>
@@ -2594,15 +2710,17 @@
         <li><a href="mable.html#mable.shipping_market.SimpleMarket.distribute_trades.params.shipping_companies">(mable.shipping_market.SimpleMarket.distribute_trades parameter)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.shipping_market.AuctionLedger.get_trades_for_company_copy.params.shipping_company">shipping_company (mable.shipping_market.AuctionLedger.get_trades_for_company_copy parameter)</a>
 </li>
       <li><a href="mable.html#mable.transport_operation.ShippingCompany">ShippingCompany (class in mable.transport_operation)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.transport_operation.ShippingCompany.Data">ShippingCompany.Data (class in mable.transport_operation)</a>
 </li>
       <li><a href="mable.html#mable.transport_operation.ShippingCompany.Data.Schema">ShippingCompany.Data.Schema (class in mable.transport_operation)</a>
+</li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork">ShippingNetwork (class in mable.simulation_space.structure)</a>
 </li>
       <li><a href="mable.examples.html#mable.examples.environment.generate_simulation.params.show_detailed_auction_outcome">show_detailed_auction_outcome (mable.examples.environment.generate_simulation parameter)</a>
 </li>
@@ -2672,6 +2790,12 @@
 </li>
       <li><a href="mable.extensions.html#mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.params.start_port ">start_port  (mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows parameter)</a>
 </li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney.start_time">start_time (mable.simulation_space.universe.OnJourney attribute)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.OnJourney.params.start_time">(mable.simulation_space.universe.OnJourney parameter)</a>
+</li>
+      </ul></li>
       <li><a href="mable.html#mable.shipping_market.StaticShipping">StaticShipping (class in mable.shipping_market)</a>
 </li>
       <li><a href="mable.html#mable.shipping_market.Trade.status">status (mable.shipping_market.Trade attribute)</a>
@@ -2795,6 +2919,8 @@
 </li>
         <li><a href="mable.html#mable.shipping_market.Trade.to_json">(mable.shipping_market.Trade method)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Port.to_json">(mable.simulation_space.universe.Port method)</a>
+</li>
         <li><a href="mable.html#mable.transport_operation.CargoCapacity.to_json">(mable.transport_operation.CargoCapacity method)</a>
 </li>
         <li><a href="mable.html#mable.transport_operation.SimpleVessel.to_json">(mable.transport_operation.SimpleVessel method)</a>
@@ -2882,6 +3008,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.html#mable.shipping_market.AuctionAllocationResult.unallocated_trades">unallocated_trades (mable.shipping_market.AuctionAllocationResult attribute)</a>
 </li>
+      <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork">UnitShippingNetwork (class in mable.simulation_space.structure)</a>
+</li>
       <li><a href="mable.html#mable.shipping_market.TradeStatus.UNKNOWN">UNKNOWN (mable.shipping_market.TradeStatus attribute)</a>
 </li>
       <li><a href="mable.html#mable.transport_operation.CargoHold.unload_cargo">unload_cargo() (mable.transport_operation.CargoHold method)</a>
@@ -2957,6 +3085,12 @@
 </li>
         <li><a href="mable.html#mable.metrics.MetricsCollector.get_vessel_id.params.vessel">(mable.metrics.MetricsCollector.get_vessel_id parameter)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_journey_location.params.vessel">(mable.simulation_space.structure.ShippingNetwork.get_journey_location parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.ShippingNetwork.get_vessel_location.params.vessel">(mable.simulation_space.structure.ShippingNetwork.get_vessel_location parameter)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.structure.UnitShippingNetwork.get_journey_location.params.vessel">(mable.simulation_space.structure.UnitShippingNetwork.get_journey_location parameter)</a>
+</li>
         <li><a href="mable.html#mable.transport_operation.SimpleCompany.get_arrival_time.params.vessel">(mable.transport_operation.SimpleCompany.get_arrival_time parameter)</a>
 </li>
         <li><a href="mable.html#mable.transportation_scheduling.CurrentState.vessel">(mable.transportation_scheduling.CurrentState attribute)</a>
@@ -3025,7 +3159,15 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongLocation.params.x">x (mable.extensions.world_ports.LatLongLocation parameter)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Location.params.x">(mable.simulation_space.universe.Location parameter)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Location.x">(mable.simulation_space.universe.Location property)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Port.params.x">(mable.simulation_space.universe.Port parameter)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -3033,7 +3175,15 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="mable.extensions.html#mable.extensions.world_ports.LatLongLocation.params.y">y (mable.extensions.world_ports.LatLongLocation parameter)</a>
+
+      <ul>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Location.params.y">(mable.simulation_space.universe.Location parameter)</a>
 </li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Location.y">(mable.simulation_space.universe.Location property)</a>
+</li>
+        <li><a href="mable.simulation_space.html#mable.simulation_space.universe.Port.params.y">(mable.simulation_space.universe.Port parameter)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 

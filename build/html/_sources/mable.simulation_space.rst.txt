@@ -1,0 +1,29 @@
+mable.simulation\_space package
+===============================
+
+Submodules
+----------
+
+mable.simulation\_space.structure module
+----------------------------------------
+
+.. automodule:: mable.simulation_space.structure
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mable.simulation\_space.universe module
+---------------------------------------
+
+.. automodule:: mable.simulation_space.universe
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: mable.simulation_space
+   :members:
+   :undoc-members:
+   :show-inheritance:
