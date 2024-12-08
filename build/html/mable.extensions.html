@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable.extensions package &mdash; MABLE 0.0.8 documentation</title>
+  <title>mable.extensions package &mdash; MABLE 0.0.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=53b53b71"></script>
+      <script src="_static/documentation_options.js?v=f7cdbf68"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -568,10 +568,19 @@ List of Cargo objects of length specified</p>
 <dd><p>Sample time interval based on normal time transition distributions between start and end ports</p>
 <section id="id2">
 <h3>Parameters<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
-<dl>
-<dt>time_transition_dict: dict</dt><dd><p>Dictionary which stores the time transition times between port pairs</p>
+<dl class="field-list simple">
+<dt class="field-odd">param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.world<span class="colon">:</span></dt>
+<dd class="field-odd"><p>TODO</p>
 </dd>
-<dt>time_transit_distribution<span class="classifier">pandas.DataFrame</span></dt><dd><p>Distributions of the sailing time between ports
+<dt class="field-even">param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.time_transition_dict<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary which stores the time transition times between port pairs</p>
+</dd>
+<dt class="field-odd">type _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.time_transition_dict<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<dl>
+<dt>:param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.time_transit_distribution :</dt><dd><p>Distributions of the sailing time between ports
 Columns:</p>
 <blockquote>
 <div><dl>
@@ -589,23 +598,42 @@ Columns:</p>
 </dl>
 </div></blockquote>
 </dd>
-<dt>mean_transition_std: float</dt><dd><p>The average standard deviation across all records in the time_transit_distribution.
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">type _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.time_transit_distribution<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.mean_transition_std<span class="colon">:</span></dt>
+<dd class="field-even"><p>float
+The average standard deviation across all records in the time_transit_distribution.
 Used when std is missing.</p>
 </dd>
-<dt>start_port<span class="classifier">str</span></dt><dd><p>The name of the start port</p>
+</dl>
+<dl class="simple">
+<dt>:param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.start_port<span class="classifier">str</span></dt><dd><p>The name of the start port</p>
 </dd>
-<dt>end_port<span class="classifier">str</span></dt><dd><p>The name of the end port</p>
+<dt>:param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.end_port<span class="classifier">str</span></dt><dd><p>The name of the end port</p>
 </dd>
-<dt>cargo_weight<span class="classifier">float</span></dt><dd><p>The cargo weight to be transported. It is used to calculate loading and unloading times</p>
+<dt>:param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.cargo_weight<span class="classifier">float</span></dt><dd><p>The cargo weight to be transported. It is used to calculate loading and unloading times</p>
 </dd>
-<dt>pickup_period<span class="classifier">(start_T, end_T) tuple</span></dt><dd><p>The timestep interval in which trades needs to be picked up</p>
-</dd>
-<dt>time_windows_allowance<span class="classifier">int, optional</span></dt><dd><p>The number of days (per directions) to extend each time window (default is 5)</p>
+<dt>:param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.pickup_period :</dt><dd><p>The timestep interval in which trades needs to be picked up in days.</p>
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">return<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p></dd>
+<dt class="field-odd">type _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.pickup_period<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[float, float]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>:param _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.time_windows_allowance :</dt><dd><p>The number of days (per directions) to extend each time window (default is 5)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">type _sphinx_paramlinks_mable.extensions.cargo_distributions.DistributionShipping.sample_time_windows.time_windows_allowance<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
 </dl>
 <dl class="simple">
 <dt>pickup_time_window<span class="classifier">tuple</span></dt><dd><p>Pickup time window consisting representing the time interval the pickup should be started and finished</p>
@@ -1061,7 +1089,7 @@ This should be a flat per time value.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.extensions.fuel_emissions.VesselWithEngine">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.fuel_emissions.</span></span><span class="sig-name descname"><span class="pre">VesselWithEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">propelling_engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.fuel_emissions.VesselWithEngine" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.fuel_emissions.</span></span><span class="sig-name descname"><span class="pre">VesselWithEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">propelling_engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.fuel_emissions.VesselWithEngine" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.extensions.world_ports.WorldVessel" title="mable.extensions.world_ports.WorldVessel"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorldVessel</span></code></a></p>
 <p>A vessel with a fuel consuming engine.</p>
 <dl class="py class">
@@ -1094,7 +1122,7 @@ This should be a flat per time value.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.fuel_emissions.VesselWithEngine.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">propelling_engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.fuel_emissions.VesselWithEngine.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">propelling_engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.fuel_emissions.VesselWithEngine.__init__" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1104,6 +1132,7 @@ This should be a flat per time value.</p></li>
 <li><p><span class="target" id="mable.extensions.fuel_emissions.VesselWithEngine.params.propelling_engine"></span><strong>propelling_engine</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.fuel_emissions.VesselWithEngine.params.propelling_engine">¶</a> (<a class="reference internal" href="#mable.extensions.fuel_emissions.VesselEngine" title="mable.extensions.fuel_emissions.VesselEngine"><em>VesselEngine</em></a>) – The propelling engine.</p></li>
 <li><p><span class="target" id="mable.extensions.fuel_emissions.VesselWithEngine.params.keep_journey_log"></span><strong>keep_journey_log</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.fuel_emissions.VesselWithEngine.params.keep_journey_log">¶</a> (<em>bool</em>) – If true the vessel keeps a log of event occurrences that affected the vessel.</p></li>
 <li><p><span class="target" id="mable.extensions.fuel_emissions.VesselWithEngine.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.fuel_emissions.VesselWithEngine.params.name">¶</a> (<em>str</em>) – The name of the vessel.</p></li>
+<li><p><span class="target" id="mable.extensions.fuel_emissions.VesselWithEngine.params.company"></span><strong>company</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.fuel_emissions.VesselWithEngine.params.company">¶</a> (<a class="reference internal" href="mable.html#mable.transport_operation.ShippingCompany" title="mable.transport_operation.ShippingCompany"><em>ShippingCompany</em></a><em>[</em><em>V</em><em>]</em>) – The company that owns the vessel.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1259,7 +1288,7 @@ while under ballast (unladen).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongFactory.generate_location">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongFactory.generate_location" title="Link to this definition"></a></dt>
-<dd><p>Generates a location. Default: py:class:<cite>maritime_simulator.simulation_space.Location</cite>.
+<dd><p>Generates a location. Default: py:class:<cite>mable.simulation_space.universe.Location</cite>.
 :param _sphinx_paramlinks_mable.extensions.world_ports.LatLongFactory.generate_location.args:</p>
 <blockquote>
 <div><p>Positional args.</p>
@@ -1277,14 +1306,13 @@ while under ballast (unladen).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongFactory.generate_network">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongFactory.generate_network" title="Link to this definition"></a></dt>
-<dd><p>Generates a network (space). Default: py:class:<cite>maritime_simulator.simulation_space.UnitShippingNetwork</cite>.
-:param _sphinx_paramlinks_mable.extensions.world_ports.LatLongFactory.generate_network.args:</p>
-<blockquote>
-<div><p>Positional args.</p>
-</div></blockquote>
+<dd><p>Generates a network (space). Default: py:class:<cite>mable.simulation_space.structure.UnitShippingNetwork</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.extensions.world_ports.LatLongFactory.generate_network.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongFactory.generate_network.params.kwargs">¶</a> – Keyword args.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongFactory.generate_network.params.args"></span><strong>args</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongFactory.generate_network.params.args">¶</a> – Positional args.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongFactory.generate_network.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongFactory.generate_network.params.kwargs">¶</a> – Keyword args.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The network.</p>
@@ -1295,7 +1323,7 @@ while under ballast (unladen).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongFactory.generate_port">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongFactory.generate_port" title="Link to this definition"></a></dt>
-<dd><p>Generates a port. Default: py:class:<cite>maritime_simulator.simulation_space.Port</cite>.
+<dd><p>Generates a port. Default: py:class:<cite>mable.simulation_space.universe.Port</cite>.
 :param _sphinx_paramlinks_mable.extensions.world_ports.LatLongFactory.generate_port.args:</p>
 <blockquote>
 <div><p>Positional args.</p>
@@ -1333,7 +1361,7 @@ while under ballast (unladen).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongLocation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.world_ports.</span></span><span class="sig-name descname"><span class="pre">LatLongLocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongLocation" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="mable.html#mable.simulation_space.Location" title="mable.simulation_space.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></p>
 <p>A location with latitude and longitude.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongLocation.__init__">
@@ -1364,7 +1392,7 @@ while under ballast (unladen).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongPort">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.world_ports.</span></span><span class="sig-name descname"><span class="pre">LatLongPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongPort" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="mable.html#mable.simulation_space.Port" title="mable.simulation_space.Port"><code class="xref py py-class docutils literal notranslate"><span class="pre">Port</span></code></a>, <a class="reference internal" href="mable.html#mable.util.JsonAble" title="mable.util.JsonAble"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonAble</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Port</span></code>, <a class="reference internal" href="mable.html#mable.util.JsonAble" title="mable.util.JsonAble"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonAble</span></code></a></p>
 <p>A port with latitude and longitude.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongPort.__init__">
@@ -1424,7 +1452,7 @@ while under ballast (unladen).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongShippingNetwork">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.world_ports.</span></span><span class="sig-name descname"><span class="pre">LatLongShippingNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precomputed_routes_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.LatLongShippingNetwork" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="mable.html#mable.simulation_space.NetworkWithPortDict" title="mable.simulation_space.NetworkWithPortDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></p>
 <p>A shipping network with latitude on longitude locations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.LatLongShippingNetwork.__init__">
@@ -1622,7 +1650,7 @@ are considered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one">¶</a> (<a class="reference internal" href="mable.html#mable.simulation_space.Port" title="mable.simulation_space.Port"><em>Port</em></a><em> | </em><em>str</em>) – The first location.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one"></span><strong>location_one</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_one">¶</a> (<em>Port</em><em> | </em><em>str</em>) – The first location.</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_distance.params.location_two">¶</a> – The second location.</p></li>
 </ul>
 </dd>
@@ -1642,7 +1670,7 @@ are considered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey">¶</a> (<a class="reference internal" href="mable.html#mable.simulation_space.OnJourney" title="mable.simulation_space.OnJourney"><em>OnJourney</em></a>) – The journey object.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey"></span><strong>journey</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.journey">¶</a> (<em>OnJourney</em>) – The journey object.</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.vessel">¶</a> (<a class="reference internal" href="mable.html#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel that is performing the journey.</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.LatLongShippingNetwork.get_journey_location.params.current_time">¶</a> (<em>float</em>) – The current time.</p></li>
 </ul>
@@ -1651,7 +1679,7 @@ are considered.</p>
 <dd class="field-even"><p>The current location the vessel is in.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="mable.html#mable.simulation_space.Location" title="mable.simulation_space.Location">Location</a></p>
+<dd class="field-odd"><p>Location</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1828,11 +1856,11 @@ assuming the earth is a perfect sphere.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.WorldVessel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.world_ports.</span></span><span class="sig-name descname"><span class="pre">WorldVessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.WorldVessel" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.extensions.world_ports.</span></span><span class="sig-name descname"><span class="pre">WorldVessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.WorldVessel" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="mable.html#mable.transport_operation.SimpleVessel" title="mable.transport_operation.SimpleVessel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleVessel</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.extensions.world_ports.WorldVessel.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.WorldVessel.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.extensions.world_ports.WorldVessel.__init__" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1841,6 +1869,7 @@ assuming the earth is a perfect sphere.</p>
 <li><p><span class="target" id="mable.extensions.world_ports.WorldVessel.params.speed"></span><strong>speed</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.WorldVessel.params.speed">¶</a> (<em>float</em>) – The vessels speed in knots (kn), i.e. nautical miles per hour (nmi/h).</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.WorldVessel.params.keep_journey_log"></span><strong>keep_journey_log</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.WorldVessel.params.keep_journey_log">¶</a> (<em>bool</em>) – If true the vessel keeps a log of event occurrences that affected the vessel.</p></li>
 <li><p><span class="target" id="mable.extensions.world_ports.WorldVessel.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.WorldVessel.params.name">¶</a> (<em>str</em>) – The name of the vessel.</p></li>
+<li><p><span class="target" id="mable.extensions.world_ports.WorldVessel.params.company"></span><strong>company</strong><a class="paramlink headerlink reference internal" href="#mable.extensions.world_ports.WorldVessel.params.company">¶</a> (<a class="reference internal" href="mable.html#mable.transport_operation.ShippingCompany" title="mable.transport_operation.ShippingCompany"><em>ShippingCompany</em></a><em>[</em><em>V</em><em>]</em>) – The company that owns the vessel.</p></li>
 </ul>
 </dd>
 </dl>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable package &mdash; MABLE 0.0.8 documentation</title>
+  <title>mable package &mdash; MABLE 0.0.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=53b53b71"></script>
+      <script src="_static/documentation_options.js?v=f7cdbf68"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -99,12 +99,16 @@
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.POST_RUN_CMDS"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.POST_RUN_CMDS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.PRE_RUN_CMDS"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.PRE_RUN_CMDS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.__init__"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.add_new_schedules"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.add_new_schedules()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.apply_new_schedules"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.apply_new_schedules()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.class_factory"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.class_factory</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.event_queue"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.event_queue</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.find_company_for_vessel"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.find_company_for_vessel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.get_event_observers"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.get_event_observers()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.global_agent_timeout"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.global_agent_timeout</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.headquarters"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.headquarters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.market"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.market</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.market_authority"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.market_authority</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.notify_event_observer"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.notify_event_observer()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.output_directory"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.output_directory</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.engine.SimulationEngine.register_event_observer"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.register_event_observer()</span></code></a></li>
@@ -151,7 +155,6 @@
 <li class="toctree-l5"><a class="reference internal" href="#mable.event_management.Event.__init__"><code class="docutils literal notranslate"><span class="pre">Event.__init__()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.event_management.Event.added_to_queue"><code class="docutils literal notranslate"><span class="pre">Event.added_to_queue()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.event_management.Event.event_action"><code class="docutils literal notranslate"><span class="pre">Event.event_action()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.event_management.Event.format_time"><code class="docutils literal notranslate"><span class="pre">Event.format_time()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.event_management.Event.time"><code class="docutils literal notranslate"><span class="pre">Event.time</span></code></a></li>
 </ul>
 </li>
@@ -283,8 +286,12 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.observers.AuctionOutcomeObserver"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomeObserver</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mable.observers.AuctionOutcomeObserver.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomeObserver.__init__()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.observers.AuctionOutcomeObserver.notify"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomeObserver.notify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#mable.observers.AuctionOutcomePrintObserver"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomePrintObserver</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#mable.observers.AuctionOutcomePrintObserver.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomePrintObserver.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.observers.AuctionOutcomePrintObserver.notify"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomePrintObserver.notify()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.observers.EventFuelPrintObserver"><code class="docutils literal notranslate"><span class="pre">EventFuelPrintObserver</span></code></a><ul>
@@ -304,9 +311,19 @@
 <li class="toctree-l5"><a class="reference internal" href="#mable.observers.MetricsObserver.notify"><code class="docutils literal notranslate"><span class="pre">MetricsObserver.notify()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="#mable.observers.TradeDeliveryObserver"><code class="docutils literal notranslate"><span class="pre">TradeDeliveryObserver</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#mable.observers.TradeDeliveryObserver.notify"><code class="docutils literal notranslate"><span class="pre">TradeDeliveryObserver.notify()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mable.shipping_market">mable.shipping_market module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mable.shipping_market.AuctionAllocationResult"><code class="docutils literal notranslate"><span class="pre">AuctionAllocationResult</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.AuctionAllocationResult.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionAllocationResult.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.AuctionAllocationResult.ledger"><code class="docutils literal notranslate"><span class="pre">AuctionAllocationResult.ledger</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.AuctionAllocationResult.unallocated_trades"><code class="docutils literal notranslate"><span class="pre">AuctionAllocationResult.unallocated_trades</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.shipping_market.AuctionLedger"><code class="docutils literal notranslate"><span class="pre">AuctionLedger</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.AuctionLedger.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionLedger.__init__()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.AuctionLedger.get_trades_for_company_copy"><code class="docutils literal notranslate"><span class="pre">AuctionLedger.get_trades_for_company_copy()</span></code></a></li>
@@ -323,6 +340,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#mable.shipping_market.Contract"><code class="docutils literal notranslate"><span class="pre">Contract</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.Contract.__init__"><code class="docutils literal notranslate"><span class="pre">Contract.__init__()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.Contract.copy"><code class="docutils literal notranslate"><span class="pre">Contract.copy()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.Contract.fulfilled"><code class="docutils literal notranslate"><span class="pre">Contract.fulfilled</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.Contract.payment"><code class="docutils literal notranslate"><span class="pre">Contract.payment</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.Contract.to_json"><code class="docutils literal notranslate"><span class="pre">Contract.to_json()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mable.shipping_market.Contract.trade"><code class="docutils literal notranslate"><span class="pre">Contract.trade</span></code></a></li>
@@ -472,50 +490,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-mable.simulation_space">mable.simulation_space module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mable.simulation_space.Location"><code class="docutils literal notranslate"><span class="pre">Location</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.Location.__init__"><code class="docutils literal notranslate"><span class="pre">Location.__init__()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.Location.name"><code class="docutils literal notranslate"><span class="pre">Location.name</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.Location.x"><code class="docutils literal notranslate"><span class="pre">Location.x</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.Location.y"><code class="docutils literal notranslate"><span class="pre">Location.y</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.__init__()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict.get_port"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.get_port()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict.get_port_or_default"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.get_port_or_default()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict.ports"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.ports</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#mable.simulation_space.OnJourney"><code class="docutils literal notranslate"><span class="pre">OnJourney</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.OnJourney.__init__"><code class="docutils literal notranslate"><span class="pre">OnJourney.__init__()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.OnJourney.destination"><code class="docutils literal notranslate"><span class="pre">OnJourney.destination</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.OnJourney.origin"><code class="docutils literal notranslate"><span class="pre">OnJourney.origin</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.OnJourney.start_time"><code class="docutils literal notranslate"><span class="pre">OnJourney.start_time</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#mable.simulation_space.Port"><code class="docutils literal notranslate"><span class="pre">Port</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.Port.__init__"><code class="docutils literal notranslate"><span class="pre">Port.__init__()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.Port.to_json"><code class="docutils literal notranslate"><span class="pre">Port.to_json()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#mable.simulation_space.ShippingNetwork"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.ShippingNetwork.__init__"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.__init__()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.ShippingNetwork.get_distance"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_distance()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.ShippingNetwork.get_journey_location"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_journey_location()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.ShippingNetwork.get_port"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_port()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.ShippingNetwork.get_port_or_default"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_port_or_default()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.ShippingNetwork.get_vessel_location"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_vessel_location()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#mable.simulation_space.UnitShippingNetwork"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.UnitShippingNetwork.__init__"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.__init__()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.UnitShippingNetwork.get_distance"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.get_distance()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mable.simulation_space.UnitShippingNetwork.get_journey_location"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.get_journey_location()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mable.simulation_space">mable.simulation_space module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mable.transport_operation">mable.transport_operation module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#mable.transport_operation.Bid"><code class="docutils literal notranslate"><span class="pre">Bid</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#mable.transport_operation.Bid.__init__"><code class="docutils literal notranslate"><span class="pre">Bid.__init__()</span></code></a></li>
@@ -707,6 +682,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#mable.util.JsonAbleEncoder.default"><code class="docutils literal notranslate"><span class="pre">JsonAbleEncoder.default()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="#mable.util.format_time"><code class="docutils literal notranslate"><span class="pre">format_time()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mable">Module contents</a></li>
@@ -782,6 +758,13 @@
 <li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters.get_journey_location"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_journey_location()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters.get_network_distance"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_network_distance()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.CompanyHeadquarters.get_network_port_or_default"><code class="docutils literal notranslate"><span class="pre">CompanyHeadquarters.get_network_port_or_default()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mable.competition.html#mable.competition.information.MarketAuthority"><code class="docutils literal notranslate"><span class="pre">MarketAuthority</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.MarketAuthority.__init__"><code class="docutils literal notranslate"><span class="pre">MarketAuthority.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.MarketAuthority.add_allocation_results"><code class="docutils literal notranslate"><span class="pre">MarketAuthority.add_allocation_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.MarketAuthority.contracts_per_company"><code class="docutils literal notranslate"><span class="pre">MarketAuthority.contracts_per_company</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.competition.html#mable.competition.information.MarketAuthority.trade_fulfilled"><code class="docutils literal notranslate"><span class="pre">MarketAuthority.trade_fulfilled()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1306,6 +1289,26 @@ Default list is <a class="reference internal" href="#mable.engine.SimulationEngi
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.engine.SimulationEngine.add_new_schedules">
+<span class="sig-name descname"><span class="pre">add_new_schedules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">company</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedules</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.SimulationEngine.add_new_schedules" title="Link to this definition"></a></dt>
+<dd><p>Adds new vessel schedules to be applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.engine.SimulationEngine.add_new_schedules.params.company"></span><strong>company</strong><a class="paramlink headerlink reference internal" href="#mable.engine.SimulationEngine.add_new_schedules.params.company">¶</a> (<a class="reference internal" href="#mable.transport_operation.ShippingCompany" title="mable.transport_operation.ShippingCompany"><em>ShippingCompany</em></a>) – The company which owns the vessels.</p></li>
+<li><p><span class="target" id="mable.engine.SimulationEngine.add_new_schedules.params.schedules"></span><strong>schedules</strong><a class="paramlink headerlink reference internal" href="#mable.engine.SimulationEngine.add_new_schedules.params.schedules">¶</a> (<em>Dict</em><em>[</em><a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a><em>, </em><a class="reference internal" href="#mable.transportation_scheduling.Schedule" title="mable.transportation_scheduling.Schedule"><em>Schedule</em></a><em>]</em>) – The schedules.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.engine.SimulationEngine.apply_new_schedules">
+<span class="sig-name descname"><span class="pre">apply_new_schedules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.SimulationEngine.apply_new_schedules" title="Link to this definition"></a></dt>
+<dd><p>Applies any new existing schedules to the vessels.</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="mable.engine.SimulationEngine.class_factory">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">class_factory</span></span><a class="headerlink" href="#mable.engine.SimulationEngine.class_factory" title="Link to this definition"></a></dt>
@@ -1326,6 +1329,20 @@ The class generation object (the class factory).</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#mable.event_management.EventQueue" title="mable.event_management.EventQueue">EventQueue</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.engine.SimulationEngine.find_company_for_vessel">
+<span class="sig-name descname"><span class="pre">find_company_for_vessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.engine.SimulationEngine.find_company_for_vessel" title="Link to this definition"></a></dt>
+<dd><p>Find the company the vessel belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.engine.SimulationEngine.find_company_for_vessel.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.engine.SimulationEngine.find_company_for_vessel.params.vessel">¶</a> (<a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a>) – The vessel.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The company</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1358,6 +1375,11 @@ The cargo distribution object (the cargo market).</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mable.engine.SimulationEngine.market_authority">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">market_authority</span></span><a class="headerlink" href="#mable.engine.SimulationEngine.market_authority" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.engine.SimulationEngine.notify_event_observer">
@@ -1678,22 +1700,6 @@ occurrence, i.e. <a class="reference internal" href="#mable.event_management.Ves
 </div></blockquote>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.event_management.Event.format_time">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">format_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.Event.format_time" title="Link to this definition"></a></dt>
-<dd><p>Formats a decimal time assumed to be hours in to a string of roughly days and hours.
-After days are determined the remaining hours are round to one decimal place.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.event_management.Event.format_time.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.Event.format_time.params.time">¶</a> (<em>float</em>) – Time in hours.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>str
-‘~&lt;days&gt; day(s) &lt;hours&gt; hour(s)’</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="mable.event_management.Event.time">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#mable.event_management.Event.time" title="Link to this definition"></a></dt>
@@ -1770,18 +1776,13 @@ After days are determined the remaining hours are round to one decimal place.</p
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.event_management.EventObserver.notify">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.EventObserver.notify" title="Link to this definition"></a></dt>
-<dd><p>Notify this observer of an event.
-:param _sphinx_paramlinks_mable.event_management.EventObserver.notify.engine: Engine</p>
-<blockquote>
-<div><p>Simulation engine.</p>
-</div></blockquote>
+<dd><p>Notify this observer of an event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.event_management.EventObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventObserver.notify.params.event">¶</a> – Event
-Some event.</p></li>
-<li><p><span class="target" id="mable.event_management.EventObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventObserver.notify.params.data">¶</a> – EventExecutionData
-Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
+<li><p><span class="target" id="mable.event_management.EventObserver.notify.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventObserver.notify.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – Simulation engine.</p></li>
+<li><p><span class="target" id="mable.event_management.EventObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventObserver.notify.params.event">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a>) – Some event.</p></li>
+<li><p><span class="target" id="mable.event_management.EventObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.EventObserver.notify.params.data">¶</a> (<a class="reference internal" href="#mable.event_management.EventExecutionData" title="mable.event_management.EventExecutionData"><em>EventExecutionData</em></a>) – Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1792,7 +1793,7 @@ Additional data in conjunction with the event. E.g. data that was produced or ch
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.event_management.EventQueue">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.event_management.</span></span><span class="sig-name descname"><span class="pre">EventQueue</span></span><a class="headerlink" href="#mable.event_management.EventQueue" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mable.simulation_environment.SimulationEngineAware" title="mable.simulation_environment.SimulationEngineAware"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngineAware</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PriorityQueue</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#mable.simulation_environment.SimulationEngineAware" title="mable.simulation_environment.SimulationEngineAware"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngineAware</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PriorityQueue</span></code>[<a class="reference internal" href="#mable.event_management.EventItem" title="mable.event_management.EventItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventItem</span></code></a>]</p>
 <p>Priority Queue for events.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.event_management.EventQueue.__init__">
@@ -2604,18 +2605,13 @@ The tuple of the company id and the vessel id (in this order).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.observers.AuctionMetricsObserver.notify">
 <span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.AuctionMetricsObserver.notify" title="Link to this definition"></a></dt>
-<dd><p>Notify this observer of an event.
-:param _sphinx_paramlinks_mable.observers.AuctionMetricsObserver.notify.engine: Engine</p>
-<blockquote>
-<div><p>Simulation engine.</p>
-</div></blockquote>
+<dd><p>Notify this observer of an event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.observers.AuctionMetricsObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionMetricsObserver.notify.params.event">¶</a> – Event
-Some event.</p></li>
-<li><p><span class="target" id="mable.observers.AuctionMetricsObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionMetricsObserver.notify.params.data">¶</a> – EventExecutionData
-Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
+<li><p><span class="target" id="mable.observers.AuctionMetricsObserver.notify.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionMetricsObserver.notify.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – Simulation engine.</p></li>
+<li><p><span class="target" id="mable.observers.AuctionMetricsObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionMetricsObserver.notify.params.event">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a>) – Some event.</p></li>
+<li><p><span class="target" id="mable.observers.AuctionMetricsObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionMetricsObserver.notify.params.data">¶</a> (<a class="reference internal" href="#mable.event_management.EventExecutionData" title="mable.event_management.EventExecutionData"><em>EventExecutionData</em></a>) – Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2625,30 +2621,47 @@ Additional data in conjunction with the event. E.g. data that was produced or ch
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.observers.AuctionOutcomeObserver">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.observers.</span></span><span class="sig-name descname"><span class="pre">AuctionOutcomeObserver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.AuctionOutcomeObserver" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.observers.</span></span><span class="sig-name descname"><span class="pre">AuctionOutcomeObserver</span></span><a class="headerlink" href="#mable.observers.AuctionOutcomeObserver" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.event_management.EventObserver" title="mable.event_management.EventObserver"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventObserver</span></code></a></p>
+<p>An observer that logs allocated trades.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.observers.AuctionOutcomeObserver.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.AuctionOutcomeObserver.notify" title="Link to this definition"></a></dt>
+<dd><p>Notify this observer of an event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.observers.AuctionOutcomeObserver.notify.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionOutcomeObserver.notify.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – Simulation engine.</p></li>
+<li><p><span class="target" id="mable.observers.AuctionOutcomeObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionOutcomeObserver.notify.params.event">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a>) – Some event.</p></li>
+<li><p><span class="target" id="mable.observers.AuctionOutcomeObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionOutcomeObserver.notify.params.data">¶</a> (<a class="reference internal" href="#mable.event_management.EventExecutionData" title="mable.event_management.EventExecutionData"><em>EventExecutionData</em></a>) – Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.observers.AuctionOutcomePrintObserver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.observers.</span></span><span class="sig-name descname"><span class="pre">AuctionOutcomePrintObserver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.AuctionOutcomePrintObserver" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.event_management.EventObserver" title="mable.event_management.EventObserver"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventObserver</span></code></a></p>
 <p>A logger that prints detailed information about the auction outcomes for
 <a class="reference internal" href="mable.competition.html#mable.competition.generation.AuctionCargoEvent" title="mable.competition.generation.AuctionCargoEvent"><code class="xref py py-func docutils literal notranslate"><span class="pre">mable.competition.generation.AuctionCargoEvent()</span></code></a>.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="mable.observers.AuctionOutcomeObserver.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.AuctionOutcomeObserver.__init__" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="mable.observers.AuctionOutcomePrintObserver.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.AuctionOutcomePrintObserver.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="mable.observers.AuctionOutcomeObserver.notify">
-<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.AuctionOutcomeObserver.notify" title="Link to this definition"></a></dt>
-<dd><p>Notify this observer of an event.
-:param _sphinx_paramlinks_mable.observers.AuctionOutcomeObserver.notify.engine: Engine</p>
-<blockquote>
-<div><p>Simulation engine.</p>
-</div></blockquote>
+<dt class="sig sig-object py" id="mable.observers.AuctionOutcomePrintObserver.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.AuctionOutcomePrintObserver.notify" title="Link to this definition"></a></dt>
+<dd><p>Notify this observer of an event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.observers.AuctionOutcomeObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionOutcomeObserver.notify.params.event">¶</a> – Event
-Some event.</p></li>
-<li><p><span class="target" id="mable.observers.AuctionOutcomeObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionOutcomeObserver.notify.params.data">¶</a> – EventExecutionData
-Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
+<li><p><span class="target" id="mable.observers.AuctionOutcomePrintObserver.notify.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionOutcomePrintObserver.notify.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – Simulation engine.</p></li>
+<li><p><span class="target" id="mable.observers.AuctionOutcomePrintObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionOutcomePrintObserver.notify.params.event">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a>) – Some event.</p></li>
+<li><p><span class="target" id="mable.observers.AuctionOutcomePrintObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.AuctionOutcomePrintObserver.notify.params.data">¶</a> (<a class="reference internal" href="#mable.event_management.EventExecutionData" title="mable.event_management.EventExecutionData"><em>EventExecutionData</em></a>) – Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2668,18 +2681,13 @@ Additional data in conjunction with the event. E.g. data that was produced or ch
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.observers.EventFuelPrintObserver.notify">
 <span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.EventFuelPrintObserver.notify" title="Link to this definition"></a></dt>
-<dd><p>Notify this observer of an event.
-:param _sphinx_paramlinks_mable.observers.EventFuelPrintObserver.notify.engine: Engine</p>
-<blockquote>
-<div><p>Simulation engine.</p>
-</div></blockquote>
+<dd><p>Notify this observer of an event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.observers.EventFuelPrintObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.EventFuelPrintObserver.notify.params.event">¶</a> – Event
-Some event.</p></li>
-<li><p><span class="target" id="mable.observers.EventFuelPrintObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.EventFuelPrintObserver.notify.params.data">¶</a> – EventExecutionData
-Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
+<li><p><span class="target" id="mable.observers.EventFuelPrintObserver.notify.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.observers.EventFuelPrintObserver.notify.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – Simulation engine.</p></li>
+<li><p><span class="target" id="mable.observers.EventFuelPrintObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.EventFuelPrintObserver.notify.params.event">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a>) – Some event.</p></li>
+<li><p><span class="target" id="mable.observers.EventFuelPrintObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.EventFuelPrintObserver.notify.params.data">¶</a> (<a class="reference internal" href="#mable.event_management.EventExecutionData" title="mable.event_management.EventExecutionData"><em>EventExecutionData</em></a>) – Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2725,18 +2733,35 @@ Additional data in conjunction with the event. E.g. data that was produced or ch
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.observers.MetricsObserver.notify">
 <span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.MetricsObserver.notify" title="Link to this definition"></a></dt>
-<dd><p>Notify this observer of an event.
-:param _sphinx_paramlinks_mable.observers.MetricsObserver.notify.engine: Engine</p>
-<blockquote>
-<div><p>Simulation engine.</p>
-</div></blockquote>
+<dd><p>Notify this observer of an event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.observers.MetricsObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.MetricsObserver.notify.params.event">¶</a> – Event
-Some event.</p></li>
-<li><p><span class="target" id="mable.observers.MetricsObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.MetricsObserver.notify.params.data">¶</a> – EventExecutionData
-Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
+<li><p><span class="target" id="mable.observers.MetricsObserver.notify.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.observers.MetricsObserver.notify.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – Simulation engine.</p></li>
+<li><p><span class="target" id="mable.observers.MetricsObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.MetricsObserver.notify.params.event">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a>) – Some event.</p></li>
+<li><p><span class="target" id="mable.observers.MetricsObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.MetricsObserver.notify.params.data">¶</a> (<a class="reference internal" href="#mable.event_management.EventExecutionData" title="mable.event_management.EventExecutionData"><em>EventExecutionData</em></a>) – Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.observers.TradeDeliveryObserver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.observers.</span></span><span class="sig-name descname"><span class="pre">TradeDeliveryObserver</span></span><a class="headerlink" href="#mable.observers.TradeDeliveryObserver" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mable.event_management.EventObserver" title="mable.event_management.EventObserver"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventObserver</span></code></a></p>
+<p>An observer that logs completed trades.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.observers.TradeDeliveryObserver.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.observers.TradeDeliveryObserver.notify" title="Link to this definition"></a></dt>
+<dd><p>Notify this observer of an event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.observers.TradeDeliveryObserver.notify.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.observers.TradeDeliveryObserver.notify.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – Simulation engine.</p></li>
+<li><p><span class="target" id="mable.observers.TradeDeliveryObserver.notify.params.event"></span><strong>event</strong><a class="paramlink headerlink reference internal" href="#mable.observers.TradeDeliveryObserver.notify.params.event">¶</a> (<a class="reference internal" href="#mable.event_management.Event" title="mable.event_management.Event"><em>Event</em></a>) – Some event.</p></li>
+<li><p><span class="target" id="mable.observers.TradeDeliveryObserver.notify.params.data"></span><strong>data</strong><a class="paramlink headerlink reference internal" href="#mable.observers.TradeDeliveryObserver.notify.params.data">¶</a> (<a class="reference internal" href="#mable.event_management.EventExecutionData" title="mable.event_management.EventExecutionData"><em>EventExecutionData</em></a>) – Additional data in conjunction with the event. E.g. data that was produced or changes that were made.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2748,6 +2773,28 @@ Additional data in conjunction with the event. E.g. data that was produced or ch
 <section id="module-mable.shipping_market">
 <span id="mable-shipping-market-module"></span><h2>mable.shipping_market module<a class="headerlink" href="#module-mable.shipping_market" title="Link to this heading"></a></h2>
 <p>All cargo generation and distribution related classes.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mable.shipping_market.AuctionAllocationResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">AuctionAllocationResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ledger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.AuctionLedger" title="mable.shipping_market.AuctionLedger"><span class="pre">AuctionLedger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unallocated_trades</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><span class="pre">Trade</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.AuctionAllocationResult" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.shipping_market.AuctionAllocationResult.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ledger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.AuctionLedger" title="mable.shipping_market.AuctionLedger"><span class="pre">AuctionLedger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unallocated_trades</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><span class="pre">Trade</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.shipping_market.AuctionAllocationResult.__init__" title="Link to this definition"></a></dt>
+<dd><p>Method generated by attrs for class AuctionAllocationResult.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.shipping_market.AuctionAllocationResult.ledger">
+<span class="sig-name descname"><span class="pre">ledger</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#mable.shipping_market.AuctionLedger" title="mable.shipping_market.AuctionLedger"><span class="pre">AuctionLedger</span></a></em><a class="headerlink" href="#mable.shipping_market.AuctionAllocationResult.ledger" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.shipping_market.AuctionAllocationResult.unallocated_trades">
+<span class="sig-name descname"><span class="pre">unallocated_trades</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><span class="pre">Trade</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#mable.shipping_market.AuctionAllocationResult.unallocated_trades" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.shipping_market.AuctionLedger">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">AuctionLedger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shipping_companies</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.AuctionLedger" title="Link to this definition"></a></dt>
@@ -2855,7 +2902,7 @@ are also returned.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.shipping_market.Contract">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">Contract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><span class="pre">Trade</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.Contract" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">Contract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><span class="pre">Trade</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fulfilled</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.Contract" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.util.JsonAble" title="mable.util.JsonAble"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonAble</span></code></a></p>
 <p>A cargo transportation contract.
 :param _sphinx_paramlinks_mable.shipping_market.Contract.payment: The amount which is paid for the transportation.
@@ -2864,13 +2911,18 @@ are also returned.</p>
 :type _sphinx_paramlinks_mable.shipping_market.Contract.trade: Trade</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.shipping_market.Contract.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><span class="pre">Trade</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.shipping_market.Contract.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><span class="pre">Trade</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fulfilled</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.shipping_market.Contract.__init__" title="Link to this definition"></a></dt>
 <dd><p>Method generated by attrs for class Contract.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.shipping_market.Contract.copy">
 <span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.Contract.copy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mable.shipping_market.Contract.fulfilled">
+<span class="sig-name descname"><span class="pre">fulfilled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#mable.shipping_market.Contract.fulfilled" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -3049,7 +3101,7 @@ The list of shipping companies.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.shipping_market.TimeWindowTrade">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">TimeWindowTrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.TradeStatus" title="mable.shipping_market.TradeStatus"><span class="pre">TradeStatus</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TradeStatus.UNKNOWN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[None,</span> <span class="pre">None,</span> <span class="pre">None,</span> <span class="pre">None]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.TimeWindowTrade" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">TimeWindowTrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.TradeStatus" title="mable.shipping_market.TradeStatus"><span class="pre">TradeStatus</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TradeStatus.UNKNOWN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[None,</span> <span class="pre">None,</span> <span class="pre">None,</span> <span class="pre">None]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.TimeWindowTrade" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trade</span></code></a></p>
 <p>A trade with time windows.</p>
 <p>The time windows are represented by four values.
@@ -3066,7 +3118,7 @@ Flexibility or no restrictions are indicated by None.</p>
 <p>For additional parameters see <a class="reference internal" href="#mable.shipping_market.Trade" title="mable.shipping_market.Trade"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trade</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.shipping_market.TimeWindowTrade.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.TradeStatus" title="mable.shipping_market.TradeStatus"><span class="pre">TradeStatus</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TradeStatus.UNKNOWN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[None,</span> <span class="pre">None,</span> <span class="pre">None,</span> <span class="pre">None]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.shipping_market.TimeWindowTrade.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.TradeStatus" title="mable.shipping_market.TradeStatus"><span class="pre">TradeStatus</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TradeStatus.UNKNOWN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[None,</span> <span class="pre">None,</span> <span class="pre">None,</span> <span class="pre">None]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.shipping_market.TimeWindowTrade.__init__" title="Link to this definition"></a></dt>
 <dd><p>Method generated by attrs for class TimeWindowTrade.</p>
 </dd></dl>
 
@@ -3193,14 +3245,14 @@ Flexibility or no restrictions are indicated by None.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.shipping_market.Trade">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">Trade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.TradeStatus" title="mable.shipping_market.TradeStatus"><span class="pre">TradeStatus</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TradeStatus.UNKNOWN</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.Trade" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.shipping_market.</span></span><span class="sig-name descname"><span class="pre">Trade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.TradeStatus" title="mable.shipping_market.TradeStatus"><span class="pre">TradeStatus</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TradeStatus.UNKNOWN</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.shipping_market.Trade" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.util.JsonAble" title="mable.util.JsonAble"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonAble</span></code></a></p>
 <p>A trade opportunity specifying a cargo that shall be transported.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.shipping_market.Trade.params.origin_port"></span><strong>origin_port</strong><a class="paramlink headerlink reference internal" href="#mable.shipping_market.Trade.params.origin_port">¶</a> (<em>Union</em><em>[</em><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><em>Port</em></a><em>, </em><em>str</em><em>]</em>) – The origin of the trade where the cargo has to be picked up.</p></li>
-<li><p><span class="target" id="mable.shipping_market.Trade.params.destination_port"></span><strong>destination_port</strong><a class="paramlink headerlink reference internal" href="#mable.shipping_market.Trade.params.destination_port">¶</a> (<em>Union</em><em>[</em><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><em>Port</em></a><em>, </em><em>str</em><em>]</em>) – The destination of the trade where the cargo has to be dropped off.</p></li>
+<li><p><span class="target" id="mable.shipping_market.Trade.params.origin_port"></span><strong>origin_port</strong><a class="paramlink headerlink reference internal" href="#mable.shipping_market.Trade.params.origin_port">¶</a> (<em>Union</em><em>[</em><em>Port</em><em>, </em><em>str</em><em>]</em>) – The origin of the trade where the cargo has to be picked up.</p></li>
+<li><p><span class="target" id="mable.shipping_market.Trade.params.destination_port"></span><strong>destination_port</strong><a class="paramlink headerlink reference internal" href="#mable.shipping_market.Trade.params.destination_port">¶</a> (<em>Union</em><em>[</em><em>Port</em><em>, </em><em>str</em><em>]</em>) – The destination of the trade where the cargo has to be dropped off.</p></li>
 <li><p><span class="target" id="mable.shipping_market.Trade.params.amount"></span><strong>amount</strong><a class="paramlink headerlink reference internal" href="#mable.shipping_market.Trade.params.amount">¶</a> (<em>float</em>) – The amount of cargo to be transported.</p></li>
 <li><p><span class="target" id="mable.shipping_market.Trade.params.cargo_type"></span><strong>cargo_type</strong><a class="paramlink headerlink reference internal" href="#mable.shipping_market.Trade.params.cargo_type">¶</a> (<em>Hashable</em>) – The type of cargo.</p></li>
 <li><p><span class="target" id="mable.shipping_market.Trade.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.shipping_market.Trade.params.time">¶</a> (<em>int</em>) – The time that trade becomes available for allocation or a market etc.</p></li>
@@ -3209,7 +3261,7 @@ Flexibility or no restrictions are indicated by None.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.shipping_market.Trade.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.TradeStatus" title="mable.shipping_market.TradeStatus"><span class="pre">TradeStatus</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TradeStatus.UNKNOWN</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.shipping_market.Trade.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.shipping_market.TradeStatus" title="mable.shipping_market.TradeStatus"><span class="pre">TradeStatus</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TradeStatus.UNKNOWN</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.shipping_market.Trade.__init__" title="Link to this definition"></a></dt>
 <dd><p>Method generated by attrs for class Trade.</p>
 </dd></dl>
 
@@ -3225,12 +3277,12 @@ Flexibility or no restrictions are indicated by None.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mable.shipping_market.Trade.destination_port">
-<span class="sig-name descname"><span class="pre">destination_port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mable.shipping_market.Trade.destination_port" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">destination_port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mable.shipping_market.Trade.destination_port" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mable.shipping_market.Trade.origin_port">
-<span class="sig-name descname"><span class="pre">origin_port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mable.shipping_market.Trade.origin_port" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">origin_port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Port</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mable.shipping_market.Trade.origin_port" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -3434,7 +3486,7 @@ Also keeps track of the current time.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.simulation_environment.World.params.network"></span><strong>network</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_environment.World.params.network">¶</a> (<a class="reference internal" href="#mable.simulation_space.ShippingNetwork" title="mable.simulation_space.ShippingNetwork"><em>ShippingNetwork</em></a>) – The space/network of operation.</p></li>
+<li><p><span class="target" id="mable.simulation_environment.World.params.network"></span><strong>network</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_environment.World.params.network">¶</a> (<em>ShippingNetwork</em>) – The space/network of operation.</p></li>
 <li><p><span class="target" id="mable.simulation_environment.World.params.event_queue"></span><strong>event_queue</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_environment.World.params.event_queue">¶</a> (<a class="reference internal" href="#mable.event_management.EventQueue" title="mable.event_management.EventQueue"><em>EventQueue</em></a>) – The event queue.</p></li>
 <li><p><span class="target" id="mable.simulation_environment.World.params.random"></span><strong>random</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_environment.World.params.random">¶</a> – A random to use wherever randomness is needed.</p></li>
 </ul>
@@ -3500,7 +3552,7 @@ event occurrence.</p>
 <dd class="field-odd"><p>The space/network of operation.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#mable.simulation_space.ShippingNetwork" title="mable.simulation_space.ShippingNetwork">ShippingNetwork</a></p>
+<dd class="field-even"><p>ShippingNetwork</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3734,7 +3786,7 @@ Default: py:class:<cite>maritime_simulator.event_management.VesselLocationInform
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.simulation_generation.ClassFactory.generate_location">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_generation.ClassFactory.generate_location" title="Link to this definition"></a></dt>
-<dd><p>Generates a location. Default: py:class:<cite>maritime_simulator.simulation_space.Location</cite>.
+<dd><p>Generates a location. Default: py:class:<cite>mable.simulation_space.universe.Location</cite>.
 :param _sphinx_paramlinks_mable.simulation_generation.ClassFactory.generate_location.args:</p>
 <blockquote>
 <div><p>Positional args.</p>
@@ -3770,14 +3822,13 @@ Default: py:class:<cite>maritime_simulator.event_management.VesselLocationInform
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.simulation_generation.ClassFactory.generate_network">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_generation.ClassFactory.generate_network" title="Link to this definition"></a></dt>
-<dd><p>Generates a network (space). Default: py:class:<cite>maritime_simulator.simulation_space.UnitShippingNetwork</cite>.
-:param _sphinx_paramlinks_mable.simulation_generation.ClassFactory.generate_network.args:</p>
-<blockquote>
-<div><p>Positional args.</p>
-</div></blockquote>
+<dd><p>Generates a network (space). Default: py:class:<cite>mable.simulation_space.structure.UnitShippingNetwork</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.simulation_generation.ClassFactory.generate_network.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_generation.ClassFactory.generate_network.params.kwargs">¶</a> – Keyword args.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="mable.simulation_generation.ClassFactory.generate_network.params.args"></span><strong>args</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_generation.ClassFactory.generate_network.params.args">¶</a> – Positional args.</p></li>
+<li><p><span class="target" id="mable.simulation_generation.ClassFactory.generate_network.params.kwargs"></span><strong>kwargs</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_generation.ClassFactory.generate_network.params.kwargs">¶</a> – Keyword args.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The network.</p>
@@ -3788,7 +3839,7 @@ Default: py:class:<cite>maritime_simulator.event_management.VesselLocationInform
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.simulation_generation.ClassFactory.generate_port">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_generation.ClassFactory.generate_port" title="Link to this definition"></a></dt>
-<dd><p>Generates a port. Default: py:class:<cite>maritime_simulator.simulation_space.Port</cite>.
+<dd><p>Generates a port. Default: py:class:<cite>mable.simulation_space.universe.Port</cite>.
 :param _sphinx_paramlinks_mable.simulation_generation.ClassFactory.generate_port.args:</p>
 <blockquote>
 <div><p>Positional args.</p>
@@ -4131,335 +4182,6 @@ instructions from <a class="reference internal" href="#mable.simulation_generati
 </section>
 <section id="module-mable.simulation_space">
 <span id="mable-simulation-space-module"></span><h2>mable.simulation_space module<a class="headerlink" href="#module-mable.simulation_space" title="Link to this heading"></a></h2>
-<p>The space where the simulation and operation takes place including the seas and the ports.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="mable.simulation_space.Location">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.</span></span><span class="sig-name descname"><span class="pre">Location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.Location" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A location in the operational space.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.Location.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.Location.__init__" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.simulation_space.Location.params.x"></span><strong>x</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.Location.params.x">¶</a> (<em>float</em>) – The x coordinate of the location.</p></li>
-<li><p><span class="target" id="mable.simulation_space.Location.params.y"></span><strong>y</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.Location.params.y">¶</a> (<em>float</em>) – The y coordinate of the location.</p></li>
-<li><p><span class="target" id="mable.simulation_space.Location.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.Location.params.name">¶</a> (<em>str</em>) – An optional name of the location.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="mable.simulation_space.Location.name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mable.simulation_space.Location.name" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="mable.simulation_space.Location.x">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#mable.simulation_space.Location.x" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="mable.simulation_space.Location.y">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#mable.simulation_space.Location.y" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mable.simulation_space.NetworkWithPortDict">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.</span></span><span class="sig-name descname"><span class="pre">NetworkWithPortDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.NetworkWithPortDict" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mable.simulation_space.ShippingNetwork" title="mable.simulation_space.ShippingNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShippingNetwork</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
-<p>A space of operation that stores the ports in form of a dictionary.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.NetworkWithPortDict.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.NetworkWithPortDict.__init__" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.NetworkWithPortDict.get_port">
-<span class="sig-name descname"><span class="pre">get_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.NetworkWithPortDict.get_port" title="Link to this definition"></a></dt>
-<dd><p>Returns the port with the name.
-:param _sphinx_paramlinks_mable.simulation_space.NetworkWithPortDict.get_port.name:
-:return:</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.NetworkWithPortDict.get_port_or_default">
-<span class="sig-name descname"><span class="pre">get_port_or_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.NetworkWithPortDict.get_port_or_default" title="Link to this definition"></a></dt>
-<dd><p>Returns a port by name or the default value in case no port with the specified name exists.
-:param _sphinx_paramlinks_mable.simulation_space.NetworkWithPortDict.get_port_or_default.name: str</p>
-<blockquote>
-<div><p>The name of the port.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.simulation_space.NetworkWithPortDict.get_port_or_default.params.default"></span><strong>default</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.NetworkWithPortDict.get_port_or_default.params.default">¶</a> – Any
-The default value to return. By default, this is None.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>default
-Whatever is passed to default or None if nothing is specified.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="mable.simulation_space.NetworkWithPortDict.ports">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ports</span></span><a class="headerlink" href="#mable.simulation_space.NetworkWithPortDict.ports" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mable.simulation_space.OnJourney">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.</span></span><span class="sig-name descname"><span class="pre">OnJourney</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.OnJourney" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>An indicator that a vessel is in transit, i.e. performing a journey.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.simulation_space.OnJourney.params.origin"></span><strong>origin</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.OnJourney.params.origin">¶</a> (<a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><em>Location</em></a>) – The start location of the journey.</p></li>
-<li><p><span class="target" id="mable.simulation_space.OnJourney.params.destination"></span><strong>destination</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.OnJourney.params.destination">¶</a> (<a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><em>Location</em></a>) – The end location of the journey.</p></li>
-<li><p><span class="target" id="mable.simulation_space.OnJourney.params.start_time"></span><strong>start_time</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.OnJourney.params.start_time">¶</a> (<em>float</em>) – The time at which the journey started, i.e. the time the vessel left origin.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.OnJourney.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.simulation_space.OnJourney.__init__" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mable.simulation_space.OnJourney.destination">
-<span class="sig-name descname"><span class="pre">destination</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></em><a class="headerlink" href="#mable.simulation_space.OnJourney.destination" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mable.simulation_space.OnJourney.origin">
-<span class="sig-name descname"><span class="pre">origin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></em><a class="headerlink" href="#mable.simulation_space.OnJourney.origin" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mable.simulation_space.OnJourney.start_time">
-<span class="sig-name descname"><span class="pre">start_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#mable.simulation_space.OnJourney.start_time" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mable.simulation_space.Port">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.</span></span><span class="sig-name descname"><span class="pre">Port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.Port" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a>, <a class="reference internal" href="#mable.util.JsonAble" title="mable.util.JsonAble"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsonAble</span></code></a></p>
-<p>A port, i.e. a location in the operational space at which cargo gets exchanged.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.Port.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.Port.__init__" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.simulation_space.Port.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.Port.params.name">¶</a> (<em>str</em>) – The name of the port.</p></li>
-<li><p><span class="target" id="mable.simulation_space.Port.params.x"></span><strong>x</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.Port.params.x">¶</a> (<em>float</em>) – The x coordinate of the port.</p></li>
-<li><p><span class="target" id="mable.simulation_space.Port.params.y"></span><strong>y</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.Port.params.y">¶</a> (<em>float</em>) – The y coordinate of the port.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.Port.to_json">
-<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.Port.to_json" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Any
-A json encodable object.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mable.simulation_space.ShippingNetwork">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.</span></span><span class="sig-name descname"><span class="pre">ShippingNetwork</span></span><a class="headerlink" href="#mable.simulation_space.ShippingNetwork" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mable.simulation_environment.SimulationEngineAware" title="mable.simulation_environment.SimulationEngineAware"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngineAware</span></code></a></p>
-<p>An abstract class for the space of operation.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.ShippingNetwork.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.ShippingNetwork.__init__" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.ShippingNetwork.get_distance">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.ShippingNetwork.get_distance" title="Link to this definition"></a></dt>
-<dd><p>Returns the distance between two locations.
-:param _sphinx_paramlinks_mable.simulation_space.ShippingNetwork.get_distance.location_one: Location</p>
-<blockquote>
-<div><p>The first location.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.simulation_space.ShippingNetwork.get_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.ShippingNetwork.get_distance.params.location_two">¶</a> – Location
-The second location.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>float
-The distance.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.ShippingNetwork.get_journey_location">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_journey_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.ShippingNetwork.get_journey_location" title="Link to this definition"></a></dt>
-<dd><p>Returns the current position of the vessel based on the journey information and the current time.
-:param _sphinx_paramlinks_mable.simulation_space.ShippingNetwork.get_journey_location.journey: Journey</p>
-<blockquote>
-<div><p>The journey object.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.simulation_space.ShippingNetwork.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.ShippingNetwork.get_journey_location.params.vessel">¶</a> – Vessel
-The vessel that is performing the journey</p></li>
-<li><p><span class="target" id="mable.simulation_space.ShippingNetwork.get_journey_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.ShippingNetwork.get_journey_location.params.current_time">¶</a> – float
-The current time.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Location
-The current location the vessel is in.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.ShippingNetwork.get_port">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.ShippingNetwork.get_port" title="Link to this definition"></a></dt>
-<dd><p>Returns a port by name.
-:param _sphinx_paramlinks_mable.simulation_space.ShippingNetwork.get_port.name: str</p>
-<blockquote>
-<div><p>The name of the port.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Port
-The port by the name.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.ShippingNetwork.get_port_or_default">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_port_or_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.ShippingNetwork.get_port_or_default" title="Link to this definition"></a></dt>
-<dd><p>Returns a port by name or the default value in case no port with the specified name exists.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.simulation_space.ShippingNetwork.get_port_or_default.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.ShippingNetwork.get_port_or_default.params.name">¶</a> (<em>str</em>) – The name of the port.</p></li>
-<li><p><span class="target" id="mable.simulation_space.ShippingNetwork.get_port_or_default.params.default"></span><strong>default</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.ShippingNetwork.get_port_or_default.params.default">¶</a> (<em>Any</em>) – The default value to return. By default, this is None.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Either the port or whatever is passed to default (None by default).</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[<a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port">Port</a>, None]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.ShippingNetwork.get_vessel_location">
-<span class="sig-name descname"><span class="pre">get_vessel_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.ShippingNetwork.get_vessel_location" title="Link to this definition"></a></dt>
-<dd><p>Returns the location of the vessel assuming the vessel is either in a port or on a journey.
-If the vessel is on a journey the current time is used to determine the vessel’s location on the
-journey.</p>
-<p>The method is robust to the vessel having a location by name or Location, i.e. if the vessel’s location
-is a port name the port will be determined by the name.
-:param _sphinx_paramlinks_mable.simulation_space.ShippingNetwork.get_vessel_location.vessel: Vessel</p>
-<blockquote>
-<div><p>The vessel.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.simulation_space.ShippingNetwork.get_vessel_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.ShippingNetwork.get_vessel_location.params.current_time">¶</a> – float
-The current time.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Location
-The current location of the vessel.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mable.simulation_space.UnitShippingNetwork">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.simulation_space.</span></span><span class="sig-name descname"><span class="pre">UnitShippingNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.UnitShippingNetwork" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mable.simulation_space.NetworkWithPortDict" title="mable.simulation_space.NetworkWithPortDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></a></p>
-<p>A space of operation in the [0,1]^2 Euclidian space.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.UnitShippingNetwork.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.UnitShippingNetwork.__init__" title="Link to this definition"></a></dt>
-<dd><p>Constructor.
-:param _sphinx_paramlinks_mable.simulation_space.UnitShippingNetwork.ports: dict | list</p>
-<blockquote>
-<div><p>The collection of ports.</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.UnitShippingNetwork.get_distance">
-<span class="sig-name descname"><span class="pre">get_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.UnitShippingNetwork.get_distance" title="Link to this definition"></a></dt>
-<dd><p>Returns the Euclidean distance between two locations.
-:param _sphinx_paramlinks_mable.simulation_space.UnitShippingNetwork.get_distance.location_one: Location</p>
-<blockquote>
-<div><p>The first location.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="mable.simulation_space.UnitShippingNetwork.get_distance.params.location_two"></span><strong>location_two</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.UnitShippingNetwork.get_distance.params.location_two">¶</a> – Location
-The second location.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>float
-The Euclidean distance. If the location are outside of [0,1]^2 float(‘inf’) is returned.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mable.simulation_space.UnitShippingNetwork.get_journey_location">
-<span class="sig-name descname"><span class="pre">get_journey_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.simulation_space.UnitShippingNetwork.get_journey_location" title="Link to this definition"></a></dt>
-<dd><p>Returns the current position of the vessel based on the journey information and the current time.
-If the current time is before the start time the origin is returned. Similarly, if the current time is beyond
-the start time plus the travel time the destination is returned.
-:param _sphinx_paramlinks_mable.simulation_space.UnitShippingNetwork.get_journey_location.journey: Journey</p>
-<blockquote>
-<div><p>The journey object.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.simulation_space.UnitShippingNetwork.get_journey_location.params.vessel"></span><strong>vessel</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.UnitShippingNetwork.get_journey_location.params.vessel">¶</a> – Vessel
-The vessel that is performing the journey</p></li>
-<li><p><span class="target" id="mable.simulation_space.UnitShippingNetwork.get_journey_location.params.current_time"></span><strong>current_time</strong><a class="paramlink headerlink reference internal" href="#mable.simulation_space.UnitShippingNetwork.get_journey_location.params.current_time">¶</a> – float
-The current time.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Location
-The current location the vessel is in or one of the endpoints.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </section>
 <section id="module-mable.transport_operation">
 <span id="mable-transport-operation-module"></span><h2>mable.transport_operation module<a class="headerlink" href="#module-mable.transport_operation" title="Link to this heading"></a></h2>
@@ -4943,18 +4665,12 @@ A json encodable object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.SimpleCompany.apply_schedules">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apply_schedules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedules</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleCompany.apply_schedules" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">apply_schedules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedules</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleCompany.apply_schedules" title="Link to this definition"></a></dt>
 <dd><p>Applies the schedules to the vessels.</p>
 <p>If any schedule is invalid it will not be applied.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="target" id="mable.transport_operation.SimpleCompany.apply_schedules.params.schedules"></span><strong>schedules</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.SimpleCompany.apply_schedules.params.schedules">¶</a> (<em>Dict</em><em>[</em><a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><em>Vessel</em></a><em>, </em><a class="reference internal" href="#mable.transportation_scheduling.Schedule" title="mable.transportation_scheduling.Schedule"><em>Schedule</em></a><em>]</em>) – The schedules to apply indexed by the vessels.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The rejected schedules.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict[<a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel">Vessel</a>, <a class="reference internal" href="#mable.transportation_scheduling.Schedule" title="mable.transportation_scheduling.Schedule">Schedule</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5054,7 +4770,7 @@ will be created.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transport_operation.SimpleVessel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transport_operation.</span></span><span class="sig-name descname"><span class="pre">SimpleVessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleVessel" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transport_operation.</span></span><span class="sig-name descname"><span class="pre">SimpleVessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleVessel" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vessel</span></code></a></p>
 <p>A vessel with a fixed travel time.</p>
 <dl class="py class">
@@ -5087,7 +4803,7 @@ will be created.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.SimpleVessel.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleVessel.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.SimpleVessel.__init__" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -5096,6 +4812,7 @@ will be created.</p>
 <li><p><span class="target" id="mable.transport_operation.SimpleVessel.params.speed"></span><strong>speed</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.SimpleVessel.params.speed">¶</a> (<em>float</em>) – The speed of the vessel.</p></li>
 <li><p><span class="target" id="mable.transport_operation.SimpleVessel.params.keep_journey_log"></span><strong>keep_journey_log</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.SimpleVessel.params.keep_journey_log">¶</a> (<em>bool</em>) – If true the vessel keeps a log of event occurrences that affected the vessel.</p></li>
 <li><p><span class="target" id="mable.transport_operation.SimpleVessel.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.SimpleVessel.params.name">¶</a> (<em>str</em>) – The name of the vessel.</p></li>
+<li><p><span class="target" id="mable.transport_operation.SimpleVessel.params.company"></span><strong>company</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.SimpleVessel.params.company">¶</a> (<a class="reference internal" href="#mable.transport_operation.ShippingCompany" title="mable.transport_operation.ShippingCompany"><em>ShippingCompany</em></a><em>[</em><em>V</em><em>]</em>) – The company that owns the vessel.</p></li>
 </ul>
 </dd>
 </dl>
@@ -5167,7 +4884,7 @@ the loading rate of the cargo hold.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transport_operation.</span></span><span class="sig-name descname"><span class="pre">Vessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transport_operation.</span></span><span class="sig-name descname"><span class="pre">Vessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mable.simulation_environment.SimulationEngineAware" title="mable.simulation_environment.SimulationEngineAware"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationEngineAware</span></code></a></p>
 <p>A vessel to travel and transport cargo.</p>
 <dl class="py class">
@@ -5215,7 +4932,7 @@ the loading rate of the cargo hold.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transport_operation.Vessel.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capacities_and_loading_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_journey_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transport_operation.Vessel.__init__" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -5223,6 +4940,7 @@ the loading rate of the cargo hold.</p>
 <li><p><span class="target" id="mable.transport_operation.Vessel.params.location"></span><strong>location</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.Vessel.params.location">¶</a> – The location of the vessel at creation.</p></li>
 <li><p><span class="target" id="mable.transport_operation.Vessel.params.keep_journey_log"></span><strong>keep_journey_log</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.Vessel.params.keep_journey_log">¶</a> (<em>bool</em>) – If true the vessel keeps a log of event occurrences that affected the vessel.</p></li>
 <li><p><span class="target" id="mable.transport_operation.Vessel.params.name"></span><strong>name</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.Vessel.params.name">¶</a> (<em>str</em>) – The name of the vessel.</p></li>
+<li><p><span class="target" id="mable.transport_operation.Vessel.params.company"></span><strong>company</strong><a class="paramlink headerlink reference internal" href="#mable.transport_operation.Vessel.params.company">¶</a> (<a class="reference internal" href="#mable.transport_operation.ShippingCompany" title="mable.transport_operation.ShippingCompany"><em>ShippingCompany</em></a><em>[</em><em>V</em><em>]</em>) – The company that owns the vessel.</p></li>
 </ul>
 </dd>
 </dl>
@@ -5424,7 +5142,7 @@ the loading rate of the cargo hold.</p>
 <dd class="field-odd"><p>The current location.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location">Location</a> | <a class="reference internal" href="#mable.simulation_space.OnJourney" title="mable.simulation_space.OnJourney">OnJourney</a></p>
+<dd class="field-even"><p>Location | OnJourney</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5513,12 +5231,12 @@ the loading rate of the cargo hold.</p>
 <p>Shipping operation</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.CurrentState">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">CurrentState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_cargo_hold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><span class="pre">Vessel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><span class="pre">SimulationEngine</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_valid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.CurrentState" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.transportation_scheduling.</span></span><span class="sig-name descname"><span class="pre">CurrentState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_cargo_hold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><span class="pre">Vessel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><span class="pre">SimulationEngine</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_valid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.transportation_scheduling.CurrentState" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The current state of a vessel including location and cargo loading.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.CurrentState.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_cargo_hold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><span class="pre">Vessel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><span class="pre">SimulationEngine</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_valid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.transportation_scheduling.CurrentState.__init__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_cargo_hold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vessel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.transport_operation.Vessel" title="mable.transport_operation.Vessel"><span class="pre">Vessel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><span class="pre">SimulationEngine</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_valid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mable.transportation_scheduling.CurrentState.__init__" title="Link to this definition"></a></dt>
 <dd><p>Method generated by attrs for class CurrentState.</p>
 </dd></dl>
 
@@ -5529,7 +5247,7 @@ the loading rate of the cargo hold.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mable.transportation_scheduling.CurrentState.current_location">
-<span class="sig-name descname"><span class="pre">current_location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#mable.simulation_space.Location" title="mable.simulation_space.Location"><span class="pre">Location</span></a></em><a class="headerlink" href="#mable.transportation_scheduling.CurrentState.current_location" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">current_location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Location</span></em><a class="headerlink" href="#mable.transportation_scheduling.CurrentState.current_location" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -5581,7 +5299,7 @@ the loading rate of the cargo hold.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="mable.transportation_scheduling.Schedule.add_relocation.params.port"></span><strong>port</strong><a class="paramlink headerlink reference internal" href="#mable.transportation_scheduling.Schedule.add_relocation.params.port">¶</a> (<a class="reference internal" href="#mable.simulation_space.Port" title="mable.simulation_space.Port"><em>Port</em></a>) – The port to relocate to.</p></li>
+<li><p><span class="target" id="mable.transportation_scheduling.Schedule.add_relocation.params.port"></span><strong>port</strong><a class="paramlink headerlink reference internal" href="#mable.transportation_scheduling.Schedule.add_relocation.params.port">¶</a> (<em>Port</em>) – The port to relocate to.</p></li>
 <li><p><span class="target" id="mable.transportation_scheduling.Schedule.add_relocation.params.index_in_schedule"></span><strong>index_in_schedule</strong><a class="paramlink headerlink reference internal" href="#mable.transportation_scheduling.Schedule.add_relocation.params.index_in_schedule">¶</a> (<em>int</em>) – The index of the relocation in the schedule.</p></li>
 </ul>
 </dd>
@@ -5780,7 +5498,8 @@ The verification is done via simulating all loading and unloading events.</p>
 <section id="module-mable.util">
 <span id="mable-util-module"></span><h2>mable.util module<a class="headerlink" href="#module-mable.util" title="Link to this heading"></a></h2>
 <p>Util module including:
-- Json encoding</p>
+- Json encoding
+- Time formatting</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="mable.util.JsonAble">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mable.util.</span></span><span class="sig-name descname"><span class="pre">JsonAble</span></span><a class="headerlink" href="#mable.util.JsonAble" title="Link to this definition"></a></dt>
@@ -5824,6 +5543,22 @@ A json encodable object.</p>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mable.util.format_time">
+<span class="sig-prename descclassname"><span class="pre">mable.util.</span></span><span class="sig-name descname"><span class="pre">format_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.util.format_time" title="Link to this definition"></a></dt>
+<dd><p>Formats a decimal time assumed to be hours in to a string of roughly days and hours.
+After days are determined the remaining hours are round to one decimal place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.util.format_time.params.time"></span><strong>time</strong><a class="paramlink headerlink reference internal" href="#mable.util.format_time.params.time">¶</a> (<em>float</em>) – Time in hours.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>str
+‘~&lt;days&gt; day(s) &lt;hours&gt; hour(s)’</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>

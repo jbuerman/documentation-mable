@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable &mdash; MABLE 0.0.8 documentation</title>
+  <title>mable &mdash; MABLE 0.0.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=53b53b71"></script>
+      <script src="_static/documentation_options.js?v=f7cdbf68"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -159,12 +159,16 @@
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.POST_RUN_CMDS"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.POST_RUN_CMDS</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.PRE_RUN_CMDS"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.PRE_RUN_CMDS</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.__init__"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.add_new_schedules"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.add_new_schedules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.apply_new_schedules"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.apply_new_schedules()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.class_factory"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.class_factory</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.event_queue"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.event_queue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.find_company_for_vessel"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.find_company_for_vessel()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.get_event_observers"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.get_event_observers()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.global_agent_timeout"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.global_agent_timeout</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.headquarters"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.headquarters</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.market"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.market</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.market_authority"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.market_authority</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.notify_event_observer"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.notify_event_observer()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.output_directory"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.output_directory</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.engine.SimulationEngine.register_event_observer"><code class="docutils literal notranslate"><span class="pre">SimulationEngine.register_event_observer()</span></code></a></li>
@@ -211,7 +215,6 @@
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.event_management.Event.__init__"><code class="docutils literal notranslate"><span class="pre">Event.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.event_management.Event.added_to_queue"><code class="docutils literal notranslate"><span class="pre">Event.added_to_queue()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.event_management.Event.event_action"><code class="docutils literal notranslate"><span class="pre">Event.event_action()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.event_management.Event.format_time"><code class="docutils literal notranslate"><span class="pre">Event.format_time()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.event_management.Event.time"><code class="docutils literal notranslate"><span class="pre">Event.time</span></code></a></li>
 </ul>
 </li>
@@ -335,8 +338,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#mable.observers.AuctionOutcomeObserver"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomeObserver</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.observers.AuctionOutcomeObserver.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomeObserver.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.observers.AuctionOutcomeObserver.notify"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomeObserver.notify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.observers.AuctionOutcomePrintObserver"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomePrintObserver</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.observers.AuctionOutcomePrintObserver.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomePrintObserver.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.observers.AuctionOutcomePrintObserver.notify"><code class="docutils literal notranslate"><span class="pre">AuctionOutcomePrintObserver.notify()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#mable.observers.EventFuelPrintObserver"><code class="docutils literal notranslate"><span class="pre">EventFuelPrintObserver</span></code></a><ul>
@@ -356,9 +363,19 @@
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.observers.MetricsObserver.notify"><code class="docutils literal notranslate"><span class="pre">MetricsObserver.notify()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.observers.TradeDeliveryObserver"><code class="docutils literal notranslate"><span class="pre">TradeDeliveryObserver</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.observers.TradeDeliveryObserver.notify"><code class="docutils literal notranslate"><span class="pre">TradeDeliveryObserver.notify()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mable.html#module-mable.shipping_market">mable.shipping_market module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.shipping_market.AuctionAllocationResult"><code class="docutils literal notranslate"><span class="pre">AuctionAllocationResult</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.AuctionAllocationResult.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionAllocationResult.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.AuctionAllocationResult.ledger"><code class="docutils literal notranslate"><span class="pre">AuctionAllocationResult.ledger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.AuctionAllocationResult.unallocated_trades"><code class="docutils literal notranslate"><span class="pre">AuctionAllocationResult.unallocated_trades</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#mable.shipping_market.AuctionLedger"><code class="docutils literal notranslate"><span class="pre">AuctionLedger</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.AuctionLedger.__init__"><code class="docutils literal notranslate"><span class="pre">AuctionLedger.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.AuctionLedger.get_trades_for_company_copy"><code class="docutils literal notranslate"><span class="pre">AuctionLedger.get_trades_for_company_copy()</span></code></a></li>
@@ -375,6 +392,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mable.html#mable.shipping_market.Contract"><code class="docutils literal notranslate"><span class="pre">Contract</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.Contract.__init__"><code class="docutils literal notranslate"><span class="pre">Contract.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.Contract.copy"><code class="docutils literal notranslate"><span class="pre">Contract.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.Contract.fulfilled"><code class="docutils literal notranslate"><span class="pre">Contract.fulfilled</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.Contract.payment"><code class="docutils literal notranslate"><span class="pre">Contract.payment</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.Contract.to_json"><code class="docutils literal notranslate"><span class="pre">Contract.to_json()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.shipping_market.Contract.trade"><code class="docutils literal notranslate"><span class="pre">Contract.trade</span></code></a></li>
@@ -524,50 +542,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mable.html#module-mable.simulation_space">mable.simulation_space module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.simulation_space.Location"><code class="docutils literal notranslate"><span class="pre">Location</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.Location.__init__"><code class="docutils literal notranslate"><span class="pre">Location.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.Location.name"><code class="docutils literal notranslate"><span class="pre">Location.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.Location.x"><code class="docutils literal notranslate"><span class="pre">Location.x</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.Location.y"><code class="docutils literal notranslate"><span class="pre">Location.y</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.simulation_space.NetworkWithPortDict"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.NetworkWithPortDict.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.NetworkWithPortDict.get_port"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.get_port()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.NetworkWithPortDict.get_port_or_default"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.get_port_or_default()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.NetworkWithPortDict.ports"><code class="docutils literal notranslate"><span class="pre">NetworkWithPortDict.ports</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.simulation_space.OnJourney"><code class="docutils literal notranslate"><span class="pre">OnJourney</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.OnJourney.__init__"><code class="docutils literal notranslate"><span class="pre">OnJourney.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.OnJourney.destination"><code class="docutils literal notranslate"><span class="pre">OnJourney.destination</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.OnJourney.origin"><code class="docutils literal notranslate"><span class="pre">OnJourney.origin</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.OnJourney.start_time"><code class="docutils literal notranslate"><span class="pre">OnJourney.start_time</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.simulation_space.Port"><code class="docutils literal notranslate"><span class="pre">Port</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.Port.__init__"><code class="docutils literal notranslate"><span class="pre">Port.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.Port.to_json"><code class="docutils literal notranslate"><span class="pre">Port.to_json()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.simulation_space.ShippingNetwork"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.ShippingNetwork.__init__"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.ShippingNetwork.get_distance"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_distance()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.ShippingNetwork.get_journey_location"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_journey_location()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.ShippingNetwork.get_port"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_port()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.ShippingNetwork.get_port_or_default"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_port_or_default()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.ShippingNetwork.get_vessel_location"><code class="docutils literal notranslate"><span class="pre">ShippingNetwork.get_vessel_location()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.simulation_space.UnitShippingNetwork"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.UnitShippingNetwork.__init__"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.UnitShippingNetwork.get_distance"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.get_distance()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="mable.html#mable.simulation_space.UnitShippingNetwork.get_journey_location"><code class="docutils literal notranslate"><span class="pre">UnitShippingNetwork.get_journey_location()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="mable.html#module-mable.simulation_space">mable.simulation_space module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mable.html#module-mable.transport_operation">mable.transport_operation module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mable.html#mable.transport_operation.Bid"><code class="docutils literal notranslate"><span class="pre">Bid</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.transport_operation.Bid.__init__"><code class="docutils literal notranslate"><span class="pre">Bid.__init__()</span></code></a></li>
@@ -721,6 +696,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mable.html#mable.util.JsonAbleEncoder.default"><code class="docutils literal notranslate"><span class="pre">JsonAbleEncoder.default()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="mable.html#mable.util.format_time"><code class="docutils literal notranslate"><span class="pre">format_time()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mable.html#module-mable">Module contents</a></li>
