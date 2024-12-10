@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable package &mdash; MABLE 0.0.9 documentation</title>
+  <title>mable package &mdash; MABLE 0.0.10 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=f7cdbf68"></script>
+      <script src="_static/documentation_options.js?v=a83ce22a"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -127,6 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-mable.event_management">mable.event_management module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#mable.event_management.ArrivalEvent"><code class="docutils literal notranslate"><span class="pre">ArrivalEvent</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#mable.event_management.ArrivalEvent.distance"><code class="docutils literal notranslate"><span class="pre">ArrivalEvent.distance()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mable.event_management.ArrivalEvent.event_action"><code class="docutils literal notranslate"><span class="pre">ArrivalEvent.event_action()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#mable.event_management.CargoAnnouncementEvent"><code class="docutils literal notranslate"><span class="pre">CargoAnnouncementEvent</span></code></a><ul>
@@ -1547,6 +1548,18 @@ The world environment of the simulation.</p>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float
 The distance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mable.event_management.ArrivalEvent.event_action">
+<span class="sig-name descname"><span class="pre">event_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.event_management.ArrivalEvent.event_action" title="Link to this definition"></a></dt>
+<dd><p>Informs the vessel about the occurrence of the event and updates its location to the location of the
+occurrence, i.e. <a class="reference internal" href="#mable.event_management.VesselEvent.location" title="mable.event_management.VesselEvent.location"><code class="xref py py-func docutils literal notranslate"><span class="pre">VesselEvent.location()</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="target" id="mable.event_management.ArrivalEvent.event_action.params.engine"></span><strong>engine</strong><a class="paramlink headerlink reference internal" href="#mable.event_management.ArrivalEvent.event_action.params.engine">¶</a> (<a class="reference internal" href="#mable.engine.SimulationEngine" title="mable.engine.SimulationEngine"><em>SimulationEngine</em></a>) – The simulation engine.</p>
 </dd>
 </dl>
 </dd></dl>
