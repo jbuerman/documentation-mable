@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mable.examples package &mdash; MABLE 0.0.10 documentation</title>
+  <title>mable.examples package &mdash; MABLE 0.0.11 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx_paramlinks.css?v=dd72e65a" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="_static/mable_favicon.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=a83ce22a"></script>
+      <script src="_static/documentation_options.js?v=0c446633"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -364,7 +364,7 @@ finishing the current schedule.</p>
 <span id="mable-examples-environment-module"></span><h2>mable.examples.environment module<a class="headerlink" href="#module-mable.examples.environment" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="mable.examples.environment.generate_simulation">
-<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">generate_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specifications_builder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_detailed_auction_outcome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_agent_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.generate_simulation" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">mable.examples.environment.</span></span><span class="sig-name descname"><span class="pre">generate_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specifications_builder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_detailed_auction_outcome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_agent_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mable.examples.environment.generate_simulation" title="Link to this definition"></a></dt>
 <dd><p>Generate a simulation from a specifications.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -374,6 +374,7 @@ finishing the current schedule.</p>
 <li><p><span class="target" id="mable.examples.environment.generate_simulation.params.output_directory"></span><strong>output_directory</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.output_directory">¶</a> (<em>str</em>) – A directory to save the simulation output files.</p></li>
 <li><p><span class="target" id="mable.examples.environment.generate_simulation.params.global_agent_timeout"></span><strong>global_agent_timeout</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.global_agent_timeout">¶</a> (<em>int.</em>) – The timeout in seconds of every agent action, e.g. one call to ‘inform’ or ‘receive’.
 Default is 60 seconds.</p></li>
+<li><p><span class="target" id="mable.examples.environment.generate_simulation.params.info"></span><strong>info</strong><a class="paramlink headerlink reference internal" href="#mable.examples.environment.generate_simulation.params.info">¶</a> (<em>str</em><em> | </em><em>dict</em>) – Any information on the simulation.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
